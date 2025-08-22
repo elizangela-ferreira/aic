@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Impacto Construtivo</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <style>        
+        .conventional-col { color: var(--bs-danger); }
+        .ecological-col { color: var(--bs-success); }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container" style="max-width: 1200px;">
+        <div class="p-4 p-md-5 my-5 bg-white shadow-sm rounded-3">
+            <h1 class="display-6 text-center text-primary">Análise de Impacto Construtivo</h1>
+            <p class="lead text-center text-muted mb-5">
+                Compare o impacto ambiental e financeiro entre a alvenaria convencional e a ecológica.
+            </p>
+    
+            <div class="row g-3 mb-4 align-items-center">
+                <div class="col-auto">
+                    <label for="wall-length" class="form-label">Largura da Parede</label>
+                    <div class="input-group">
+                        <input type="number" id="wall-length" class="form-control" value="5" step="0.1">
+                        <span class="input-group-text">m</span>
+                    </div>                    
+                </div>
+                <div class="col-auto">
+                    <label for="wall-height" class="form-label">Altura da Parede</label>
+                    <div class="input-group">
+                        <input type="number" id="wall-height" class="form-control" value="3" step="0.1">
+                        <span class="input-group-text">m</span>
+                    </div>
+                </div>                
+            </div>
+    
+            <div class="accordion mb-4" id="parametros-accordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                        data-bs-target="#collapseConvencional" aria-expanded="false" aria-controls="collapseConvencional">
+                            Configurar parâmetros da alvenaria convencional
+                        </button>
+                    </h2>
+                    <div id="collapseConvencional" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#parametros-accordion">
+                        <div class="accordion-body">
+                            <div class="row mb-3 g-3 align-items-center">
+                                
+                                <div class="col-auto">
+                                    <label for="brick-type-conv" class="col-form-label">Tipo de Tijolo</label>
+                                    <select id="brick-type-conv" class="form-select" style="width: auto;" aria-label="Tipo de Tijolo Convencional">
+                                        <option >Selecione o tipo de tijolo</option>
+                                        <option selected value="1">Cerâmico 8 furos 9x19x19cm</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
+                            <div class="row mb-3">
+                                
+                                <div class="col-auto">
+                                    <label for="custoTijoloConv" class="col-form-label">Custo unitário</label>
+                                    <div id="custoTijoloConv" class="input-group">                                        
+                                        <input type="number" id="custo-tijolo-conv" class="form-control" placeholder="1.00" step="0.01" value="1.00" aria-label="Custo unitário do tijolo convencional">
+                                        <span class="input-group-text">R$/peça</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-auto">
+                                    <label for="dist-fab-rev-conv" class="col-form-label">Distância da Fábrica até o revendedor</label>
+                                    <div class="input-group">
+                                        <input type="number" id="dist-fab-rev-conv" class="form-control" placeholder="95" step="1" value="95" "Distância da fábrica até o revendedor">
+                                        <span class="input-group-text">km</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-auto">
+                                    <label for="dist-rev-obra-conv" class="col-form-label">Distância do revendedor até a obra</label>
+                                    <div class="input-group">                                        
+                                        <input type="number" id="dist-rev-obra-conv" class="form-control" placeholder="5" step="1" value="5">
+                                        <span class="input-group-text">km</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-auto">
+                                    <label for="espessura-junta" class="col-form-label">Junta de assentamento</label>
+                                    <div id="espessura-junta" class="input-group">                                        
+                                        <input type="number" id="espessura-junta-conv" class="form-control" placeholder="1.0" step="0.01" value="1.0" "Espessura da junta de assentamento">
+                                        <span class="input-group-text">cm</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="row mb-3">
+                                <div class="col-auto">
+                                    <label for="espessura-chapisco" class="col-form-label">Espessura do chapisco</label>
+                                    <div id="espessura-chapisco" class="input-group">                                        
+                                        <input type="number" id="espessura-chapisco-conv" class="form-control" placeholder="0.5" value="0.5" step="0.01" 
+                                            aria-label="Espessura do chapisco">
+                                        <span class="input-group-text">cm</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row mb-3">                                
+                                <div class="col-auto">
+                                    <label for="espessura-emboco" class="col-form-label">Espessura do emboço:</label>
+                                    <div id="espessura-emboco" class="input-group">
+                                        <input type="number" id="espessura-emboco-conv" class="form-control" placeholder="1.5" value="1.5" step="0.01" 
+                                            aria-label="Espessura do emboço">
+                                        <span class="input-group-text">cm</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-auto">
+                                    <label for="espessura-reboco" class="col-form-label">Espessura do reboco:</label>
+                                    <div id="espessura-reboco" class="input-group">
+                                        <input type="number" id="espessura-reboco-conv" class="form-control" placeholder="0.5" value="0.5" step="0.01" 
+                                            aria-label="Espessura do reboco">
+                                        <span class="input-group-text">cm</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                        data-bs-target="#collapseEcologica" aria-expanded="false" aria-controls="collapseEcologica">
+                            Configurar parâmetros da alvenaria ecológica
+                        </button>
+                    </h2>
+                    <div id="collapseEcologica" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#parametros-accordion">
+                        <div class="accordion-body">                            
+                            <div class="row mb-3 g-3 align-items-center">                                
+                                <div class="col-auto">
+                                    <label for="tipo-tijolo-ecologico" class="col-form-label">Tipo de Tijolo</label>
+                                    <select id="tipo-tijolo-ecologico" class="form-select" style="width: auto;" aria-label="Tipo de Tijolo Ecológico">
+                                        <option>Selecione o tipo de tijolo</option>
+                                        <option selected value="1">Tijolo Modular 12,5x25x7cm</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
+                            <div class="row mb-3">                                
+                                <div class="col-auto">
+                                    <label for="custoTijoloEco" class="col-form-label">Custo unitário</label>
+                                    <div id="custoTijoloEco" class="input-group">                                        
+                                        <input type="number" id="custo-tijolo-eco" class="form-control" placeholder="1.20" step="0.01" value="1.20" aria-label="Custo unitário do tijolo ecológico">
+                                        <span class="input-group-text">R$/peça</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-auto">
+                                    <label for="dist-fab-obra-eco" class="col-form-label">Distância da Fábrica até à obra</label>
+                                    <div class="input-group">
+                                        <input type="number" id="dist-fab-obra-eco" class="form-control" placeholder="100" step="1" value="100">
+                                        <span class="input-group-text">km</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-auto">
+                                    <label for="rendimento-cola" class="col-form-label">Rendimento cola assentamento</label>
+                                    <div id="rendimento-cola" class="input-group">                                        
+                                        <input type="number" id="valor-rendimento-assentamento" class="form-control" placeholder="1000" step="1" value="1000" aria-label="Rendimento cola de assentamento">
+                                        <span class="input-group-text">tijolos / litro</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="row mb-3">
+                                <div class="col-auto">
+                                    <label for="espessura-rejunte" class="col-form-label">Espessura do rejunte</label>
+                                    <div id="espessura-rejunte" class="input-group">                                        
+                                        <input type="number" id="valor-espessura-rejunte" class="form-control" placeholder="0.5" step="0.01" 
+                                            value="0.5" aria-label="Espessura do rejunte">
+                                        <span class="input-group-text">cm</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <button id="calculate-button" class="btn btn-primary btn-lg w-100">Calcular Comparativo</button>
+    
+            <div id="loading-message" class="text-center text-muted fst-italic my-3" style="display: none;">Calculando...</div>
+            
+            <div id="results-section" class="mt-5" style="display: none;">
+                <h3 class="text-center text-primary mb-4">Comparativo com Ecológico Comum</h2>
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr>
+                            <th>Indicador</th>
+                            <th class="conventional-col">Convencional</th>
+                            <th class="ecological-col">Ecológico</th>
+                        </tr>
+                    </thead>
+                    <tbody id="results-body">                        
+                         
+                    </tbody>
+                </table>
+
+            <h3 class="text-center text-primary mt-5 mb-4">Comparativo com Ecológico Aditivado<sup>1</sup></h3>
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr>
+                            <th>Indicador</th>
+                            <th class="conventional-col">Convencional</th>
+                            <th class="ecological-col">Ecológico Aditivado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="results-body-aditivado">
+                        
+                    </tbody>
+                </table>
+
+                <div id="alert-container" class="my-3"></div>
+
+                <div class="row mt-5 g-4">
+                    <div class="col-md-6">
+                        <canvas id="co2-chart"></canvas>
+                    </div>
+                    <div class="col-md-6">
+                        <canvas id="waste-chart"></canvas>
+                    </div>                    
+                    <div class="col-md-6">
+                        <canvas id="water-chart"></canvas>
+                    </div>                    
+                    <div class="col-md-6">
+                        <canvas id="cost-chart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-5 text-muted small">
+                <p><sup>1</sup> O tijolo ecológico aditivado considera o uso de uma mistura com 15% de poliéster que pode reduzir a necessidade de cimento na sua fabricação, resultando em menor impacto ambiental.</p>
+            </div>
+            <footer class="text-center text-muted mt-5">
+                <p>&copy; 2025 Elizangela Ferreira A. Paiva</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+</html>
