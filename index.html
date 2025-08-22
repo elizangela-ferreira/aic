@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Impacto Construtivo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #007BFF;
+            --secondary-color: #f8f9fa;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --text-color: #333;
+            --card-bg: #fff;
+            --border-color: #dee2e6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 0;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+        .intro-text {
+            text-align: center;
+            font-size: 1.1em;
+            color: #6c757d;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .input-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .input-item label {
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--text-color);
+        }
+        .input-item input {
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1em;
+        }
+        button {
+            padding: 12px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        #results-section {
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: center;
+        }
+        .comparison-table th {
+            background-color: var(--secondary-color);
+            font-weight: 700;
+        }
+        .conventional-col { color: var(--danger-color); }
+        .ecological-col { color: var(--success-color); }
+        #loading-message {
+            text-align: center;
+            font-style: italic;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Análise de Impacto Construtivo</h1>
+        <p class="intro-text">
+            Compare o impacto ambiental e financeiro da alvenaria convencional vs. alvenaria ecológica para 1 m² de parede. Os valores iniciais são exemplos e podem ser alterados.
+        </p>
+
+        <div class="input-group">
+            <div class="input-item">
+                <label for="price-conv">Preço Tijolo Convencional (R$)</label>
+                <input type="number" id="price-conv" value="0.80">
+            </div>
+            <div class="input-item">
+                <label for="price-eco">Preço Tijolo Ecológico (R$)</label>
+                <input type="number" id="price-eco" value="1.10">
+            </div>
+            <div class="input-item">
+                <label for="cost-labor">Custo Mão de Obra (R$/m²)</label>
+                <input type="number" id="cost-labor" value="40.00">
+            </div>
+        </div>
+
+        <button id="calculate-button">Calcular Comparativo</button>
+
+        <div id="loading-message" style="display: none;">Calculando...</div>
+        
+        <div id="results-section">
+            <h2 style="text-align: center; color: var(--primary-color);">Resultados para 1 m² de Parede</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Indicador</th>
+                        <th class="conventional-col">Convencional</th>
+                        <th class="ecological-col">Ecológico</th>
+                    </tr>
+                </thead>
+                <tbody id="results-body">
+                    <!-- Resultados serão inseridos aqui via JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Dados de referência fixos no código.
+        const DATA_CONVENCIONAL = {
+            tijolos_m2: 25,
+            argamassa_m2: 15, // kg
+            agua_producao_tijolo: 0.20, // L/un
+            agua_argamassa_saco: 5.00, // L/saco
+            co2_producao_tijolo: 0.50, // kg/un
+            co2_producao_argamassa: 2.50, // kg/saco
+            residuos_m2: 10.00, // kg
+            rendimento_saco: 20 // kg por saco
+        };
+        const DATA_ECOLOGICO = {
+            tijolos_m2: 18,
+            argamassa_m2: 8, // kg
+            agua_producao_tijolo: 0.00, // L/un
+            agua_argamassa_saco: 5.00, // L/saco
+            co2_producao_tijolo: 0.15, // kg/un
+            co2_producao_argamassa: 2.50, // kg/saco
+            residuos_m2: 2.00, // kg
+            rendimento_saco: 20 // kg por saco
+        };
+        const PRICE_ARGAMASSA = 25.00; // R$ por saco
+
+        document.getElementById('calculate-button').addEventListener('click', calculate);
+
+        function calculate() {
+            const loading = document.getElementById('loading-message');
+            const resultsSection = document.getElementById('results-section');
+            const resultsBody = document.getElementById('results-body');
+
+            loading.style.display = 'block';
+            resultsSection.style.display = 'none';
+            resultsBody.innerHTML = ''; // Limpa resultados anteriores
+
+            setTimeout(() => { // Simula um tempo de processamento
+                try {
+                    // Parâmetros de entrada do usuário
+                    const priceConv = parseFloat(document.getElementById('price-conv').value);
+                    const priceEco = parseFloat(document.getElementById('price-eco').value);
+                    const costLabor = parseFloat(document.getElementById('cost-labor').value);
+
+                    if (isNaN(priceConv) || isNaN(priceEco) || isNaN(costLabor)) {
+                        throw new Error('Por favor, insira valores numéricos válidos.');
+                    }
+
+                    // --- Cálculos para Alvenaria Convencional ---
+                    const conv = {};
+                    conv.custo = (priceConv * DATA_CONVENCIONAL.tijolos_m2) + 
+                                 (PRICE_ARGAMASSA * (DATA_CONVENCIONAL.argamassa_m2 / DATA_CONVENCIONAL.rendimento_saco)) + 
+                                 costLabor;
+                    conv.agua = (DATA_CONVENCIONAL.agua_producao_tijolo * DATA_CONVENCIONAL.tijolos_m2) +
+                                (DATA_CONVENCIONAL.agua_argamassa_saco * (DATA_CONVENCIONAL.argamassa_m2 / DATA_CONVENCIONAL.rendimento_saco));
+                    conv.co2 = (DATA_CONVENCIONAL.co2_producao_tijolo * DATA_CONVENCIONAL.tijolos_m2) +
+                               (DATA_CONVENCIONAL.co2_producao_argamassa * (DATA_CONVENCIONAL.argamassa_m2 / DATA_CONVENCIONAL.rendimento_saco));
+                    conv.residuos = DATA_CONVENCIONAL.residuos_m2;
+
+                    // --- Cálculos para Alvenaria Ecológica ---
+                    const eco = {};
+                    eco.custo = (priceEco * DATA_ECOLOGICO.tijolos_m2) + 
+                                (PRICE_ARGAMASSA * (DATA_ECOLOGICO.argamassa_m2 / DATA_ECOLOGICO.rendimento_saco)) + 
+                                costLabor;
+                    eco.agua = (DATA_ECOLOGICO.agua_producao_tijolo * DATA_ECOLOGICO.tijolos_m2) +
+                               (DATA_ECOLOGICO.agua_argamassa_saco * (DATA_ECOLOGICO.argamassa_m2 / DATA_ECOLOGICO.rendimento_saco));
+                    eco.co2 = (DATA_ECOLOGICO.co2_producao_tijolo * DATA_ECOLOGICO.tijolos_m2) +
+                              (DATA_ECOLOGICO.co2_producao_argamassa * (DATA_ECOLOGICO.argamassa_m2 / DATA_ECOLOGICO.rendimento_saco));
+                    eco.residuos = DATA_ECOLOGICO.residuos_m2;
+
+                    // Exibe os resultados
+                    const resultsHtml = `
+                        <tr>
+                            <td>Custo Total</td>
+                            <td>R$ ${conv.custo.toFixed(2)}</td>
+                            <td>R$ ${eco.custo.toFixed(2)}</td>
+                        </tr>
+                        <tr>
+                            <td>Consumo de Água</td>
+                            <td>${conv.agua.toFixed(2)} L</td>
+                            <td>${eco.agua.toFixed(2)} L</td>
+                        </tr>
+                        <tr>
+                            <td>Pegada de Carbono</td>
+                            <td>${conv.co2.toFixed(2)} kg CO₂</td>
+                            <td>${eco.co2.toFixed(2)} kg CO₂</td>
+                        </tr>
+                        <tr>
+                            <td>Geração de Resíduos</td>
+                            <td>${conv.residuos.toFixed(2)} kg</td>
+                            <td>${eco.residuos.toFixed(2)} kg</td>
+                        </tr>
+                    `;
+                    resultsBody.innerHTML = resultsHtml;
+                    loading.style.display = 'none';
+                    resultsSection.style.display = 'flex';
+
+                } catch (error) {
+                    loading.style.display = 'none';
+                    resultsSection.style.display = 'block';
+                    resultsSection.innerHTML = `<p style="color:red; text-align: center;">Erro: ${error.message}</p>`;
+                }
+            }, 500); // Pequeno atraso para simular o cálculo
+        }
+    </script>
+</body>
+</html>
