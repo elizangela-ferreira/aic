@@ -47,7 +47,6 @@
                     <div id="collapseConvencional" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#parametros-accordion">
                         <div class="accordion-body">
                             <div class="row mb-3 g-3 align-items-center">
-
                                 
                                 <div class="col-auto">
                                     <label for="brick-type-conv" class="col-form-label">Tipo de Tijolo</label>
@@ -63,7 +62,7 @@
                                 <div class="col-auto">
                                     <label for="custoTijoloConv" class="col-form-label">Custo unitário</label>
                                     <div id="custoTijoloConv" class="input-group">                                        
-                                        <input type="number" id="custo-tijolo-conv" class="form-control" placeholder="0.80" step="0.01" value="1.50" aria-label="Custo unitário do tijolo convencional">
+                                        <input type="number" id="custo-tijolo-conv" class="form-control" placeholder="0.80" step="0.01" value="0.80" aria-label="Custo unitário do tijolo convencional">
                                         <span class="input-group-text">R$/peça</span>
                                     </div>
                                 </div>
@@ -73,7 +72,7 @@
                                 <div class="col-auto">
                                     <label for="espessura-junta" class="col-form-label">Junta de assentamento</label>
                                     <div id="espessura-junta" class="input-group">                                        
-                                        <input type="number" class="form-control" placeholder="1.0" step="0.01" aria-label="Espessura da junta de assentamento">
+                                        <input type="number" id="espessura-junta-conv" class="form-control" placeholder="1.0" step="0.01" value="1.0" "Espessura da junta de assentamento">
                                         <span class="input-group-text">cm</span>
                                     </div>
                                 </div>
@@ -84,7 +83,7 @@
                                 <div class="col-auto">
                                     <label for="espessura-chapisco" class="col-form-label">Espessura do chapisco</label>
                                     <div id="espessura-chapisco" class="input-group">                                        
-                                        <input type="number" class="form-control" placeholder="0.5" step="0.01" 
+                                        <input type="number" id="espessura-chapisco-conv" class="form-control" placeholder="0.5" value="0.5" step="0.01" 
                                             aria-label="Espessura do chapisco">
                                         <span class="input-group-text">cm</span>
                                     </div>
@@ -96,7 +95,7 @@
                                 <div class="col-auto">
                                     <label for="espessura-emboco" class="col-form-label">Espessura do emboço:</label>
                                     <div id="espessura-emboco" class="input-group">
-                                        <input type="number" class="form-control" placeholder="1.5" step="0.01" 
+                                        <input type="number" id="espessura-emboco-conv" class="form-control" placeholder="1.5" value="1.5" step="0.01" 
                                             aria-label="Espessura do emboço">
                                         <span class="input-group-text">cm</span>
                                     </div>
@@ -107,7 +106,7 @@
                                 <div class="col-auto">
                                     <label for="espessura-reboco" class="col-form-label">Espessura do reboco:</label>
                                     <div id="espessura-reboco" class="input-group">
-                                        <input type="number" class="form-control" placeholder="0.5" step="0.01" 
+                                        <input type="number" id="espessura-reboco-conv" class="form-control" placeholder="0.5" value="0.5" step="0.01" 
                                             aria-label="Espessura do reboco">
                                         <span class="input-group-text">cm</span>
                                     </div>
@@ -151,7 +150,7 @@
                                 <div class="col-auto">
                                     <label for="rendimento-cola" class="col-form-label">Rendimento cola assentamento</label>
                                     <div id="rendimento-cola" class="input-group">                                        
-                                        <input type="number" class="form-control" placeholder="1000" step="1" aria-label="Rendimento cola de assentamento">
+                                        <input type="number" id="valor-rendimento-assentamento" class="form-control" placeholder="1000" step="1" value="1000" aria-label="Rendimento cola de assentamento">
                                         <span class="input-group-text">tijolos / litro</span>
                                     </div>
                                 </div>
@@ -162,8 +161,8 @@
                                 <div class="col-auto">
                                     <label for="espessura-rejunte" class="col-form-label">Espessura do rejunte</label>
                                     <div id="espessura-rejunte" class="input-group">                                        
-                                        <input type="number" class="form-control" placeholder="0.5" step="0.01" 
-                                            aria-label="Espessura do rejunte">
+                                        <input type="number" id="valor-espessura-rejunte" class="form-control" placeholder="0.5" step="0.01" 
+                                            value="0.5" aria-label="Espessura do rejunte">
                                         <span class="input-group-text">cm</span>
                                     </div>
                                 </div>
@@ -194,7 +193,7 @@
                     </tbody>
                 </table>
 
-                <h3 class="text-center text-primary mt-5 mb-4">Comparativo com Ecológico Aditivado<sup>1</sup></h3>
+            <h3 class="text-center text-primary mt-5 mb-4">Comparativo com Ecológico Aditivado<sup>1</sup></h3>
                 <table class="table table-bordered text-center">
                     <thead>
                         <tr>
@@ -207,6 +206,8 @@
                         <!-- Resultados da segunda tabela serão inseridos aqui -->
                     </tbody>
                 </table>
+
+                <div id="alert-container" class="my-3"></div>
 
                 <div class="row mt-5 g-4">
                     <div class="col-md-6">

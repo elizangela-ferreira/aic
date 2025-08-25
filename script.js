@@ -1,33 +1,81 @@
 // Dados de referência fixos no código.
 const DATA_CONVENCIONAL = {
+    altura_tijolo: 0.19,
+    largura_tijolo: 0.19,
+    profundidade_tijolo: 0.09,
+    
+    cimento_traco_assentamento: 230, // kg/m3
+    cal_traco_assentamento: 140, // kg/m3
+    areia_traco_assentamento: 1, // m3
+    agua_traco_assentamento: 250, // L/m3
+    
+    cimento_traco_chapisco: 450, // kg/m3
+    cal_traco_chapisco: 0, // kg/m3
+    areia_traco_chapisco: 1, // m3
+    agua_traco_chapisco: 225, // L/m3
+    
+    cimento_traco_emboco: 230, // kg/m3
+    cal_traco_emboco: 140, // kg/m3
+    areia_traco_emboco: 1, // m3
+    agua_traco_emboco: 250, // L/m3
+
+    cimento_traco_reboco: 170,
+    cal_traco_reboco: 210,
+    areia_traco_reboco: 1,
+    agua_traco_reboco: 250,
+
+    custo_cimento_kg: 0.50, // R$ por kg
+    custo_cal_kg: 0.50, // R$ por kg
+    custo_areia_m3: 200.00, // R$ por m3
+    custo_agua_litro: 0.006, // R$ por litro
+
     tijolos_m2: 25,
     argamassa_m2: 15, // kg
     agua_producao_tijolo: 0.20, // L/un
     agua_argamassa_saco: 5.00, // L/saco
     co2_producao_tijolo: 0.50, // kg/un
+    co2_producao_cimento: 0.90, // kg/kg
     co2_producao_argamassa: 2.50, // kg/saco
     residuos_m2: 10.00, // kg
     rendimento_saco: 20, // kg por saco
     energia_m2: 150 // Wh
 };
 const DATA_ECOLOGICO = {
+    altura_tijolo: 0.07,
+    largura_tijolo: 0.25,
+    profundidade_tijolo: 0.125,
+
+    custo_cimento_kg: 0.50, // R$ por kg
+    custo_cola_litro: 50.00, // R$ por litro
+    custo_rejunte_litro: 10.00, // R$ por m3
+    custo_agua_litro: 0.006, // R$ por litro
+
     tijolos_m2: 18,
     argamassa_m2: 8, // kg
-    agua_producao_tijolo: 0.00, // L/un
+    agua_producao_tijolo: 0.05, // L/un
     agua_argamassa_saco: 5.00, // L/saco
     co2_producao_tijolo: 0.15, // kg/un
-    co2_producao_argamassa: 2.50, // kg/saco
+    co2_producao_cimento: 0.90,
     residuos_m2: 2.00, // kg
     rendimento_saco: 20, // kg por saco
     energia_m2: 30 // Wh
 };
 const DATA_ECOLOGICO_ADITIVADO = {
+    altura_tijolo: 0.07,
+    largura_tijolo: 0.25,
+    profundidade_tijolo: 0.125,
+
+    custo_cimento_kg: 0.50, // R$ por kg
+    custo_cola_litro: 50.00, // R$ por litro
+    custo_rejunte_litro: 10.00, // R$ por m3
+    custo_agua_litro: 0.006, // R$ por litro
+
     tijolos_m2: 17,
     argamassa_m2: 7, // kg
     agua_producao_tijolo: 0.00, // L/un
     agua_argamassa_saco: 5.00, // L/saco
     co2_producao_tijolo: 0.12, // kg/un
-    co2_producao_argamassa: 2.20, // kg/saco (aditivo pode reduzir cimento)
+    co2_producao_cimento: 0.90,
     residuos_m2: 1.50, // kg
     rendimento_saco: 20, // kg por saco
     energia_m2: 25 // Wh
@@ -42,72 +90,193 @@ let costChart;
 
 document.getElementById('calculate-button').addEventListener('click', calculate);
 
-function calculateWallMetrics(materialData, priceTijolo, totalM2) {
+function calculaMetricasParedeConvencional(materialData, larguraParede, alturaParede, custoTijolo, 
+    espessuraJunta, espessuraChapisco, espessuraEmboco, espessuraReboco) {
     const metrics = {};
     
-    // Custo por m² (material + mão de obra)
-    const costPerM2 = (priceTijolo * materialData.tijolos_m2) + 
-                      (PRICE_ARGAMASSA * (materialData.argamassa_m2 / materialData.rendimento_saco));
-    metrics.custo = costPerM2 * totalM2;
+    // Quantidade de tijolos
+    const areaParede = larguraParede * alturaParede;
+    const alturaEfetivaTijolo  = espessuraJunta + materialData.altura_tijolo;
+    const larguraEfetivaTijolo = espessuraJunta + materialData.largura_tijolo;
+    const numTijolos = areaParede / (alturaEfetivaTijolo * larguraEfetivaTijolo);
+    const volumeParede = areaParede * materialData.profundidade_tijolo
 
-    // Água por m²
-    const waterPerM2 = (materialData.agua_producao_tijolo * materialData.tijolos_m2) +
-                       (materialData.agua_argamassa_saco * (materialData.argamassa_m2 / materialData.rendimento_saco));
-    metrics.agua = waterPerM2 * totalM2;
+    // Volumes necessários ao cálculo de consumo por etapa
+    const volumeTijolos = numTijolos * (materialData.altura_tijolo * materialData.largura_tijolo * materialData.profundidade_tijolo);
+    const volumeAssentamento = volumeParede - volumeTijolos;
+    const volumeChapisco = areaParede * (espessuraChapisco / 100); // Convertendo cm para m
+    const volumeEmboco = areaParede * (espessuraEmboco / 100);
+    const volumeReboco = areaParede * (espessuraReboco / 100);
 
-    // CO2 por m²
-    const co2PerM2 = (materialData.co2_producao_tijolo * materialData.tijolos_m2) +
-                     (materialData.co2_producao_argamassa * (materialData.argamassa_m2 / materialData.rendimento_saco));
-    metrics.co2 = co2PerM2 * totalM2;
+    // Etapa de assentamento
+    const cimentoAssentamento   = volumeAssentamento * materialData.cimento_traco_assentamento; 
+    const calAssentamento       = volumeAssentamento * materialData.cal_traco_assentamento;
+    const areiaAssentamento     = volumeAssentamento * materialData.areia_traco_assentamento;
+    const aguaAssentamento      = volumeAssentamento * materialData.agua_traco_assentamento;
+
+    // Etapa de chapisco
+    const cimentoChapisco   = volumeChapisco * materialData.cimento_traco_chapisco; 
+    const calChapisco       = volumeChapisco * materialData.cal_traco_chapisco;
+    const areiaChapisco     = volumeChapisco * materialData.areia_traco_chapisco;
+    const aguaChapisco      = volumeChapisco * materialData.agua_traco_chapisco;
+
+    // Etapa de emboço
+    const cimentoEmboco   = volumeEmboco * materialData.cimento_traco_emboco; 
+    const calEmboco       = volumeEmboco * materialData.cal_traco_emboco;
+    const areiaEmboco     = volumeEmboco * materialData.areia_traco_emboco;
+    const aguaEmboco      = volumeEmboco * materialData.agua_traco_emboco;
+
+    // Etapa de reboco
+    const cimentoReboco   = volumeReboco * materialData.cimento_traco_reboco; 
+    const calReboco       = volumeReboco * materialData.cal_traco_reboco;
+    const areiaReboco     = volumeReboco * materialData.areia_traco_reboco;
+    const aguaReboco      = volumeReboco * materialData.agua_traco_reboco;
+    
+    
+    const totalCimento = cimentoAssentamento + cimentoChapisco + cimentoEmboco + cimentoReboco;
+    const totalCal = calAssentamento + calChapisco + calEmboco + calReboco;
+    const totalAreia = areiaAssentamento + areiaChapisco + areiaEmboco + areiaReboco;
+    const totalAguaConstrucao = aguaAssentamento + aguaChapisco + aguaEmboco + aguaReboco;
+    
+    // Custo (materiais)
+    const custoTijolos = numTijolos * custoTijolo;
+    const custoCimento = totalCimento * materialData.custo_cimento_kg;
+    const custoCal = totalCal * materialData.custo_cal_kg;
+    const custoAreia = totalAreia * materialData.custo_areia_m3;
+    const custoAgua = totalAguaConstrucao * materialData.custo_agua_litro;
+
+    metrics.custo = custoTijolos + custoCimento + custoCal + custoAreia + custoAgua;
+
+    // Água
+    const totalAgua = (materialData.agua_producao_tijolo * numTijolos) + totalAguaConstrucao;                       
+    metrics.agua = totalAgua;
+
+    // CO2
+    const co2 = (materialData.co2_producao_tijolo * numTijolos) +
+                (materialData.co2_producao_cimento * totalCimento);
+    metrics.co2 = co2;
 
     // Resíduos por m²
-    metrics.residuos = materialData.residuos_m2 * totalM2;
+    metrics.residuos = materialData.residuos_m2 * areaParede;
 
     // Energia por m²
-    metrics.energia = materialData.energia_m2 * totalM2;
+    metrics.energia = materialData.energia_m2 * areaParede;
 
     return metrics;
 }
 
+function calculaMetricasParedeEcologica(materialData, larguraParede, alturaParede, custoTijolo, 
+    rendimentoAssentamento, espessuraRejunte) {
+    const metrics = {};
+    
+    // Quantidade de tijolos
+    const areaParede = larguraParede * alturaParede;
+    const alturaEfetivaTijolo  = materialData.altura_tijolo;
+    const larguraEfetivaTijolo = materialData.largura_tijolo;
+    const numTijolos = areaParede / (alturaEfetivaTijolo * larguraEfetivaTijolo);
+    const volumeParede = areaParede * materialData.profundidade_tijolo
+
+    // Volumes necessários ao cálculo de consumo por etapa
+    const volumeTijolos = numTijolos * (materialData.altura_tijolo * materialData.largura_tijolo * materialData.profundidade_tijolo);
+    
+    // Volume de cola para assentamento
+    const volumeAssentamento = numTijolos / rendimentoAssentamento; // litros
+
+    // Volume de rejunte
+    const areaRejunte = espessuraRejunte * espessuraRejunte;
+    const volumeRejunte = areaRejunte * (numTijolos * (materialData.altura_tijolo + materialData.largura_tijolo) * 2) * 1000; // m³
+    
+    const totalCimento = 0; 
+    // Adicionar a água utilizada no rejunte + limpeza dos tijolos
+    const totalAguaConstrucao = numTijolos * 0.1;
+    
+    // Custo (materiais)
+    const custoTijolos = numTijolos * custoTijolo;
+    const custoCimento = totalCimento * materialData.custo_cimento_kg;
+    const custoAssentamento = volumeAssentamento * materialData.custo_cola_litro;
+    const custoRejunte = volumeRejunte * materialData.custo_rejunte_litro;
+    const custoAgua = totalAguaConstrucao * materialData.custo_agua_litro;
+
+    metrics.custo = custoTijolos + custoCimento + custoAssentamento + custoRejunte + custoAgua;
+
+    // Água
+    const totalAgua = (materialData.agua_producao_tijolo * numTijolos) + totalAguaConstrucao;                       
+    metrics.agua = totalAgua;
+
+    // CO2
+    const co2 = (materialData.co2_producao_tijolo * numTijolos) +
+                (materialData.co2_producao_cimento * totalCimento);
+    metrics.co2 = co2;
+
+    // Resíduos por m²
+    metrics.residuos = materialData.residuos_m2 * areaParede;
+
+    // Energia por m²
+    metrics.energia = materialData.energia_m2 * areaParede;
+
+    return metrics;
+}
+
+
 function calculate() {
     const loading = document.getElementById('loading-message');
     const resultsSection = document.getElementById('results-section');
+    const alertContainer = document.getElementById('alert-container');
     const resultsBody = document.getElementById('results-body');
 
     loading.style.display = 'block';
     resultsSection.style.display = 'none';
+    alertContainer.innerHTML = ''; // Limpa alertas anteriores
+
     resultsBody.innerHTML = ''; // Limpa resultados anteriores
 
     setTimeout(() => {
         try {
             // Parâmetros de entrada do usuário
-            const wallWidth = parseFloat(document.getElementById('wall-length').value);
-            const wallHeight = parseFloat(document.getElementById('wall-height').value);
-            const priceConv = parseFloat(document.getElementById('custo-tijolo-conv').value);
-            const priceEco = parseFloat(document.getElementById('custo-tijolo-eco').value);            
+            const larguraParede = parseFloat(document.getElementById('wall-length').value);
+            const alturaParede = parseFloat(document.getElementById('wall-height').value);
+            
+            // Parâmetros da alvenaria com tijolo convencional
+            const custoTijoloConv = parseFloat(document.getElementById('custo-tijolo-conv').value);
+            const espessuraJunta = parseFloat(document.getElementById('espessura-junta-conv').value); // Espessura da junta de assentamento (m)
+            const espessuraChapisco = parseFloat(document.getElementById('espessura-chapisco-conv').value); // Espessura do chapisco (m)
+            const espessuraEmboco = parseFloat(document.getElementById('espessura-emboco-conv').value); // Espessura do emboço (m)
+            const espessuraReboco = parseFloat(document.getElementById('espessura-reboco-conv').value); // Espessura do reboco (m)
+            
+            
 
-            if (isNaN(priceConv) || isNaN(priceEco) || isNaN(wallWidth) || isNaN(wallHeight)) {
+            if (isNaN(custoTijoloConv) || isNaN(larguraParede) || isNaN(alturaParede)) {
                 throw new Error('Por favor, insira valores numéricos válidos em todos os campos.');
             }
-            if (wallWidth <= 0 || wallHeight <= 0) {
+            if (larguraParede <= 0 || alturaParede <= 0) {
                 throw new Error('A largura e a altura devem ser valores positivos.');
             }
 
-            const totalM2 = wallWidth * wallHeight;
+            const totalM2 = larguraParede * alturaParede;
+
+            // Parâmetros da alvenaria com tijolo ecológico
+            const custoTijoloEco = parseFloat(document.getElementById('custo-tijolo-eco').value);
+            const rendimentoAssentamento = parseFloat(document.getElementById('valor-rendimento-assentamento').value); // tijolos por litro
+            const espessuraRejunte = parseFloat(document.getElementById('valor-espessura-rejunte').value) / 100.0; // m
 
             // Cálculos
-            const conv = calculateWallMetrics(DATA_CONVENCIONAL, priceConv, totalM2);
-            const eco = calculateWallMetrics(DATA_ECOLOGICO, priceEco, totalM2);
-            // NOTA: Usando o mesmo preço do ecológico para o aditivado. O ideal seria ter um campo de preço separado.
-            const ecoAditivado = calculateWallMetrics(DATA_ECOLOGICO_ADITIVADO, priceEco, totalM2);
+            const conv = calculaMetricasParedeConvencional(DATA_CONVENCIONAL, larguraParede, alturaParede, custoTijoloConv, 
+                espessuraJunta, espessuraChapisco, espessuraEmboco, espessuraReboco);
+            const eco = calculaMetricasParedeEcologica(DATA_ECOLOGICO, larguraParede, alturaParede, custoTijoloEco, 
+                rendimentoAssentamento, espessuraRejunte);
+            // NOTA: Usando o mesmo preço do ecológico para o aditivado.
+            const ecoAditivado = calculaMetricasParedeEcologica(DATA_ECOLOGICO_ADITIVADO, larguraParede, alturaParede, custoTijoloEco, 
+                rendimentoAssentamento, espessuraRejunte);
 
             // Exibe os resultados
             displayResults(conv, eco, ecoAditivado, totalM2);
 
         } catch (error) {
             loading.style.display = 'none';
-            resultsSection.style.display = 'block';
-            resultsSection.innerHTML = `<p style="color:red; text-align: center;">Erro: ${error.message}</p>`;
+            resultsSection.style.display = 'none';
+            console.error(error);            
+            // Exibe o erro no contêiner dedicado, sem destruir a estrutura da página.
+            alertContainer.innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
         }
     }, 100);
 }
