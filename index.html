@@ -16,7 +16,7 @@
         <div class="p-4 p-md-5 my-5 bg-white shadow-sm rounded-3">
             <h1 class="display-6 text-center text-primary">Análise de Impacto Construtivo</h1>
             <p class="lead text-center text-muted mb-5">
-                Compare o impacto ambiental e financeiro da alvenaria convencional vs. alvenaria ecológica.
+                Compare o impacto ambiental e financeiro entre a alvenaria convencional e a ecológica.
             </p>
     
             <div class="row g-3 mb-4 align-items-center">
@@ -47,22 +47,21 @@
                     <div id="collapseConvencional" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#parametros-accordion">
                         <div class="accordion-body">
                             <div class="row mb-3 g-3 align-items-center">
-                                <div class="col-3">
-                                    <label for="brick-type-conv" class="col-form-label">Tipo de Tijolo:</label>
-                                </div>
+
+                                
                                 <div class="col-auto">
+                                    <label for="brick-type-conv" class="col-form-label">Tipo de Tijolo</label>
                                     <select id="brick-type-conv" class="form-select" style="width: auto;" aria-label="Tipo de Tijolo Convencional">
                                         <option >Selecione o tipo de tijolo</option>
-                                        <option selected value="1">Tijolo Cerâmico 8 furos 9x19x19cm</option>
+                                        <option selected value="1">Cerâmico 8 furos 9x19x19cm</option>
                                     </select>
                                 </div>
                                 
                             </div>
                             <div class="row mb-3">
-                                <div class="col-3">
-                                    <label for="custoTijoloConv" class="col-form-label">Custo unitário:</label>
-                                </div>
+                                
                                 <div class="col-auto">
+                                    <label for="custoTijoloConv" class="col-form-label">Custo unitário</label>
                                     <div id="custoTijoloConv" class="input-group">                                        
                                         <input type="number" id="custo-tijolo-conv" class="form-control" placeholder="0.80" step="0.01" value="1.50" aria-label="Custo unitário do tijolo convencional">
                                         <span class="input-group-text">R$/peça</span>
@@ -71,10 +70,8 @@
                             </div>
 
                             <div class="row mb-3">
-                                <div class="col-3">
-                                    <label for="espessura-junta" class="col-form-label">Junta de assentamento:</label>
-                                </div>
-                                <div class="col-3">
+                                <div class="col-auto">
+                                    <label for="espessura-junta" class="col-form-label">Junta de assentamento</label>
                                     <div id="espessura-junta" class="input-group">                                        
                                         <input type="number" class="form-control" placeholder="1.0" step="0.01" aria-label="Espessura da junta de assentamento">
                                         <span class="input-group-text">cm</span>
@@ -84,10 +81,8 @@
 
                             
                             <div class="row mb-3">
-                                <div class="col-3">
-                                    <label for="espessura-chapisco" class="col-form-label">Espessura do chapisco:</label>
-                                </div>
-                                <div class="col-3">
+                                <div class="col-auto">
+                                    <label for="espessura-chapisco" class="col-form-label">Espessura do chapisco</label>
                                     <div id="espessura-chapisco" class="input-group">                                        
                                         <input type="number" class="form-control" placeholder="0.5" step="0.01" 
                                             aria-label="Espessura do chapisco">
@@ -97,11 +92,9 @@
                             </div>
 
 
-                            <div class="row mb-3">
-                                <div class="col-3">
+                            <div class="row mb-3">                                
+                                <div class="col-auto">
                                     <label for="espessura-emboco" class="col-form-label">Espessura do emboço:</label>
-                                </div>
-                                <div class="col-3">
                                     <div id="espessura-emboco" class="input-group">
                                         <input type="number" class="form-control" placeholder="1.5" step="0.01" 
                                             aria-label="Espessura do emboço">
@@ -111,10 +104,8 @@
                             </div>
 
                             <div class="row mb-3">
-                                <div class="col-3">
+                                <div class="col-auto">
                                     <label for="espessura-reboco" class="col-form-label">Espessura do reboco:</label>
-                                </div>
-                                <div class="col-3">
                                     <div id="espessura-reboco" class="input-group">
                                         <input type="number" class="form-control" placeholder="0.5" step="0.01" 
                                             aria-label="Espessura do reboco">
@@ -136,23 +127,19 @@
                     </h2>
                     <div id="collapseEcologica" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#parametros-accordion">
                         <div class="accordion-body">                            
-                            <div class="row mb-3 g-3 align-items-center">
-                                <div class="col-3">
-                                    <label for="tipo-tijolo-ecologico" class="col-form-label">Tipo de Tijolo:</label>
-                                </div>
+                            <div class="row mb-3 g-3 align-items-center">                                
                                 <div class="col-auto">
+                                    <label for="tipo-tijolo-ecologico" class="col-form-label">Tipo de Tijolo</label>
                                     <select id="tipo-tijolo-ecologico" class="form-select" style="width: auto;" aria-label="Tipo de Tijolo Ecológico">
                                         <option>Selecione o tipo de tijolo</option>
-                                        <option selected value="1">Tijolo Modular 12,5x15x7cm</option>
+                                        <option selected value="1">Tijolo Modular 12,5x25x7cm</option>
                                     </select>
                                 </div>
                                 
                             </div>
-                            <div class="row mb-3">
-                                <div class="col-3">
-                                    <label for="custoTijoloEco" class="col-form-label">Custo unitário:</label>
-                                </div>
+                            <div class="row mb-3">                                
                                 <div class="col-auto">
+                                    <label for="custoTijoloEco" class="col-form-label">Custo unitário</label>
                                     <div id="custoTijoloEco" class="input-group">                                        
                                         <input type="number" id="custo-tijolo-eco" class="form-control" placeholder="1.50" step="0.01" value="1.50" aria-label="Custo unitário do tijolo ecológico">
                                         <span class="input-group-text">R$/peça</span>
@@ -161,10 +148,8 @@
                             </div>
 
                             <div class="row mb-3">
-                                <div class="col-3">
-                                    <label for="rendimento-cola" class="col-form-label">Rendimento cola assentamento:</label>
-                                </div>
-                                <div class="col-3">
+                                <div class="col-auto">
+                                    <label for="rendimento-cola" class="col-form-label">Rendimento cola assentamento</label>
                                     <div id="rendimento-cola" class="input-group">                                        
                                         <input type="number" class="form-control" placeholder="1000" step="1" aria-label="Rendimento cola de assentamento">
                                         <span class="input-group-text">tijolos / litro</span>
@@ -174,10 +159,8 @@
 
                             
                             <div class="row mb-3">
-                                <div class="col-3">
-                                    <label for="espessura-rejunte" class="col-form-label">Espessura do rejunte:</label>
-                                </div>
-                                <div class="col-3">
+                                <div class="col-auto">
+                                    <label for="espessura-rejunte" class="col-form-label">Espessura do rejunte</label>
                                     <div id="espessura-rejunte" class="input-group">                                        
                                         <input type="number" class="form-control" placeholder="0.5" step="0.01" 
                                             aria-label="Espessura do rejunte">
@@ -196,19 +179,32 @@
             <div id="loading-message" class="text-center text-muted fst-italic my-3" style="display: none;">Calculando...</div>
             
             <div id="results-section" class="mt-5" style="display: none;">
-                <h2 class="text-center text-primary mb-4">Resultados</h2>
+                <h3 class="text-center text-primary mb-4">Comparativo com Ecológico Comum</h2>
                 <table class="table table-bordered text-center">
                     <thead>
                         <tr>
                             <th>Indicador</th>
                             <th class="conventional-col">Convencional</th>
                             <th class="ecological-col">Ecológico</th>
-                            <th class="ecological-col">Ecológico Aditivado</th>
                         </tr>
                     </thead>
                     <tbody id="results-body">
                         <!-- Resultados serão inseridos aqui via JS -->
                          
+                    </tbody>
+                </table>
+
+                <h3 class="text-center text-primary mt-5 mb-4">Comparativo com Ecológico Aditivado<sup>1</sup></h3>
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr>
+                            <th>Indicador</th>
+                            <th class="conventional-col">Convencional</th>
+                            <th class="ecological-col">Ecológico Aditivado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="results-body-aditivado">
+                        <!-- Resultados da segunda tabela serão inseridos aqui -->
                     </tbody>
                 </table>
 
@@ -230,7 +226,11 @@
                     </div>
                 </div>
 
-            </div>            
+            </div>
+            
+            <div class="mt-5 text-muted small">
+                <p><sup>1</sup> O tijolo ecológico aditivado considera o uso de uma mistura com 15% de poliéster que pode reduzir a necessidade de cimento na sua fabricação, resultando em menor impacto ambiental.</p>
+            </div>
         </div>
     </div>
 

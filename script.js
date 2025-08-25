@@ -78,7 +78,7 @@ function calculate() {
     resultsSection.style.display = 'none';
     resultsBody.innerHTML = ''; // Limpa resultados anteriores
 
-    setTimeout(() => { // Simula um tempo de processamento
+    setTimeout(() => {
         try {
             // Parâmetros de entrada do usuário
             const wallWidth = parseFloat(document.getElementById('wall-length').value);
@@ -109,7 +109,7 @@ function calculate() {
             resultsSection.style.display = 'block';
             resultsSection.innerHTML = `<p style="color:red; text-align: center;">Erro: ${error.message}</p>`;
         }
-    }, 500); // Pequeno atraso para simular o cálculo
+    }, 100);
 }
 
 /**
@@ -157,8 +157,10 @@ function createOrUpdateChart(chartInstance, canvasId, chartLabel, chartTitle, ch
 }
 
 function displayResults(conv, eco, ecoAditivado, totalM2) {
-    const resultsBody = document.getElementById('results-body');
-    const resultsHtml = `
+    const resultsBody1 = document.getElementById('results-body');
+    const resultsBody2 = document.getElementById('results-body-aditivado');
+    
+    const resultsHtml1 = `
         <tr>
             <td>Área Total da Parede</td>
             <td colspan="3" style="font-weight: bold;">${totalM2.toFixed(2)} m²</td>
@@ -167,42 +169,65 @@ function displayResults(conv, eco, ecoAditivado, totalM2) {
         <tr>
             <td>Emissão de Carbono</td>
             <td class="conventional-col">${conv.co2.toFixed(2)} kg CO₂</td>
-            <td class="ecological-col">${eco.co2.toFixed(2)} kg CO₂</td>
+            <td class="ecological-col">${eco.co2.toFixed(2)} kg CO₂</td>            
+        </tr>
+        <tr>
+            <td>Geração de Resíduos</td>
+            <td class="conventional-col">${conv.residuos.toFixed(2)} kg</td>
+            <td class="ecological-col">${eco.residuos.toFixed(2)} kg</td>            
+        </tr>
+        <tr>
+            <td>Consumo de Água</td>
+            <td class="conventional-col">${conv.agua.toFixed(2)} L</td>
+            <td class="ecological-col">${eco.agua.toFixed(2)} L</td>            
+        </tr>
+        <tr>
+            <td>Consumo de Energia</td>
+            <td class="conventional-col">${conv.energia.toFixed(2)} Wh</td>
+            <td class="ecological-col">${eco.energia.toFixed(2)} Wh</td>            
+        </tr>
+        <tr>
+            <td>Custo Total</td>
+            <td class="conventional-col">R$ ${conv.custo.toFixed(2)}</td>
+            <td class="ecological-col">R$ ${eco.custo.toFixed(2)}</td>            
+        </tr>
+    `;
+    resultsBody1.innerHTML = resultsHtml1;
+
+    // Tabela 2: Convencional vs. Ecológico Aditivado
+    const resultsHtml2 = `
+        <tr>
+            <td>Área Total da Parede</td>
+            <td colspan="2" style="font-weight: bold;">${totalM2.toFixed(2)} m²</td>
+        </tr>
+        <tr>
+            <td>Emissão de Carbono</td>
+            <td class="conventional-col">${conv.co2.toFixed(2)} kg CO₂</td>
             <td class="ecological-col">${ecoAditivado.co2.toFixed(2)} kg CO₂</td>
         </tr>
         <tr>
             <td>Geração de Resíduos</td>
             <td class="conventional-col">${conv.residuos.toFixed(2)} kg</td>
-            <td class="ecological-col">${eco.residuos.toFixed(2)} kg</td>
             <td class="ecological-col">${ecoAditivado.residuos.toFixed(2)} kg</td>
         </tr>
         <tr>
             <td>Consumo de Água</td>
             <td class="conventional-col">${conv.agua.toFixed(2)} L</td>
-            <td class="ecological-col">${eco.agua.toFixed(2)} L</td>
             <td class="ecological-col">${ecoAditivado.agua.toFixed(2)} L</td>
         </tr>
         <tr>
             <td>Consumo de Energia</td>
             <td class="conventional-col">${conv.energia.toFixed(2)} Wh</td>
-            <td class="ecological-col">${eco.energia.toFixed(2)} Wh</td>
             <td class="ecological-col">${ecoAditivado.energia.toFixed(2)} Wh</td>
         </tr>
         <tr>
             <td>Custo Total</td>
             <td class="conventional-col">R$ ${conv.custo.toFixed(2)}</td>
-            <td class="ecological-col">R$ ${eco.custo.toFixed(2)}</td>
             <td class="ecological-col">R$ ${ecoAditivado.custo.toFixed(2)}</td>
         </tr>
     `;
-    resultsBody.innerHTML = resultsHtml;
-
-    // Adiciona o indicador de referência ao cabeçalho da tabela dinamicamente.
-    const headers = document.querySelectorAll('#results-section thead th');
-    // O índice 3 corresponde à quarta coluna de dados ("Ecológico Aditivado")
-    if (headers.length > 3 && !headers[3].innerHTML.includes('<sup>')) {
-        headers[3].innerHTML += '<sup>1</sup>';
-    }
+    resultsBody2.innerHTML = resultsHtml2;
+   
 
     // --- CRIAÇÃO DOS GRÁFICOS ---
     const co2Data = [conv.co2, eco.co2, ecoAditivado.co2].map(d => d.toFixed(2));
