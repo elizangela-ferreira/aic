@@ -25,6 +25,7 @@ const DATA_CONVENCIONAL = {
     agua_traco_reboco: 250,
 
     custo_cimento_kg: 0.50, // R$ por kg
+    custo_plastificante_litro: 20.00, // R$ por litro
     custo_cal_kg: 0.50, // R$ por kg
     custo_areia_m3: 200.00, // R$ por m3
     custo_agua_litro: 0.006, // R$ por litro
@@ -37,7 +38,6 @@ const DATA_CONVENCIONAL = {
     co2_producao_cimento: 0.90, // kg/kg
     co2_producao_argamassa: 2.50, // kg/saco
     residuos_m2: 10.00, // kg
-    rendimento_saco: 20, // kg por saco
     energia_m2: 150 // Wh
 };
 const DATA_ECOLOGICO = {
@@ -57,7 +57,6 @@ const DATA_ECOLOGICO = {
     co2_producao_tijolo: 0.15, // kg/un
     co2_producao_cimento: 0.90,
     residuos_m2: 2.00, // kg
-    rendimento_saco: 20, // kg por saco
     energia_m2: 30 // Wh
 };
 const DATA_ECOLOGICO_ADITIVADO = {
@@ -70,15 +69,14 @@ const DATA_ECOLOGICO_ADITIVADO = {
     custo_rejunte_litro: 10.00, // R$ por m3
     custo_agua_litro: 0.006, // R$ por litro
 
-    tijolos_m2: 17,
-    argamassa_m2: 7, // kg
-    agua_producao_tijolo: 0.00, // L/un
+    tijolos_m2: 18,
+    argamassa_m2: 8, // kg
+    agua_producao_tijolo: 0.05, // L/un
     agua_argamassa_saco: 5.00, // L/saco
-    co2_producao_tijolo: 0.12, // kg/un
+    co2_producao_tijolo: 0.15, // kg/un
     co2_producao_cimento: 0.90,
-    residuos_m2: 1.50, // kg
-    rendimento_saco: 20, // kg por saco
-    energia_m2: 25 // Wh
+    residuos_m2: 2.00, // kg
+    energia_m2: 30 // Wh
 };
 const PRICE_ARGAMASSA = 25.00; // R$ por saco
 
@@ -100,40 +98,52 @@ function calculaMetricasParedeConvencional(materialData, larguraParede, alturaPa
     const larguraEfetivaTijolo = espessuraJunta + materialData.largura_tijolo;
     const numTijolos = areaParede / (alturaEfetivaTijolo * larguraEfetivaTijolo);
     const volumeParede = areaParede * materialData.profundidade_tijolo
+    const volumeTijolo = materialData.altura_tijolo * materialData.largura_tijolo * materialData.profundidade_tijolo;
+
+    // Perdas
+    const perdasAssentamento = 1.1; // 10% de perda na argamassa de assentamento
+    const perdasChapisco = 1.2; // 20% de perda no chapisco
+    const perdasEmboco = 1.5; // 50% de perda no emboço
+    const perdasReboco = 1.2; // 20% de perda no reboco
 
     // Volumes necessários ao cálculo de consumo por etapa
-    const volumeTijolos = numTijolos * (materialData.altura_tijolo * materialData.largura_tijolo * materialData.profundidade_tijolo);
-    const volumeAssentamento = volumeParede - volumeTijolos;
-    const volumeChapisco = areaParede * (espessuraChapisco / 100); // Convertendo cm para m
-    const volumeEmboco = areaParede * (espessuraEmboco / 100);
-    const volumeReboco = areaParede * (espessuraReboco / 100);
+    const volumeTijolos = numTijolos * volumeTijolo;
+    const volumeAssentamento = (volumeParede - volumeTijolos) * perdasAssentamento; 
+    const volumeChapisco = (areaParede * espessuraChapisco) * perdasChapisco; 
+    const volumeEmboco = (areaParede * espessuraEmboco) * perdasEmboco;
+    const volumeReboco = (areaParede * espessuraReboco) * perdasReboco;
 
     // Etapa de assentamento
-    const cimentoAssentamento   = volumeAssentamento * materialData.cimento_traco_assentamento; 
+    const cimentoAssentamento   = volumeAssentamento * materialData.cimento_traco_assentamento;
+    const plastifAssentamento   = cimentoAssentamento * 0.002;
     const calAssentamento       = volumeAssentamento * materialData.cal_traco_assentamento;
     const areiaAssentamento     = volumeAssentamento * materialData.areia_traco_assentamento;
     const aguaAssentamento      = volumeAssentamento * materialData.agua_traco_assentamento;
 
     // Etapa de chapisco
-    const cimentoChapisco   = volumeChapisco * materialData.cimento_traco_chapisco; 
+    const cimentoChapisco   = volumeChapisco * materialData.cimento_traco_chapisco;
+    const plastifChapisco   = cimentoChapisco * 0.002;
     const calChapisco       = volumeChapisco * materialData.cal_traco_chapisco;
     const areiaChapisco     = volumeChapisco * materialData.areia_traco_chapisco;
     const aguaChapisco      = volumeChapisco * materialData.agua_traco_chapisco;
 
     // Etapa de emboço
     const cimentoEmboco   = volumeEmboco * materialData.cimento_traco_emboco; 
+    const plastifEmboco   = cimentoEmboco * 0.002;
     const calEmboco       = volumeEmboco * materialData.cal_traco_emboco;
     const areiaEmboco     = volumeEmboco * materialData.areia_traco_emboco;
     const aguaEmboco      = volumeEmboco * materialData.agua_traco_emboco;
 
     // Etapa de reboco
     const cimentoReboco   = volumeReboco * materialData.cimento_traco_reboco; 
+    const plastifReboco   = cimentoReboco * 0.002;
     const calReboco       = volumeReboco * materialData.cal_traco_reboco;
     const areiaReboco     = volumeReboco * materialData.areia_traco_reboco;
     const aguaReboco      = volumeReboco * materialData.agua_traco_reboco;
     
     
     const totalCimento = cimentoAssentamento + cimentoChapisco + cimentoEmboco + cimentoReboco;
+    const totalPlastificante = plastifAssentamento + plastifChapisco + plastifEmboco + plastifReboco;
     const totalCal = calAssentamento + calChapisco + calEmboco + calReboco;
     const totalAreia = areiaAssentamento + areiaChapisco + areiaEmboco + areiaReboco;
     const totalAguaConstrucao = aguaAssentamento + aguaChapisco + aguaEmboco + aguaReboco;
@@ -141,11 +151,12 @@ function calculaMetricasParedeConvencional(materialData, larguraParede, alturaPa
     // Custo (materiais)
     const custoTijolos = numTijolos * custoTijolo;
     const custoCimento = totalCimento * materialData.custo_cimento_kg;
+    const custoPlastificante = totalPlastificante * materialData.custo_plastificante_litro;
     const custoCal = totalCal * materialData.custo_cal_kg;
     const custoAreia = totalAreia * materialData.custo_areia_m3;
     const custoAgua = totalAguaConstrucao * materialData.custo_agua_litro;
 
-    metrics.custo = custoTijolos + custoCimento + custoCal + custoAreia + custoAgua;
+    metrics.custo = custoTijolos + custoCimento + custoPlastificante + custoAreia + custoAgua;
 
     // Água
     const totalAgua = (materialData.agua_producao_tijolo * numTijolos) + totalAguaConstrucao;                       
@@ -162,7 +173,52 @@ function calculaMetricasParedeConvencional(materialData, larguraParede, alturaPa
     // Energia por m²
     metrics.energia = materialData.energia_m2 * areaParede;
 
+    // Relatório detalhado (para debug)
+    // console.log(`--- Detalhes da alvenaria convencional ---`);
+    // console.log(`Área da parede: ${areaParede.toFixed(2)} m²`);
+    // console.log(`Número de tijolos: ${numTijolos.toFixed(2)}`);
+    // console.log(`Volume de tijolos: ${volumeTijolos.toFixed(2)} m³`);
+    // console.log(`Volume de argamassa de assentamento: ${volumeAssentamento.toFixed(2)} m³`);
+    // console.log(`Volume de chapisco: ${volumeChapisco.toFixed(2)} m³`);
+    // console.log(`Volume de emboço: ${volumeEmboco.toFixed(2)} m³`);
+    // console.log(`Volume de reboco: ${volumeReboco.toFixed(2)} m³`);
+    // console.log(`Custo dos tijolos: R$ ${custoTijolos.toFixed(2)}`);
+    // console.log(`Custo do cimento: R$ ${custoCimento.toFixed(2)}`);
+    // console.log(`Custo do plastificante: R$ ${custoPlastificante.toFixed(2)}`);    
+    // console.log(`Custo da areia: R$ ${custoAreia.toFixed(2)}`);
+    // console.log(`Custo da água: R$ ${custoAgua.toFixed(2)}`);
+    // console.log(`Custo total: R$ ${metrics.custo.toFixed(2)}`);
+
     return metrics;
+}
+
+function calcularRejunte(area, diametroCordao) {
+  // area: área da parede em m² (número positivo)
+  // diametroCordao: diâmetro do cordão em mm (número positivo, ex.: 5 para 5mm)
+  
+  const l = 0.25; // comprimento do tijolo em metros
+  const h = 0.07; // altura do tijolo em metros
+  
+  // Densidade linear de canais (metros lineares por m²)
+  const densidadeLinear = (1 / l) + (1 / h); // ≈ 18.2857 m/m²
+  
+  // Comprimento total de canais (em metros)
+  const comprimentoTotal = area * densidadeLinear;
+  
+  // Conversão de diâmetro para metros
+  const diametroM = diametroCordao / 1000;
+  const raio = diametroM / 2;
+  
+  // Área da seção transversal do cordão (em m²)
+  const areaSecao = Math.PI * raio * raio;
+  
+  // Volume total em m³
+  const volumeM3 = areaSecao * comprimentoTotal;
+  
+  // Conversão para litros (1 m³ = 1000 L)
+  const litros = volumeM3 * 1000;
+  
+  return litros.toFixed(3); // Retorna com 3 casas decimais para precisão
 }
 
 function calculaMetricasParedeEcologica(materialData, larguraParede, alturaParede, custoTijolo, 
@@ -183,8 +239,9 @@ function calculaMetricasParedeEcologica(materialData, larguraParede, alturaPared
     const volumeAssentamento = numTijolos / rendimentoAssentamento; // litros
 
     // Volume de rejunte
-    const areaRejunte = espessuraRejunte * espessuraRejunte;
-    const volumeRejunte = areaRejunte * (numTijolos * (materialData.altura_tijolo + materialData.largura_tijolo) * 2) * 1000; // m³
+    const areaRejunte = Math.PI * (espessuraRejunte / 2) * (espessuraRejunte / 2);
+    const volumeRejunte = areaRejunte * (numTijolos * (materialData.altura_tijolo + materialData.largura_tijolo) ) * 1000; // litros
+    const volumeRejunteCorrigido = calcularRejunte(areaParede, espessuraRejunte * 1000); // litros
     
     const totalCimento = 0; 
     // Adicionar a água utilizada no rejunte + limpeza dos tijolos
@@ -194,7 +251,7 @@ function calculaMetricasParedeEcologica(materialData, larguraParede, alturaPared
     const custoTijolos = numTijolos * custoTijolo;
     const custoCimento = totalCimento * materialData.custo_cimento_kg;
     const custoAssentamento = volumeAssentamento * materialData.custo_cola_litro;
-    const custoRejunte = volumeRejunte * materialData.custo_rejunte_litro;
+    const custoRejunte = volumeRejunteCorrigido * materialData.custo_rejunte_litro;
     const custoAgua = totalAguaConstrucao * materialData.custo_agua_litro;
 
     metrics.custo = custoTijolos + custoCimento + custoAssentamento + custoRejunte + custoAgua;
@@ -213,6 +270,21 @@ function calculaMetricasParedeEcologica(materialData, larguraParede, alturaPared
 
     // Energia por m²
     metrics.energia = materialData.energia_m2 * areaParede;
+
+    // Relatório detalhado (para debug)
+    // console.log(`--- Detalhes da alvenaria ecológica ---`);
+    // console.log(`Área da parede: ${areaParede.toFixed(2)} m²`);
+    // console.log(`Número de tijolos: ${numTijolos.toFixed(2)}`);
+    // console.log(`Volume de tijolos: ${volumeTijolos.toFixed(2)} m³`);
+    // console.log(`Volume de argamassa de assentamento: ${volumeAssentamento.toFixed(2)} L`);
+    // console.log(`Volume de rejunte: ${volumeRejunte.toFixed(2)} L`);
+    // console.log(`Volume de rejunte (calculado): ${volumeRejunteCorrigido} L`);
+    // console.log(`Custo dos tijolos: R$ ${custoTijolos.toFixed(2)}`);
+    // console.log(`Custo da argamassa de assentamento: R$ ${custoAssentamento.toFixed(2)}`);
+    // console.log(`Custo do rejunte: R$ ${custoRejunte.toFixed(2)}`);
+    // console.log(`Custo do cimento: R$ ${custoCimento.toFixed(2)}`);
+    // console.log(`Custo da água: R$ ${custoAgua.toFixed(2)}`);
+    // console.log(`Custo total: R$ ${metrics.custo.toFixed(2)}`);
 
     return metrics;
 }
@@ -238,10 +310,10 @@ function calculate() {
             
             // Parâmetros da alvenaria com tijolo convencional
             const custoTijoloConv = parseFloat(document.getElementById('custo-tijolo-conv').value);
-            const espessuraJunta = parseFloat(document.getElementById('espessura-junta-conv').value); // Espessura da junta de assentamento (m)
-            const espessuraChapisco = parseFloat(document.getElementById('espessura-chapisco-conv').value); // Espessura do chapisco (m)
-            const espessuraEmboco = parseFloat(document.getElementById('espessura-emboco-conv').value); // Espessura do emboço (m)
-            const espessuraReboco = parseFloat(document.getElementById('espessura-reboco-conv').value); // Espessura do reboco (m)
+            const espessuraJunta = parseFloat(document.getElementById('espessura-junta-conv').value) / 100.0; // Espessura da junta de assentamento (m)
+            const espessuraChapisco = parseFloat(document.getElementById('espessura-chapisco-conv').value) / 100.0; // Espessura do chapisco (m)
+            const espessuraEmboco = parseFloat(document.getElementById('espessura-emboco-conv').value) / 100.0; // Espessura do emboço (m)
+            const espessuraReboco = parseFloat(document.getElementById('espessura-reboco-conv').value) / 100.0; // Espessura do reboco (m)
             
             
 
