@@ -9,6 +9,17 @@
     <style>        
         .conventional-col { color: var(--bs-danger); }
         .ecological-col { color: var(--bs-success); }
+        .table-ref-data {
+            table-layout: fixed;
+            width: 70%; /* Reduz a largura total da tabela */
+            margin: 0 auto; /* Centraliza a tabela */
+        }
+        .table-ref-data th:first-child, .table-ref-data td:first-child {
+            width: 65%; /* Ajusta a largura da coluna de descrição */
+        }
+        .table-ref-data th:last-child, .table-ref-data td:last-child {
+            width: 35%; /* Ajusta a largura da coluna de valor */
+        }
     </style>
 </head>
 <body class="bg-light">
@@ -19,7 +30,7 @@
                 Compare o impacto ambiental e financeiro entre a alvenaria convencional e a ecológica.
             </p>
     
-            <div class="row g-3 mb-4 align-items-center">
+            <div class="row g-3 mb-4 align-items-center justify-content-center">
                 <div class="col-auto">
                     <label for="wall-length" class="form-label">Largura da Parede</label>
                     <div class="input-group">
@@ -201,6 +212,43 @@
                         </div>
                     </div>
                 </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                        data-bs-target="#collapseReferencia" aria-expanded="false" aria-controls="collapseReferencia">
+                            Dados de Referência
+                        </button>
+                    </h2>
+                    <div id="collapseReferencia" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#parametros-accordion">
+                        <div class="accordion-body">
+                            <p class="text-center">Esta seção permite editar os dados de referência utilizados nos cálculos.</p>
+                            
+                            <h5 class="mt-4 text-center">Dados Comuns</h5>
+                            <table class="table table-sm table-hover table-ref-data">
+                                <thead>
+                                    <tr><th>Descrição</th><th>Valor</th></tr>
+                                </thead>
+                                <tbody id="ref-comum-body"></tbody>
+                            </table>
+
+                            <h5 class="mt-4 text-center">Alvenaria Convencional</h5>
+                            <table class="table table-sm table-hover table-ref-data">
+                                <thead>
+                                    <tr><th>Descrição</th><th>Valor</th></tr>
+                                </thead>
+                                <tbody id="ref-conv-body"></tbody>
+                            </table>
+
+                            <h5 class="mt-4 text-center">Alvenaria Ecológica</h5>
+                            <table class="table table-sm table-hover table-ref-data">
+                                <thead>
+                                    <tr><th>Descrição</th><th>Valor</th></tr>
+                                </thead>
+                                <tbody id="ref-eco-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
     
             <button id="calculate-button" class="btn btn-primary btn-lg w-100">Calcular Comparativo</button>
@@ -235,6 +283,9 @@
                         
                     </tbody>
                 </table>
+                <div class="mt-5 text-muted small">
+                    <p><sup>1</sup> O tijolo ecológico aditivado considera o uso de uma mistura com 15% de poliéster.</p>
+                </div>
 
                 <div id="alert-container" class="my-3"></div>
 
@@ -251,13 +302,12 @@
                     <div class="col-md-6">
                         <canvas id="cost-chart"></canvas>
                     </div>
-                </div>
+                </div>                
+            </div>
 
-            </div>
             
-            <div class="mt-5 text-muted small">
-                <p><sup>1</sup> O tijolo ecológico aditivado considera o uso de uma mistura com 15% de poliéster que pode reduzir a necessidade de cimento na sua fabricação, resultando em menor impacto ambiental.</p>
-            </div>
+            
+            
             <footer class="text-center text-muted mt-5">
                 <p>&copy; 2025 Elizangela Ferreira A. Paiva</p>
             </footer>
