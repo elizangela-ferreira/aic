@@ -14,16 +14,19 @@
             width: 100%; /* Reduz a largura total da tabela */
             margin: 0 auto; /* Centraliza a tabela */
         }
-        .table-ref-data th:first-child, .table-ref-data td:first-child {
-            width: 55%; /* Ajusta a largura da coluna de descrição */
-        }
         .table-ref-data th:last-child, .table-ref-data td:last-child {
-            width: 45%; /* Ajusta a largura da coluna de valor */
+            width: 50%; /* Largura base da coluna de valor */
+            min-width: 180px; /* Largura mínima para evitar compressão */
+        }
+        /* Garante que o input dentro do input-group ocupe o espaço disponível */
+        .table-ref-data .input-group .form-control {
+            flex: 1 1 auto;
+            width: 1%; /* Necessário para o flexbox funcionar corretamente no input */
         }
     </style>
 </head>
 <body class="bg-light">
-    <div class="container" style="max-width: 1200px;">
+    <div class="container-fluid" style="max-width: 1400px;">
         <div class="p-4 p-md-5 my-5 bg-white shadow-sm rounded-3">
             <h1 class="display-6 text-center text-primary">Análise de Impacto Construtivo</h1>
             <p class="lead text-center text-muted mb-5">
