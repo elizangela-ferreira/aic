@@ -2,10 +2,10 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análise de Impacto Construtivo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title data-lang-key="pageTitle">Construction Impact Analysis</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>        
         .conventional-col { color: var(--bs-danger); }
         .ecological-col { color: var(--bs-success); }
@@ -28,21 +28,26 @@
 <body class="bg-light">
     <div class="container-fluid" style="max-width: 1400px;">
         <div class="p-4 p-md-5 my-5 bg-white shadow-sm rounded-3">
-            <h1 class="display-6 text-center text-primary">Análise de Impacto Construtivo</h1>
-            <p class="lead text-center text-muted mb-5">
-                Compare o impacto ambiental e financeiro entre a alvenaria convencional e a ecológica.
+            <div class="d-flex justify-content-end mb-3">                
+                <button class="btn btn-secondary btn-sm" type="button" id="language-switcher">
+                    Alterar Idioma
+                </button>
+            </div>
+            <h1 class="display-6 text-center text-primary" data-lang-key="mainTitle">Construction Impact Analysis</h1>
+            <p class="lead text-center text-muted mb-5" data-lang-key="subTitle">
+                Compare the environmental and financial impact between conventional and ecological masonry.
             </p>
     
             <div class="row g-3 mb-4 align-items-center justify-content-center">
                 <div class="col-auto">
-                    <label for="wall-length" class="form-label">Largura da Parede</label>
+                    <label for="wall-length" class="form-label" data-lang-key="wallWidth">Wall Width</label>
                     <div class="input-group">
                         <input type="number" id="wall-length" class="form-control" value="5" step="0.1">
                         <span class="input-group-text">m</span>
                     </div>                    
                 </div>
                 <div class="col-auto">
-                    <label for="wall-height" class="form-label">Altura da Parede</label>
+                    <label for="wall-height" class="form-label" data-lang-key="wallHeight">Wall Height</label>
                     <div class="input-group">
                         <input type="number" id="wall-height" class="form-control" value="3" step="0.1">
                         <span class="input-group-text">m</span>
@@ -54,8 +59,8 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-                        data-bs-target="#collapseConvencional" aria-expanded="false" aria-controls="collapseConvencional">
-                            Configurar parâmetros da alvenaria convencional
+                        data-bs-target="#collapseConvencional" aria-expanded="false" aria-controls="collapseConvencional" data-lang-key="configConventional">
+                            Configure Conventional Masonry Parameters
                         </button>
                     </h2>
                     <div id="collapseConvencional" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#parametros-accordion">
@@ -63,10 +68,10 @@
                             <div class="row mb-3 g-3 align-items-center">
                                 
                                 <div class="col-auto">
-                                    <label for="brick-type-conv" class="col-form-label">Tipo de Tijolo</label>
+                                    <label for="brick-type-conv" class="col-form-label" data-lang-key="brickType">Brick Type</label>
                                     <select id="brick-type-conv" class="form-select" style="width: auto;" aria-label="Tipo de Tijolo Convencional">
-                                        <option >Selecione o tipo de tijolo</option>
-                                        <option selected value="1">Cerâmico 8 furos 9x19x19cm</option>
+                                        <option data-lang-key="selectBrickType">Select brick type</option>
+                                        <option selected value="1">Ceramic 8-hole 9x19x19cm</option>
                                     </select>
                                 </div>
                                 
@@ -74,17 +79,17 @@
                             <div class="row mb-3">
                                 
                                 <div class="col-auto">
-                                    <label for="custoTijoloConv" class="col-form-label">Custo unitário</label>
+                                    <label for="custoTijoloConv" class="col-form-label" data-lang-key="unitCost">Unit Cost</label>
                                     <div id="custoTijoloConv" class="input-group">                                        
                                         <input type="number" id="custo-tijolo-conv" class="form-control" placeholder="1.00" step="0.01" value="1.00" aria-label="Custo unitário do tijolo convencional">
-                                        <span class="input-group-text">R$/peça</span>
+                                        <span class="input-group-text">R$/pc</span>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-auto">
-                                    <label for="dist-fab-rev-conv" class="col-form-label">Distância da Fábrica até o revendedor</label>
+                                    <label for="dist-fab-rev-conv" class="col-form-label" data-lang-key="distFactoryReseller">Distance from Factory to Reseller</label>
                                     <div class="input-group">
                                         <input type="number" id="dist-fab-rev-conv" class="form-control" placeholder="95" step="1" value="95" "Distância da fábrica até o revendedor">
                                         <span class="input-group-text">km</span>
@@ -94,7 +99,7 @@
 
                             <div class="row mb-3">
                                 <div class="col-auto">
-                                    <label for="dist-rev-obra-conv" class="col-form-label">Distância do revendedor até a obra</label>
+                                    <label for="dist-rev-obra-conv" class="col-form-label" data-lang-key="distResellerSite">Distance from Reseller to Site</label>
                                     <div class="input-group">                                        
                                         <input type="number" id="dist-rev-obra-conv" class="form-control" placeholder="5" step="1" value="5">
                                         <span class="input-group-text">km</span>
@@ -104,7 +109,7 @@
 
                             <div class="row mb-3">
                                 <div class="col-auto">
-                                    <label for="espessura-junta" class="col-form-label">Junta de assentamento</label>
+                                    <label for="espessura-junta" class="col-form-label" data-lang-key="mortarJoint">Mortar Joint</label>
                                     <div id="espessura-junta" class="input-group">                                        
                                         <input type="number" id="espessura-junta-conv" class="form-control" placeholder="1.0" step="0.01" value="1.0" "Espessura da junta de assentamento">
                                         <span class="input-group-text">cm</span>
@@ -115,7 +120,7 @@
                             
                             <div class="row mb-3">
                                 <div class="col-auto">
-                                    <label for="espessura-chapisco" class="col-form-label">Espessura do chapisco</label>
+                                    <label for="espessura-chapisco" class="col-form-label" data-lang-key="roughcastThickness">Roughcast Thickness</label>
                                     <div id="espessura-chapisco" class="input-group">                                        
                                         <input type="number" id="espessura-chapisco-conv" class="form-control" placeholder="0.5" value="0.5" step="0.01" 
                                             aria-label="Espessura do chapisco">
@@ -127,7 +132,7 @@
 
                             <div class="row mb-3">                                
                                 <div class="col-auto">
-                                    <label for="espessura-emboco" class="col-form-label">Espessura do emboço:</label>
+                                    <label for="espessura-emboco" class="col-form-label" data-lang-key="renderCoatThickness">Render Coat Thickness</label>
                                     <div id="espessura-emboco" class="input-group">
                                         <input type="number" id="espessura-emboco-conv" class="form-control" placeholder="1.5" value="1.5" step="0.01" 
                                             aria-label="Espessura do emboço">
@@ -138,7 +143,7 @@
 
                             <div class="row mb-3">
                                 <div class="col-auto">
-                                    <label for="espessura-reboco" class="col-form-label">Espessura do reboco:</label>
+                                    <label for="espessura-reboco" class="col-form-label" data-lang-key="plasterThickness">Plaster Thickness</label>
                                     <div id="espessura-reboco" class="input-group">
                                         <input type="number" id="espessura-reboco-conv" class="form-control" placeholder="0.5" value="0.5" step="0.01" 
                                             aria-label="Espessura do reboco">
@@ -154,35 +159,35 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-                        data-bs-target="#collapseEcologica" aria-expanded="false" aria-controls="collapseEcologica">
-                            Configurar parâmetros da alvenaria ecológica
+                        data-bs-target="#collapseEcologica" aria-expanded="false" aria-controls="collapseEcologica" data-lang-key="configEcological">
+                            Configure Ecological Masonry Parameters
                         </button>
                     </h2>
                     <div id="collapseEcologica" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#parametros-accordion">
                         <div class="accordion-body">                            
                             <div class="row mb-3 g-3 align-items-center">                                
                                 <div class="col-auto">
-                                    <label for="tipo-tijolo-ecologico" class="col-form-label">Tipo de Tijolo</label>
+                                    <label for="tipo-tijolo-ecologico" class="col-form-label" data-lang-key="brickType">Brick Type</label>
                                     <select id="tipo-tijolo-ecologico" class="form-select" style="width: auto;" aria-label="Tipo de Tijolo Ecológico">
-                                        <option>Selecione o tipo de tijolo</option>
-                                        <option selected value="1">Tijolo Modular 12,5x25x7cm</option>
+                                        <option data-lang-key="selectBrickType">Select brick type</option>
+                                        <option selected value="1">Modular Brick 12.5x25x7cm</option>
                                     </select>
                                 </div>
                                 
                             </div>
                             <div class="row mb-3">                                
                                 <div class="col-auto">
-                                    <label for="custoTijoloEco" class="col-form-label">Custo unitário</label>
+                                    <label for="custoTijoloEco" class="col-form-label" data-lang-key="unitCost">Unit Cost</label>
                                     <div id="custoTijoloEco" class="input-group">                                        
                                         <input type="number" id="custo-tijolo-eco" class="form-control" placeholder="1.20" step="0.01" value="1.20" aria-label="Custo unitário do tijolo ecológico">
-                                        <span class="input-group-text">R$/peça</span>
+                                        <span class="input-group-text">R$/pc</span>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-auto">
-                                    <label for="dist-fab-obra-eco" class="col-form-label">Distância da Fábrica até à obra</label>
+                                    <label for="dist-fab-obra-eco" class="col-form-label" data-lang-key="distFactorySite">Distance from Factory to Site</label>
                                     <div class="input-group">
                                         <input type="number" id="dist-fab-obra-eco" class="form-control" placeholder="100" step="1" value="100">
                                         <span class="input-group-text">km</span>
@@ -192,10 +197,10 @@
 
                             <div class="row mb-3">
                                 <div class="col-auto">
-                                    <label for="rendimento-cola" class="col-form-label">Rendimento cola assentamento</label>
+                                    <label for="rendimento-cola" class="col-form-label" data-lang-key="mortarAdhesiveYield">Mortar Adhesive Yield</label>
                                     <div id="rendimento-cola" class="input-group">                                        
                                         <input type="number" id="valor-rendimento-assentamento" class="form-control" placeholder="1000" step="1" value="1000" aria-label="Rendimento cola de assentamento">
-                                        <span class="input-group-text">tijolos / litro</span>
+                                        <span class="input-group-text" data-lang-key="unitBricksPerLiter">tijolos / L</span>
                                     </div>
                                 </div>
                             </div>
@@ -203,7 +208,7 @@
                             
                             <div class="row mb-3">
                                 <div class="col-auto">
-                                    <label for="espessura-rejunte" class="col-form-label">Espessura do rejunte</label>
+                                    <label for="espessura-rejunte" class="col-form-label" data-lang-key="groutThickness">Grout Thickness</label>
                                     <div id="espessura-rejunte" class="input-group">                                        
                                         <input type="number" id="valor-espessura-rejunte" class="form-control" placeholder="0.5" step="0.01" 
                                             value="0.5" aria-label="Espessura do rejunte">
@@ -218,34 +223,34 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-                        data-bs-target="#collapseReferencia" aria-expanded="false" aria-controls="collapseReferencia">
-                            Dados de Referência
+                        data-bs-target="#collapseReferencia" aria-expanded="false" aria-controls="collapseReferencia" data-lang-key="referenceData">
+                            Reference Data
                         </button>
                     </h2>
                     <div id="collapseReferencia" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#parametros-accordion">
                         <div class="accordion-body">
-                            <p class="text-center">Esta seção permite editar os dados de referência utilizados nos cálculos.</p>
+                            <p class="text-center" data-lang-key="referenceDataDesc">This section allows you to edit the reference data used in the calculations.</p>
                             
-                            <h5 class="mt-4 text-center">Dados Comuns</h5>
+                            <h5 class="mt-4 text-center" data-lang-key="commonData">Common Data</h5>
                             <table class="table table-sm table-hover table-ref-data">
                                 <thead>
-                                    <tr><th>Descrição</th><th>Valor</th></tr>
+                                    <tr><th data-lang-key="description">Description</th><th data-lang-key="value">Value</th></tr>
                                 </thead>
                                 <tbody id="ref-comum-body"></tbody>
                             </table>
 
-                            <h5 class="mt-4 text-center">Alvenaria Convencional</h5>
+                            <h5 class="mt-4 text-center" data-lang-key="conventionalMasonry">Conventional Masonry</h5>
                             <table class="table table-sm table-hover table-ref-data">
                                 <thead>
-                                    <tr><th>Descrição</th><th>Valor</th></tr>
+                                    <tr><th data-lang-key="description">Description</th><th data-lang-key="value">Value</th></tr>
                                 </thead>
                                 <tbody id="ref-conv-body"></tbody>
                             </table>
 
-                            <h5 class="mt-4 text-center">Alvenaria Ecológica</h5>
+                            <h5 class="mt-4 text-center" data-lang-key="ecologicalMasonry">Ecological Masonry</h5>
                             <table class="table table-sm table-hover table-ref-data">
                                 <thead>
-                                    <tr><th>Descrição</th><th>Valor</th></tr>
+                                    <tr><th data-lang-key="description">Description</th><th data-lang-key="value">Value</th></tr>
                                 </thead>
                                 <tbody id="ref-eco-body"></tbody>
                             </table>
@@ -254,18 +259,18 @@
                 </div>
             </div>
     
-            <button id="calculate-button" class="btn btn-primary btn-lg w-100">Calcular Comparativo</button>
+            <button id="calculate-button" class="btn btn-primary btn-lg w-100" data-lang-key="calculateButton">Calculate Comparison</button>
     
-            <div id="loading-message" class="text-center text-muted fst-italic my-3" style="display: none;">Calculando...</div>
+            <div id="loading-message" class="text-center text-muted fst-italic my-3" style="display: none;" data-lang-key="calculating">Calculating...</div>
             
             <div id="results-section" class="mt-5" style="display: none;">
-                <h3 class="text-center text-primary mb-4">Comparativo com Ecológico Comum</h2>
+                <h3 class="text-center text-primary mb-4" data-lang-key="comparisonStandardEco">Comparison with Standard Ecological</h2>
                 <table class="table table-bordered text-center">
                     <thead>
                         <tr>
-                            <th>Indicador</th>
-                            <th class="conventional-col">Convencional</th>
-                            <th class="ecological-col">Ecológico</th>
+                            <th data-lang-key="indicator">Indicator</th>
+                            <th class="conventional-col" data-lang-key="conventional">Conventional</th>
+                            <th class="ecological-col" data-lang-key="ecological">Ecological</th>
                         </tr>
                     </thead>
                     <tbody id="results-body">                        
@@ -273,13 +278,13 @@
                     </tbody>
                 </table>
 
-            <h3 class="text-center text-primary mt-5 mb-4">Comparativo com Ecológico Aditivado<sup>1</sup></h3>
+            <h3 class="text-center text-primary mt-5 mb-4" data-lang-key="comparisonAdditiveEco">Comparison with Additive Ecological<sup>1</sup></h3>
                 <table class="table table-bordered text-center">
                     <thead>
                         <tr>
-                            <th>Indicador</th>
-                            <th class="conventional-col">Convencional</th>
-                            <th class="ecological-col">Ecológico Aditivado</th>
+                            <th data-lang-key="indicator">Indicator</th>
+                            <th class="conventional-col" data-lang-key="conventional">Conventional</th>
+                            <th class="ecological-col" data-lang-key="ecologicalAdditive">Ecological Additive</th>
                         </tr>
                     </thead>
                     <tbody id="results-body-aditivado">
@@ -287,7 +292,7 @@
                     </tbody>
                 </table>
                 <div class="mt-5 text-muted small">
-                    <p><sup>1</sup> O tijolo ecológico aditivado considera o uso de uma mistura com 15% de poliéster.</p>
+                    <p data-lang-key="additiveEcoNote"><sup>1</sup> The additive ecological brick considers the use of a mixture with 15% polyester.</p>
                 </div>
 
                 <div id="alert-container" class="my-3"></div>
@@ -318,7 +323,7 @@
     </div>
 
     <script src="script.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </body>
