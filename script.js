@@ -1,1 +1,884 @@
-const _0x36c02f=_0x1e0f;(function(_0x1cbeff,_0x4098c8){const _0x14e891=_0x1e0f,_0x3d4250=_0x1cbeff();while(!![]){try{const _0x1bd48c=parseInt(_0x14e891(0x38b))/(-0x2cc+0x148b+0x2f5*-0x6)+-parseInt(_0x14e891(0x3a9))/(-0x25cf*-0x1+0x393+-0x2960)+-parseInt(_0x14e891(0x254))/(-0x1f*0x7b+-0xc7*-0xe+-0x67*-0xa)+-parseInt(_0x14e891(0x312))/(0x121+0xb61+-0xc7e)+parseInt(_0x14e891(0x17b))/(-0x11*0x1+-0x1a3f+0x1a55)+-parseInt(_0x14e891(0x43e))/(-0x1*-0x1fcb+0x1*0x2bd+-0x2*0x1141)*(parseInt(_0x14e891(0xaf))/(-0x1f75*0x1+0x647*-0x5+0xc93*0x5))+parseInt(_0x14e891(0x45a))/(-0xedd*0x1+0x22b3+-0x13ce)*(parseInt(_0x14e891(0x19e))/(-0xb*0x10a+-0x1*0x1118+0x985*0x3));if(_0x1bd48c===_0x4098c8)break;else _0x3d4250['push'](_0x3d4250['shift']());}catch(_0x4f9c44){_0x3d4250['push'](_0x3d4250['shift']());}}}(_0x28dc,0x8c726+-0x6739c+-0x25859*-0x1));let currentLang=_0x36c02f(0x3be);const translations={'en-US':{'pageTitle':_0x36c02f(0x44f)+_0x36c02f(0x392)+_0x36c02f(0x47a),'mainTitle':_0x36c02f(0x44f)+_0x36c02f(0x392)+_0x36c02f(0x47a),'subTitle':_0x36c02f(0xac)+_0x36c02f(0x373)+_0x36c02f(0x15c)+_0x36c02f(0x395)+_0x36c02f(0x495)+_0x36c02f(0x1a6)+_0x36c02f(0x1b7)+_0x36c02f(0x143)+_0x36c02f(0x15f)+'.','wallWidth':_0x36c02f(0x2e2),'wallHeight':_0x36c02f(0xb9)+'t','configConventional':_0x36c02f(0x362)+_0x36c02f(0xbe)+_0x36c02f(0x2d1)+_0x36c02f(0x29d)+'s','brickType':_0x36c02f(0x39d),'selectBrickType':_0x36c02f(0x1ff)+_0x36c02f(0x425),'unitCost':_0x36c02f(0x461),'distFactoryReseller':_0x36c02f(0x3fb)+_0x36c02f(0x3de)+_0x36c02f(0x18f)+_0x36c02f(0x1b2),'distResellerSite':_0x36c02f(0x3fb)+_0x36c02f(0x300)+_0x36c02f(0xb8),'mortarJoint':_0x36c02f(0x271)+'nt','roughcastThickness':_0x36c02f(0xad)+_0x36c02f(0x447),'renderCoatThickness':_0x36c02f(0x221)+_0x36c02f(0x3eb)+'s','plasterThickness':_0x36c02f(0x36a)+_0x36c02f(0x400),'configEcological':_0x36c02f(0x362)+_0x36c02f(0x411)+_0x36c02f(0x2b7)+_0x36c02f(0x129),'distFactorySite':_0x36c02f(0x3fb)+_0x36c02f(0x3de)+_0x36c02f(0x26d),'mortarAdhesiveYield':_0x36c02f(0x403)+_0x36c02f(0x352)+'d','groutThickness':_0x36c02f(0xd4)+_0x36c02f(0x314),'unitBricksPerLiter':_0x36c02f(0x2f5),'referenceData':_0x36c02f(0x163)+_0x36c02f(0x472),'referenceDataDesc':_0x36c02f(0x45d)+_0x36c02f(0x210)+_0x36c02f(0x35b)+_0x36c02f(0x2d3)+_0x36c02f(0x2ea)+_0x36c02f(0x49e)+_0x36c02f(0x2d7)+_0x36c02f(0xd8),'commonData':_0x36c02f(0x3c4)+'a','description':_0x36c02f(0x1cd)+'n','value':_0x36c02f(0x294),'conventionalMasonry':_0x36c02f(0xbe)+_0x36c02f(0x2d1),'ecologicalMasonry':_0x36c02f(0x411)+_0x36c02f(0x38a),'calculateButton':_0x36c02f(0x3e9)+_0x36c02f(0x147),'calculating':_0x36c02f(0x22b)+_0x36c02f(0xda),'comparisonStandardEco':_0x36c02f(0x147)+_0x36c02f(0xfd)+_0x36c02f(0x412)+_0x36c02f(0x35a)+'k','indicator':_0x36c02f(0x128),'conventional':_0x36c02f(0xbe)+'al','ecological':_0x36c02f(0x411),'comparisonAdditiveEco':_0x36c02f(0x147)+_0x36c02f(0xf2)+_0x36c02f(0x31a)+_0x36c02f(0x102)+_0x36c02f(0x3db),'ecologicalAdditive':_0x36c02f(0x411)+_0x36c02f(0x437)+_0x36c02f(0x39f),'additiveEcoNote':_0x36c02f(0x183)+_0x36c02f(0x48b)+_0x36c02f(0x3c7)+_0x36c02f(0x47c)+_0x36c02f(0x244)+_0x36c02f(0xf0)+_0x36c02f(0x1f8)+_0x36c02f(0x10f)+_0x36c02f(0x473)+_0x36c02f(0x20f)+_0x36c02f(0x3a2),'errorInvalidValues':_0x36c02f(0x34b)+_0x36c02f(0x44a)+_0x36c02f(0x150)+_0x36c02f(0x34d)+_0x36c02f(0x4a4),'errorPositiveValues':_0x36c02f(0x3d1)+_0x36c02f(0x3b6)+_0x36c02f(0x38e)+_0x36c02f(0x353)+'.','wallArea':_0x36c02f(0x1b3)+_0x36c02f(0x466),'totalBricks':_0x36c02f(0x421)+'ks','carbonEmission':_0x36c02f(0x36c)+_0x36c02f(0x2e9),'wasteGeneration':_0x36c02f(0x34c)+_0x36c02f(0x216),'waterConsumption':_0x36c02f(0x200)+_0x36c02f(0x17c),'materialCost':_0x36c02f(0x3ea)+_0x36c02f(0x2b8),'polyesterResidue':_0x36c02f(0x382)+_0x36c02f(0x346)+_0x36c02f(0x17d),'co2EmissionReduction':_0x36c02f(0x21f)+_0x36c02f(0x426)+'on','netCo2Emission':_0x36c02f(0xcb)+_0x36c02f(0x245),'chartCO2':_0x36c02f(0x36c)+_0x36c02f(0x229)+_0x36c02f(0xe2),'chartWaste':_0x36c02f(0x34c)+_0x36c02f(0x423)+')','chartWater':_0x36c02f(0x200)+_0x36c02f(0x2ac)+')','chartCost':_0x36c02f(0x3ea)+_0x36c02f(0x434),'chartLabelConventional':_0x36c02f(0xbe)+'al','chartLabelEcological':_0x36c02f(0x411),'chartLabelEcologicalAdditive':_0x36c02f(0x411)+_0x36c02f(0x437)+_0x36c02f(0x39f),'refCostCement':_0x36c02f(0x213)+_0x36c02f(0x2cf),'refCostWater':_0x36c02f(0x416)+_0x36c02f(0x1dd),'refCO2FactorTransport':_0x36c02f(0x21f)+_0x36c02f(0x20d)+_0x36c02f(0xa1)+_0x36c02f(0x498)+_0x36c02f(0x174),'refCO2ProdCement':_0x36c02f(0x21f)+_0x36c02f(0x16c)+_0x36c02f(0x139)+_0x36c02f(0x26e)+')','refCO2FactorBrickProd':_0x36c02f(0x21f)+_0x36c02f(0xb1)+_0x36c02f(0x120)+_0x36c02f(0x112)+_0x36c02f(0x21c),'refCostPlasticizer':_0x36c02f(0x30f)+_0x36c02f(0x252)+_0x36c02f(0x3a7),'refCostSand':_0x36c02f(0x3e8)+_0x36c02f(0x3bb),'refWaterConsumptionBrickConv':_0x36c02f(0x200)+_0x36c02f(0x1b5)+_0x36c02f(0x41e)+_0x36c02f(0xc5)+_0x36c02f(0x48d),'refWasteGenerationConv':_0x36c02f(0x34c)+_0x36c02f(0x423)+_0x36c02f(0x19b),'refCementRatioMortar':_0x36c02f(0xf7)+_0x36c02f(0x288)+_0x36c02f(0x349)+_0x36c02f(0x475),'refCementRatioRoughcast':_0x36c02f(0xad)+_0x36c02f(0xfb)+_0x36c02f(0x488)+_0x36c02f(0x3d0),'refCementRatioRender':_0x36c02f(0x221)+_0x36c02f(0x499)+_0x36c02f(0x1e8)+_0x36c02f(0x48c)+'³)','refCementRatioPlaster':_0x36c02f(0x3b2)+_0x36c02f(0x247)+_0x36c02f(0x456)+_0x36c02f(0x1b1),'refCementFractionEco':_0x36c02f(0x451)+_0x36c02f(0x420)+_0x36c02f(0x224),'refCostAdhesive':_0x36c02f(0x403)+_0x36c02f(0x108)+_0x36c02f(0x1dd),'refCostGrout':_0x36c02f(0x49d)+_0x36c02f(0x1dd),'refWaterConsumptionBrickEco':_0x36c02f(0x200)+_0x36c02f(0x1b5)+_0x36c02f(0x41e)+_0x36c02f(0xc5)+_0x36c02f(0x48d),'refWasteGenerationEco':_0x36c02f(0x34c)+_0x36c02f(0x423)+_0x36c02f(0x19b),'refCO2FactorPolyester':_0x36c02f(0x21f)+_0x36c02f(0x20d)+_0x36c02f(0x2db)+_0x36c02f(0x32d)+_0x36c02f(0x3cf)+_0x36c02f(0x3ab),'langButton':_0x36c02f(0x1e2)+_0x36c02f(0xbc)},'pt-BR':{'pageTitle':_0x36c02f(0x28e)+_0x36c02f(0x10d)+_0x36c02f(0x240),'mainTitle':_0x36c02f(0x28e)+_0x36c02f(0x10d)+_0x36c02f(0x240),'subTitle':_0x36c02f(0x365)+_0x36c02f(0x187)+_0x36c02f(0x486)+_0x36c02f(0x3f0)+_0x36c02f(0x2b5)+_0x36c02f(0x25c)+_0x36c02f(0x1e9)+_0x36c02f(0x3f6)+_0x36c02f(0xa9),'wallWidth':_0x36c02f(0x2c2)+_0x36c02f(0x450),'wallHeight':_0x36c02f(0x222)+_0x36c02f(0x20c),'configConventional':_0x36c02f(0x465)+_0x36c02f(0x2d4)+_0x36c02f(0x3e3)+_0x36c02f(0x152)+_0x36c02f(0xef),'brickType':_0x36c02f(0x418)+_0x36c02f(0x428),'selectBrickType':_0x36c02f(0x39e)+_0x36c02f(0x1be)+_0x36c02f(0x157),'unitCost':_0x36c02f(0x3cb)+_0x36c02f(0x142),'distFactoryReseller':_0x36c02f(0x2ed)+_0x36c02f(0x272)+_0x36c02f(0x29b)+_0x36c02f(0xed),'distResellerSite':_0x36c02f(0x2ed)+_0x36c02f(0x379)+_0x36c02f(0x414)+_0x36c02f(0x114),'mortarJoint':_0x36c02f(0x2dc)+_0x36c02f(0xb3)+'o','roughcastThickness':_0x36c02f(0xe0)+_0x36c02f(0x2c5)+'o','renderCoatThickness':_0x36c02f(0xe0)+_0x36c02f(0x2b9),'plasterThickness':_0x36c02f(0xe0)+_0x36c02f(0x38c),'configEcological':_0x36c02f(0x465)+_0x36c02f(0x2d4)+_0x36c02f(0x3e3)+_0x36c02f(0x2f9)+_0x36c02f(0x37f),'distFactorySite':_0x36c02f(0x2ed)+_0x36c02f(0x272)+_0x36c02f(0x1b6)+'a','mortarAdhesiveYield':_0x36c02f(0x115)+_0x36c02f(0xca)+_0x36c02f(0x3bf),'groutThickness':_0x36c02f(0xe0)+_0x36c02f(0x3f3),'unitBricksPerLiter':_0x36c02f(0x10e)+'L','referenceData':_0x36c02f(0x4a5)+_0x36c02f(0x18b),'referenceDataDesc':_0x36c02f(0x1bf)+_0x36c02f(0x117)+_0x36c02f(0x4a3)+_0x36c02f(0xdc)+_0x36c02f(0x226)+_0x36c02f(0x303)+_0x36c02f(0x1fc)+_0x36c02f(0x3d7),'commonData':_0x36c02f(0x17a)+'ns','description':_0x36c02f(0xf4),'value':_0x36c02f(0x305),'conventionalMasonry':_0x36c02f(0x429)+_0x36c02f(0x49c)+'al','ecologicalMasonry':_0x36c02f(0x429)+_0x36c02f(0xb4),'calculateButton':_0x36c02f(0x38d)+_0x36c02f(0x2a7),'calculating':_0x36c02f(0x413)+_0x36c02f(0x401),'comparisonStandardEco':_0x36c02f(0x14d)+_0x36c02f(0x3a3)+_0x36c02f(0x397)+_0x36c02f(0x189),'indicator':_0x36c02f(0xa4),'conventional':_0x36c02f(0x49c)+'al','ecological':_0x36c02f(0x371),'comparisonAdditiveEco':_0x36c02f(0x14d)+_0x36c02f(0x3a3)+_0x36c02f(0x397)+_0x36c02f(0x3d5)+_0x36c02f(0x203),'ecologicalAdditive':_0x36c02f(0x3d3)+_0x36c02f(0x1da),'additiveEcoNote':_0x36c02f(0x27a)+_0x36c02f(0x23d)+_0x36c02f(0x1c7)+_0x36c02f(0x28f)+_0x36c02f(0x205)+_0x36c02f(0xfa)+_0x36c02f(0x2cd)+_0x36c02f(0x462)+_0x36c02f(0x223)+_0x36c02f(0x1b0),'errorInvalidValues':_0x36c02f(0x482)+_0x36c02f(0x23b)+_0x36c02f(0x1c6)+_0x36c02f(0x1b8)+_0x36c02f(0x256)+_0x36c02f(0x1d0)+_0x36c02f(0x3d7),'errorPositiveValues':_0x36c02f(0x313)+_0x36c02f(0x290)+_0x36c02f(0x442)+_0x36c02f(0x427)+_0x36c02f(0x181),'wallArea':_0x36c02f(0x336)+_0x36c02f(0x386),'totalBricks':_0x36c02f(0x348)+_0x36c02f(0x46a),'carbonEmission':_0x36c02f(0x339)+_0x36c02f(0x25d),'wasteGeneration':_0x36c02f(0x3bc)+_0x36c02f(0xc7),'waterConsumption':_0x36c02f(0x372)+_0x36c02f(0x2f4),'materialCost':_0x36c02f(0x3aa)+_0x36c02f(0x320),'polyesterResidue':_0x36c02f(0xb7)+_0x36c02f(0x2f7)+_0x36c02f(0x2cc)+'do','co2EmissionReduction':_0x36c02f(0x3b5)+_0x36c02f(0x1ad)+'O₂','netCo2Emission':_0x36c02f(0x1ef)+_0x36c02f(0x344)+'O₂','chartCO2':_0x36c02f(0x339)+_0x36c02f(0x218)+_0x36c02f(0x22e),'chartWaste':_0x36c02f(0x3bc)+_0x36c02f(0x2fb)+_0x36c02f(0x43d),'chartWater':_0x36c02f(0x372)+_0x36c02f(0x253),'chartCost':_0x36c02f(0x3aa)+_0x36c02f(0x20e)+_0x36c02f(0x3fa),'chartLabelConventional':_0x36c02f(0x49c)+'al','chartLabelEcological':_0x36c02f(0x371),'chartLabelEcologicalAdditive':_0x36c02f(0x3d3)+_0x36c02f(0x1da),'refCostCement':_0x36c02f(0x105)+_0x36c02f(0x45b)+_0x36c02f(0xd3),'refCostWater':_0x36c02f(0x18a)+_0x36c02f(0x332),'refCO2FactorTransport':_0x36c02f(0x47d)+_0x36c02f(0x47f)+_0x36c02f(0x308)+_0x36c02f(0xd5)+_0x36c02f(0x11e)+_0x36c02f(0x1d9),'refCO2ProdCement':_0x36c02f(0x339)+_0x36c02f(0x3f8)+_0x36c02f(0x31e)+_0x36c02f(0x140)+_0x36c02f(0xc4),'refCO2FactorBrickProd':_0x36c02f(0x339)+_0x36c02f(0x299)+_0x36c02f(0x180)+_0x36c02f(0x10a)+_0x36c02f(0x455),'refCostPlasticizer':_0x36c02f(0x214)+_0x36c02f(0x354)+_0x36c02f(0x2a6),'refCostSand':_0x36c02f(0x358)+_0x36c02f(0x3c0)+'³)','refWaterConsumptionBrickConv':_0x36c02f(0x372)+_0x36c02f(0x1f4)+_0x36c02f(0x337)+_0x36c02f(0x1c3)+_0x36c02f(0x1a4),'refWasteGenerationConv':_0x36c02f(0x3bc)+_0x36c02f(0x2fb)+_0x36c02f(0x2ad),'refCementRatioMortar':_0x36c02f(0x2da)+_0x36c02f(0xb3)+_0x36c02f(0x175)+_0x36c02f(0x458)+_0x36c02f(0x47b)+')','refCementRatioRoughcast':_0x36c02f(0x236)+_0x36c02f(0x1a0)+_0x36c02f(0x30c)+_0x36c02f(0x119)+_0x36c02f(0x475),'refCementRatioRender':_0x36c02f(0x34e)+_0x36c02f(0x12e)+_0x36c02f(0x1d8)+_0x36c02f(0x140)+_0x36c02f(0x179),'refCementRatioPlaster':_0x36c02f(0x29e)+_0x36c02f(0xd1)+_0x36c02f(0x1d8)+_0x36c02f(0x140)+_0x36c02f(0x179),'refCementFractionEco':_0x36c02f(0x2c7)+_0x36c02f(0x169)+_0x36c02f(0xa6)+'%)','refCostAdhesive':_0x36c02f(0x16e)+_0x36c02f(0x138)+_0x36c02f(0x1f3)+_0x36c02f(0x40f),'refCostGrout':_0x36c02f(0x12d)+_0x36c02f(0x356)+_0x36c02f(0x3a7),'refWaterConsumptionBrickEco':_0x36c02f(0x372)+_0x36c02f(0x1f4)+_0x36c02f(0x337)+_0x36c02f(0x1c3)+_0x36c02f(0x1a4),'refWasteGenerationEco':_0x36c02f(0x3bc)+_0x36c02f(0x2fb)+_0x36c02f(0x2ad),'refCO2FactorPolyester':_0x36c02f(0x47d)+_0x36c02f(0x47f)+_0x36c02f(0x41a)+_0x36c02f(0x304)+_0x36c02f(0x448)+_0x36c02f(0x3e6),'langButton':_0x36c02f(0x318)+_0x36c02f(0x402)}},DEFAULT_DATA_CONVENCIONAL={'altura_tijolo':0.19,'largura_tijolo':0.19,'profundidade_tijolo':0.09,'massa_tijolo':2.2,'fator_emissao_co2_transporte':0.062,'fator_emissao_co2_fabricacao':0.3,'cimento_traco_assentamento':0xe6,'areia_traco_assentamento':0x1,'agua_traco_assentamento':0xfa,'cimento_traco_chapisco':0x1c2,'areia_traco_chapisco':0x1,'agua_traco_chapisco':0xe1,'cimento_traco_emboco':0xe6,'areia_traco_emboco':0x1,'agua_traco_emboco':0xfa,'cimento_traco_reboco':0xaa,'areia_traco_reboco':0x1,'agua_traco_reboco':0xfa,'custo_cimento_kg':0.5,'custo_plastificante_litro':0x14,'custo_areia_m3':0xc8,'custo_agua_litro':0.006,'argamassa_m2':0xf,'agua_producao_tijolo':0.2,'agua_argamassa_saco':0x5,'co2_producao_tijolo':0.5,'co2_producao_cimento':0.6,'co2_producao_argamassa':2.5,'residuos_m2':0xa,'energia_m2':0x96},DEFAULT_DATA_ECOLOGICO={'altura_tijolo':0.07,'largura_tijolo':0.25,'profundidade_tijolo':0.125,'massa_tijolo':2.8,'fator_emissao_co2_transporte':0.062,'fracao_cimento_por_tijolo':0.125,'custo_cimento_kg':0.5,'custo_cola_litro':0x32,'custo_rejunte_litro':0xa,'custo_agua_litro':0.006,'argamassa_m2':0x8,'agua_producao_tijolo':0.05,'agua_argamassa_saco':0x5,'co2_producao_tijolo':0.15,'co2_producao_cimento':0.6,'residuos_m2':0x2,'energia_m2':0x1e},DEFAULT_DATA_ECOLOGICO_ADITIVADO={'altura_tijolo':0.07,'largura_tijolo':0.25,'profundidade_tijolo':0.125,'massa_tijolo':2.8,'fator_emissao_co2_transporte':0.062,'fracao_cimento_por_tijolo':0.125,'fator_emissao_co2_poliester_incinerado':2.8,'custo_cimento_kg':0.5,'custo_cola_litro':0x32,'custo_rejunte_litro':0xa,'custo_agua_litro':0.006,'argamassa_m2':0x8,'agua_producao_tijolo':0.05,'agua_argamassa_saco':0x5,'co2_producao_tijolo':0.15,'co2_producao_cimento':0.6,'residuos_m2':0x2,'energia_m2':0x1e},PRICE_ARGAMASSA=0x2*0xc85+-0x1dc+0x137*-0x13;function _0x28dc(){const _0x525d0f=['o_reboco','roporção\x20d','ref-custo_','number','Plasticize','cEfKu','totalBrick','1211144powXqk','A\x20largura\x20','kness','oNote','VVEcG','emboço:\x20','Switch\x20to\x20','|2|7|6|8|1','ogical\x20Bri','key=\x22total','.6)','LfbdJ','odução\x20do\x20','_chapisco','ateriais','bra-eco','apisco','\x20\x20<td\x20data','custo_plas','>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','iJlIt','</div>','display','2_transpor','wall-lengt','\x20L</td>\x0a\x20\x20','PQpBG','ated\x20Polye','YJCFs','Custo\x20do\x20r','innerHTML','-key]','gua\x20(R$/L)','onventiona','JPatI','\x20\x20\x20\x20\x20\x20\x20\x20</','Área\x20Total','rodução\x20do','\x20\x20\x20\x20\x20<td\x20c','Emissão\x20de','naria\x20ecol','Additive','_cimento_p','co2','LSgwx','s=\x22input-g','nYePX','\x20\x20\x20\x20\x20<tr>\x0a','energia_m2','olo','quida\x20de\x20C','os_m2_conv','ed\x20Polyest','yrQVf','Total\x20de\x20T','roportion\x20','Utqcq','Please\x20ent','Waste\x20Gene','ues\x20in\x20all','Traço\x20do\x20E','aVJrV','umber\x22\x20cla','\x20kg','esive\x20Yiel','ive\x20values','lastifican','wallArea','ejunte\x20(R$','d>\x0a\x20\x20\x20\x20\x20\x20\x20','Custo\x20da\x20A','iXzXA','gical\x20Bric','you\x20to\x20edi','getItem','Yyhzc','areia_trac','ffnJj','qoMzV','mKoEu','Configure\x20','atioRender','data-lang-','Compare\x20o\x20','atioRoughc','cMfUt','issao','BTbdU','Plaster\x20Th','LvfeR','Carbon\x20Emi','rgba(25,\x201','qtpJC','BdzZx','hYaAO','Ecológico','Consumo\x20de','e\x20environm','alculado):','esive','MBjou','qtWMh','ynxaI','do\x20revende','bar','soOKU','custo_cola','10|15|14|1','ZpmRy','gica','</span>\x0a\x20\x20','_reboco','Incorporat','\x20L</td>\x20\x20\x20','OqrTA','qhpAR','\x20da\x20Parede','reboco:\x20','dução:\x20','plastifica','\x20Masonry','194049nlKMTf','do\x20reboco','Calcular\x20C','t\x20be\x20posit','AFSRq','textConten','\x20\x20\x20\x20\x20\x20<inp','on\x20Impact\x20','kBxiE','\x20</tr>\x0a\x20\x20\x20','financial\x20','error','olo\x20Ecológ','zurUc','litro','custo_reju','rea\x22>','rejunte_li','Brick\x20Type','Selecione\x20','tive','\x20<div\x20clas','ref-ciment','ction.','\x20com\x20o\x20Tij','language','l-col\x22>-</','residuos','/L)','nte_litro','310354BeekAh','Custo\x20de\x20M','O₂/kg)','\x20\x20\x20\x20\x20\x20\x20</t','o_traco_as','yMDsc','daAer','SLSdh','fracao_cim','Plaster\x20Mi','UMQlf','mSSjj','Redução\x20na','height\x20mus','atioMortar','jJqde','OWmrt','bGHCX','(R$/m³)','Geração\x20de','junta-conv','en-US','ntamento','reia\x20(R$/m','LmcZx','juPYK','eubHR','Common\x20Dat','rm-control','jCcdq','ck\x20with\x20ad','te:\x20R$\x20','lnGNA','GeoKI','Custo\x20unit','mpblt','residuo_po','0,\x20253)','ster\x20(kg\x20C','on\x20(kg/m³)','Width\x20and\x20','sao_co2_fa','Ecológico\x20','energia','ico\x20com\x20Ad','\x20\x20\x20\x20<td\x20da','os.','\x20\x20\x20\x20\x20<td\x20d','ata-lang-k','querySelec','ditive','BiexR','water-char','rom\x20Factor','VoUhe','ert-danger','tijolos:\x20','ateriais:\x20','s\x20da\x20alven','e=\x22number\x22','addEventLi','g\x20CO₂/kg)','SYNDQ','Sand\x20Cost\x20','Calculate\x20','Material\x20C','t\x20Thicknes','ref-comum-','yDQkw','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<','Massa\x20dos\x20','financeiro','nte','p-text\x22>','do\x20rejunte','key=\x22wallA','ractionEco','l\x20e\x20a\x20ecol','ody','\x20CO₂\x20na\x20Pr','gXZSa','R$)','Distance\x20f','ssion\x22>','uLmtQ','o_traco_ch','calculate-','ickness','...','English','Mortar\x20Adh','cimento_tr','o_traco_em','reducao_em','reia:\x20R$\x20','LUmLp','ógica\x20---','\x20\x20\x20\x20\x20\x20\x20<td','wqZwM','documentEl','dy-aditiva','MmVuK','(R$/L)','espessura-','Ecological','dard\x20Ecolo','Calculando','dor\x20até\x20a\x20','ZPNHH','Water\x20Cost','ZrVza','Tipo\x20de\x20Ti','o_emboco','CO₂\x20do\x20Pol','refCO2Fact','\x222\x22\x20style=','wxgmj','\x20Brick\x20Pro','body','ction\x20per\x20','Total\x20Bric','rol-sm\x22\x20id','ration\x20(kg','ceil','ck\x20type','on\x20Reducti','\x20valores\x20p','jolo','Alvenaria\x20','ref-co2_pr','kbFEY','QZXuI','cndUa','chartCost','BUoli','BUjFy','aco_assent','liester','refWasteGe','ost\x20(R$)','ento_por_t','es\x20da\x20alve','\x20with\x20Addi','roup\x20input','lcuVS','ation','SQths','OwHRK','(kg)','724056uvgAVN','EmissionRe','teFVm','rede:\x20','\x20devem\x20ser','encional\x20-','\x22wasteGene','none','ikyKz','Thickness','inerado\x20(k','liester_in','er\x20valid\x20n','argamassa\x20','WvBuX','lo-conv','esidue','Constructi','\x20Parede','Cement\x20Fra','DzsqN','oducao_cim','dbgUC','kg\x20CO₂/kg)','Proportion','ref-fator_','ão\x20de\x20Cime','\x20m³','432bCbyIS','imento\x20(R$','\x20form-cont','This\x20secti','terResidue','fJgMb','cimento_kg','Unit\x20Cost','de\x20poliést','class=\x22eco','rgamassa\x20d','Configurar','\x20Area','\x20\x20\x20</tr>\x0a\x20','#language-','tiBQk','ijolos','UhsxR','Spuwn','OCMmM','OhnfR','Bflya','\x20data-lang','NmNHd','Data','lyester\x20in','ogical-col','(kg/m³)','co2_produc','SRweY','uBSxs','eBiMP','Analysis','nto\x20(kg/m³','ditives\x20co','Fator\x20de\x20E','emissao_li','missão\x20de\x20','CsaOd','dataset','Por\x20favor,','lwMpI','NNjab','<td\x20data-l','biental\x20e\x20','\x20\x20\x20\x20\x20\x20\x20<sp','t\x20Proporti','swEPp','rgb(13,\x2011','ogical\x20bri','tion\x20(kg/m','/unit)','ement','nerationCo','ault','imento:\x20R$','setItem','g-key=\x22co2','boco','impact\x20bet','\x22\x20value=\x22','\x20\x20\x20\x20\x20\x20\x20<tr','rt\x20(kg\x20CO₂','t\x20Mix:\x20Cem','DOMContent','tAoYB','Convencion','Grout\x20Cost','\x20used\x20in\x20t','wyFYZ','Avdml','style','de_tijolo','ditar\x20os\x20d','\x20fields.','Dados\x20de\x20R','in\x20Transpo','l-col\x22>R$\x20','y=\x22wasteGe','Indicador','orBrickPro','r\x20Tijolo\x20(','ejunte:\x20R$','jolo_eco','ógica.','bllUp','results-bo','Compare\x20th','Roughcast\x20','ref-fracao','21EPjxPr','yZgbD','on\x20in\x20Bric','custo-tijo','ssentament','Ecológica','ainer','tr>\x0a\x20\x20\x20\x20\x20\x20','Resíduo\x20de','er\x20to\x20Site','Wall\x20Heigh','nReduction','Volume\x20de\x20','\x20Português','lass=\x22ecol','Convention','lgZwW','div>','cPfRI','GNSpa','cEDfe','g/kg)','duction\x20(L','sentamento','\x20Resíduos','ht:\x20bold;\x22','waterConsu','\x20cola\x20asse','Net\x20CO₂\x20Em','gFVfe','de\x20assenta','qumkw','cological-','langButton','eboco:\x20Pro','\x20\x20\x20\x20\x20\x20<td\x20','/kg)','Grout\x20Thic','nsporte\x20(k','switcher','OfPsK','tions.','BvtUg','g...','zGeQz','ados\x20de\x20re','d\x20colspan=','getAttribu','preventDef','Espessura\x20','ento:\x20R$\x20','CO₂)','xOrIr','cao_tijolo','\x20un</td>\x0a\x20','\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','refCostCem','sticizer','mento:\x20','massa_tijo','JVNHY','MhSUI','endedor','lSEWq','ncional','e\x20use\x20of\x20a','ZcBYk','\x20with\x20Ecol','an\x20class=\x22','Descrição','bYIeI','LQkir','Mortar\x20Mix','key','waste-char','uma\x20mistur','Mix:\x20Cemen','=\x22ref-','\x20with\x20Stan','NZnAE','trim','iQHHy','alert-cont','ck\x20with\x20Ad','rhTbB','ansporte','Custo\x20do\x20C','<tr>\x0a\x20\x20\x20\x20\x20','aqXgW','esive\x20Cost','rejunte\x20(c','o\x20Tijolo\x20(','GxQHT','CO2\x20do\x20tra','\x20Impacto\x20C','tijolos\x20/\x20','ith\x2015%\x20po','ta-lang-ke','\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20','uring\x20(kg\x20','RJakX','obra','Rendimento','ao_cimento','\x20permite\x20e','nEPVX','e\x20Cimento\x20','os_m2_eco','UMShk','\x20class=\x22fo','getElement','g\x20CO₂/ton.','gzadn','k\x20Manufact','col\x22>R$\x20','lXNNU','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20','cnnQt','FyWYx','XoCUx','OMsMr','Indicator','arameters','\x22ecologica','cIMTs','nto_kg','Custo\x20do\x20R','mboço:\x20Pro','AKmZF','Custo\x20de\x20m','cola_litro','vyRbK','idValues','jRNWY','<input\x20typ','ySEdp','MQZxl','ola\x20de\x20Ass','nt\x20Product','al-col\x22>','altura_tij','zDyCQ','d\x20data-lan','\x20m²','a_m3','Cimento\x20(k','refCostSan','ário','d\x20ecologic','rgb(220,\x205','alBricks\x22>','refCostGro','Comparison','nsumptionB','nsporte:\x20','<div\x20class','emissao_co','ssage','Comparação','jolo_conv','reboco-con','umeric\x20val','3,\x2069)','aria\x20conve','carbonEmis','Bricks\x22>','agua_traco','>\x0a\x20\x20\x20\x20','tijolo','td>\x0a\x20\x20\x20\x20\x20\x20','\x20\x20<tr>\x0a\x20\x20\x20','rickEco','onv','ental\x20and\x20','XidwU','rgb(25,\x2013','al\x20masonry','ssura-reju','refCostWat','tijolos:\x20R','Reference\x20','MCwNu','errorPosit','GPIWx','g-key=\x22wat','loading-me','Cimento\x20po','torAll','FOFvF','on\x20in\x20Ceme','block','Custo\x20da\x20C','fyuqV','\x20\x20\x20\x20\x20\x20\x20\x20\x20<','JGHqh','aco_emboco','XrTnB','/ton.km)','o:\x20Proporç','click','imento-ass','ration\x22>','g/m³)','Dados\x20Comu','1512900wGsMGI','umption','er\x20Residue','duction\x22>','chapisco:\x20','bricação\x20d','ositivos.','5,\x2084)','¹\x20The\x20ecol','\x20kg\x20CO₂</t','d>\x20\x20\x20\x20\x20\x20\x20\x20','custo_agua','impacto\x20am','nGRhb','ico\x20Padrão','Custo\x20da\x20Á','eferência','ent','ref-agua_p','agua_produ','y\x20to\x20Resel','Siyip','bjhhE','AYmIJ','zIVQV','destroy','td\x20data-la','\x20\x20\x20\x20\x20\x20\x20\x20<t','dist-fab-r','ufzqY','BYUmI','53,\x2069,\x200.','/m²)','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20','YCCoH','165861dyfHhT','PUpQf','hapisco:\x20P','profundida','rejunte:\x20','errorInval','/un)','ption\x22>','ween\x20conve','tIwjB','PwEUF','o_assentam','zkNal','</td>\x0a\x20\x20\x20\x20','ang-key=\x22w','\x20emissão\x20C','MnSDu','NOKSL','produção.','\x20(kg/m³)','ler','Total\x20Wall','ss=\x22form-c','umption\x20in','\x20até\x20à\x20obr','ntional\x20an','ricos\x20váli','tificante_','terialCost','<td\x20class=','pt-BR','bra-conv','o\x20tipo\x20de\x20','Esta\x20seção','Cement','BwyUx','entries','\x20Tijolo\x20(L','g-key=\x22car','\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a','lores\x20numé','\x20aditivado','refWaterCo','EhKIf','forEach','YcsNu','_litro','Descriptio','PbnZM','value','os\x20os\x20camp','residuos_m','bqwUc','\x22font-weig','\x22\x20step=\x22','ijolo','neration\x22>','custo_arei','porção\x20de\x20','km)','Aditivado','fator_emis','qxQPb','\x20(R$/L)','sion','split','\x20kg</td>\x20\x20','3|0|3|9|4|','Mudar\x20para','d\x20class=\x22c','o_chapisco','lang','</td>\x20\x20\x20\x20\x20','RkGNC','ent\x20Propor','onvenciona','stener','rialCost\x22>','mumjz','xSnUM','\x20\x20\x20<tr>\x0a\x20\x20','Emissão\x20Lí','refCementF','refCostPla','Rszdv','entamento\x20','\x20Água\x20na\x20P','r>\x0a\x20\x20\x20\x20\x20\x20\x20','xbvAd','[data-lang','\x20mixture\x20w','\x20kg</td>\x0a\x20','button','dist-fab-o','nos\x20cálcul','caanS','ento','Select\x20bri','Water\x20Cons','polyesterR','numTijolos','itivo','UIwZb','\x20o\x20uso\x20de\x20','_assentame','QGFCm','BFdwh','log','YiFzr','MnQsL','Parede','on\x20Factor\x20','ateriais\x20(','\x20its\x20produ','on\x20allows\x20','\x20\x20\x20\x20</tr>\x0a','-lang-key=','Cement\x20Cos','Custo\x20do\x20P','naria\x20conv','ration','35,\x2084,\x200.','\x20Carbono\x20(','parsed','IWBVd','match','CO₂/kg)','TrYvB','jcMfw','CO₂\x20Emissi','ROPOy','Render\x20Coa','Altura\x20da\x20','er\x20em\x20sua\x20','Brick\x20(%)','BvVan','ferência\x20u','bricacao','gua:\x20R$\x20','ssion\x20(kg\x20','oNjnq','Calculatin','Custo\x20do\x20p','ById','kg\x20CO₂)','cinerado','\x20m²</td>\x0a\x20','nerationEc','toLocaleSt','jkkHT','EBrXl','emboco-con','Traço\x20do\x20C','Loaded','logical-co','sao_co2_tr','YEeKI','\x20insira\x20va','chartCO2','\x20ecológico','ccZlj','valor-rend','onstrutivo','orPolyeste','chartWater','roducao_ti','nsiders\x20th','ission','_emboco','x:\x20Cement\x20','ref-residu','amento','\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20','replace','netCo2Emis','co2Emissio','g-key=\x22tot','erConsumpt','jQDgH','R$\x20','r\x20Cost\x20(R$','\x20Água\x20(L)','1096971NTZAQO','MGaNp','dos\x20em\x20tod','mxVnJ','ion\x22>','CO2\x20da\x20pro','largura_ti','\x22netCo2Emi','lvenaria\x20c','\x20Carbono','nto','JZYHp','Custo\x20da\x20a','JwBkw','or_tijolo','sao_co2_po','message','mption','r>\x20\x20\x20\x20\x20\x20\x20\x20','Custo\x20do\x20c','-key=\x22mate','ey=\x22polyes','orTranspor','chapisco-c','insertCell','y\x20to\x20Site','ion\x20(kg/kg','custo','JySkj','Mortar\x20Joi','da\x20Fábrica','lhHiN','=\x22alert\x20al','insertRow','\x223\x22\x20style=','ction','bghrr','ut\x20type=\x22n','¹\x20O\x20tijolo','areia_m3','Custo\x20da\x20á','getContext','nzMiY','2_fabricac','rickConv','chartWaste','materialCo','custo_cime','jkUEo','kLFEh','co2-chart','WSRSI',':\x20Cement\x20P','CbToO','-group-sm\x22','eOztg','SmAVX','WMeTl','Análise\x20de','\x20considera','e\x20a\x20altura','qLGpG','Número\x20de\x20','OVjZv','Value','agua_litro','vvbun','AiTvn','TVaHy','\x20CO₂\x20na\x20Fa','hdPhY','\x20até\x20o\x20rev','tro','\x20Parameter','Traço\x20do\x20R','AuBuO','refCementR','wjvJe','ORZJB','additiveEc','10,\x20253,\x200','bonEmissio','te\x20(R$/L)','omparativo','l\x22>','input-grou','dNbwy','results-se','umption\x20(L','(kg/m²)','ref-conv-b','e\x20assentam','entamento','PMkob','bSpkz','Área\x20da\x20pa','refCO2Prod','\x20entre\x20a\x20a','JAXcc','\x20Masonry\x20P','ost','do\x20emboço','includes','\x20\x20\x20\x20\x20\x20</tr','xYffU','PlDBO','cnchC','BZSOV','CBdhG','language-s','Largura\x20da','\x20<tr>\x0a\x20\x20\x20\x20','quida_co2','do\x20chapisc','o_traco_re','Fração\x20de\x20','aco_reboco','startsWith','dist-rev-o','atioPlaste','\x20incorpora','a\x20com\x2015%\x20','zSeXQ','t\x20(R$/kg)','VBkfv','al\x20Masonry','=\x22ecologic','t\x20the\x20refe','\x20parâmetro','agua','vgItn','he\x20calcula','ZgFvG','valor-espe','Traço\x20do\x20A','of\x20Inciner','Junta\x20de\x20a','label','aco_chapis','PjWiP','l-col\x22>','rgba(13,\x201','Wall\x20Width','cost-chart','refCostAdh','rgba(220,\x20','aterConsum','iveValues','12|11|5','ssion','rence\x20data','d\x20class=\x22e','---\x20Detalh','Distância\x20','wall-heigh','chartLabel','/tr>\x0a\x20\x20\x20\x20\x20','ring','KhTwS','witcher','\x20Água','bricks\x20/\x20L','ng-key=\x22ma','\x20Poliéster','ontrol\x22\x20id','aria\x20ecoló','ref-eco-bo','\x20Resíduos\x20','ev-conv','Custo\x20dos\x20','xkMKO','n\x22>','rom\x20Resell','lo-eco','wasteGener','tilizados\x20','iéster\x20Inc','Valor','\x20<td\x20class','afFZL','CO₂\x20no\x20Tra','ast','uetEZ'];_0x28dc=function(){return _0x525d0f;};return _0x28dc();}let co2Chart,wasteChart,waterChart,energyChart,costChart;function formatNumber(_0x3b2c0f,_0x34bd47={'minimumFractionDigits':0x2,'maximumFractionDigits':0x2}){const _0x68474e=_0x36c02f,_0x6f5f7b={'cEfKu':function(_0x2b31c9,_0x2652ee){return _0x2b31c9!==_0x2652ee;},'PUpQf':_0x68474e(0x30e),'BUjFy':function(_0x19b2b2,_0x3b07f){return _0x19b2b2(_0x3b07f);}};if(_0x6f5f7b[_0x68474e(0x310)](typeof _0x3b2c0f,_0x6f5f7b[_0x68474e(0x19f)])||_0x6f5f7b[_0x68474e(0x430)](isNaN,_0x3b2c0f)){const _0x4ebb3d=(-0x2322*0x1+0x365+-0x19*-0x145)[_0x68474e(0x232)+_0x68474e(0x2f1)](currentLang,_0x34bd47);return _0x4ebb3d;}return _0x3b2c0f[_0x68474e(0x232)+_0x68474e(0x2f1)](currentLang,_0x34bd47);}document[_0x36c02f(0x11d)+_0x36c02f(0x22d)](_0x36c02f(0x3ff)+_0x36c02f(0x1fa))[_0x36c02f(0x3e5)+_0x36c02f(0x1ea)](_0x36c02f(0x176),calculate),document[_0x36c02f(0x3e5)+_0x36c02f(0x1ea)](_0x36c02f(0x49a)+_0x36c02f(0x237),()=>{const _0x1e3bda=_0x36c02f,_0x3ac992={'Spuwn':function(_0xb19317,_0x3ad5e4){return _0xb19317===_0x3ad5e4;},'UhsxR':_0x1e3bda(0x3be),'eBiMP':_0x1e3bda(0x1bc),'nzMiY':function(_0x269c0f,_0x3c4a42){return _0x269c0f(_0x3c4a42);},'PbnZM':_0x1e3bda(0x3a4),'NZnAE':_0x1e3bda(0x2c1)+_0x1e3bda(0x2f3),'WSRSI':_0x1e3bda(0x176),'yrQVf':function(_0x4bbf2b){return _0x4bbf2b();}};let _0x459fd5=localStorage[_0x1e3bda(0x35c)](_0x3ac992[_0x1e3bda(0x1ce)])||navigator[_0x1e3bda(0x3a4)]||_0x3ac992[_0x1e3bda(0x46b)];if(_0x459fd5[_0x1e3bda(0x2c9)]('pt'))_0x459fd5=_0x3ac992[_0x1e3bda(0x479)];const _0x1c4b55=translations[_0x459fd5]?_0x459fd5:_0x3ac992[_0x1e3bda(0x46b)];document[_0x1e3bda(0x11d)+_0x1e3bda(0x22d)](_0x3ac992[_0x1e3bda(0xfe)])[_0x1e3bda(0x3e5)+_0x1e3bda(0x1ea)](_0x3ac992[_0x1e3bda(0x287)],_0x384e7f=>{const _0x1acd3f=_0x1e3bda;_0x384e7f[_0x1acd3f(0xdf)+_0x1acd3f(0x490)]();const _0xf0a9f4=_0x3ac992[_0x1acd3f(0x46c)](currentLang,_0x3ac992[_0x1acd3f(0x46b)])?_0x3ac992[_0x1acd3f(0x479)]:_0x3ac992[_0x1acd3f(0x46b)];_0x3ac992[_0x1acd3f(0x27e)](setLanguage,_0xf0a9f4);}),_0x3ac992[_0x1e3bda(0x347)](populateReferenceData),_0x3ac992[_0x1e3bda(0x27e)](setLanguage,_0x1c4b55);});function calculaMetricasParedeConvencional(_0x509dab,_0x568e2c,_0x34eca0,_0x50c48c,_0x171c72,_0x28dc98,_0x50e638,_0x413a45,_0x5d9548,_0x55efca){const _0x828f42=_0x36c02f,_0xb21973={'ZrVza':function(_0x4e0c2a,_0x293bb0){return _0x4e0c2a*_0x293bb0;},'BYUmI':function(_0x6ca275,_0x59a494){return _0x6ca275+_0x59a494;},'WvBuX':function(_0x408c66,_0xaaa3da){return _0x408c66/_0xaaa3da;},'CsaOd':function(_0x1a681e,_0x412a2e){return _0x1a681e*_0x412a2e;},'aVJrV':function(_0x2fadfe,_0x27b6e0){return _0x2fadfe-_0x27b6e0;},'zurUc':function(_0x398dd6,_0x47be26){return _0x398dd6*_0x47be26;},'tAoYB':function(_0x55f7b9,_0x2ee202){return _0x55f7b9*_0x2ee202;},'ynxaI':function(_0x35aadc,_0x328329){return _0x35aadc*_0x328329;},'eOztg':function(_0x24bfa4,_0x24fde1){return _0x24bfa4*_0x24fde1;},'AuBuO':function(_0x5a3aa6,_0xf90373){return _0x5a3aa6*_0xf90373;},'zDyCQ':function(_0x238595,_0x1e49aa){return _0x238595*_0x1e49aa;},'MQZxl':function(_0x33f0b7,_0x29365e){return _0x33f0b7*_0x29365e;},'wqZwM':function(_0x21636b,_0x16ebae){return _0x21636b*_0x16ebae;},'BZSOV':function(_0x9d561c,_0x278566){return _0x9d561c*_0x278566;},'MhSUI':function(_0x18dc29,_0x565103){return _0x18dc29*_0x565103;},'tIwjB':function(_0x364e4c,_0xb4106c){return _0x364e4c+_0xb4106c;},'jcMfw':function(_0x577f5f,_0x48269e){return _0x577f5f+_0x48269e;},'JwBkw':function(_0x40a846,_0xede305){return _0x40a846+_0xede305;},'JZYHp':function(_0x422253,_0xbf77df){return _0x422253+_0xbf77df;},'VBkfv':function(_0x1a6169,_0x96d4a6){return _0x1a6169+_0x96d4a6;},'SQths':function(_0x124385,_0xe68d8b){return _0x124385+_0xe68d8b;},'qtpJC':function(_0x2f8700,_0x10a9f0){return _0x2f8700*_0x10a9f0;},'QGFCm':function(_0x4d4521,_0x2afd33){return _0x4d4521*_0x2afd33;},'xbvAd':function(_0x30273e,_0x50ac7f){return _0x30273e*_0x50ac7f;},'RkGNC':function(_0x9b03e0,_0x5bf0a6){return _0x9b03e0+_0x5bf0a6;},'yMDsc':function(_0x32bfca,_0x1195bf){return _0x32bfca+_0x1195bf;},'bllUp':function(_0x4a0bf0,_0x9ee92f){return _0x4a0bf0*_0x9ee92f;},'JPatI':function(_0x34f00b,_0x47d6ef){return _0x34f00b*_0x47d6ef;},'AKmZF':function(_0x46d5ec,_0x4b640e){return _0x46d5ec*_0x4b640e;},'dNbwy':function(_0x59d743,_0x4b51b4){return _0x59d743(_0x4b51b4);},'YCCoH':function(_0x578f63,_0x4c032a){return _0x578f63(_0x4c032a);},'OWmrt':function(_0x218646,_0x1dab57){return _0x218646(_0x1dab57);},'eubHR':function(_0x4f3349,_0x4dba70){return _0x4f3349(_0x4dba70);},'bjhhE':function(_0x186b34,_0x350bd0){return _0x186b34(_0x350bd0);},'rhTbB':function(_0x3616a5,_0x4aae7b){return _0x3616a5(_0x4aae7b);},'UMShk':function(_0x202f36,_0x35ddfb){return _0x202f36(_0x35ddfb);},'kbFEY':function(_0x3c56aa,_0x4f7f25){return _0x3c56aa(_0x4f7f25);}},_0x5ef49f={},_0x3d009f=_0xb21973[_0x828f42(0x417)](_0x568e2c,_0x34eca0),_0x382510=_0xb21973[_0x828f42(0x199)](_0x171c72,_0x509dab[_0x828f42(0x13b)+_0x828f42(0x343)]),_0x135844=_0xb21973[_0x828f42(0x199)](_0x171c72,_0x509dab[_0x828f42(0x25a)+_0x828f42(0x428)]),_0x53dfa8=Math[_0x828f42(0x424)](_0xb21973[_0x828f42(0x44c)](_0x3d009f,_0xb21973[_0x828f42(0x417)](_0x382510,_0x135844))),_0x519d94=_0xb21973[_0x828f42(0x417)](_0x3d009f,_0x509dab[_0x828f42(0x1a1)+_0x828f42(0x4a2)]),_0x2f4d1b=_0xb21973[_0x828f42(0x480)](_0xb21973[_0x828f42(0x480)](_0x509dab[_0x828f42(0x13b)+_0x828f42(0x343)],_0x509dab[_0x828f42(0x25a)+_0x828f42(0x428)]),_0x509dab[_0x828f42(0x1a1)+_0x828f42(0x4a2)]),_0x2ccfd2=_0xb21973[_0x828f42(0x417)](_0x53dfa8,_0x509dab[_0x828f42(0xea)+'lo']),_0xedca80=0x2*-0x16f+-0x1*-0x17e5+-0x75*0x2e+0.10000000000000009,_0x2af98e=0x1baf+0x211c+-0x3cca+0.19999999999999996,_0xf245c3=-0x14fb+0x1*-0x1f0d+0x3409+0.5,_0x220eda=-0x46+-0x1981+0x3c*0x6e+0.19999999999999996,_0x3a629f=_0xb21973[_0x828f42(0x480)](_0x53dfa8,_0x2f4d1b),_0x5c5dc6=_0xb21973[_0x828f42(0x480)](_0xb21973[_0x828f42(0x34f)](_0x519d94,_0x3a629f),_0xedca80),_0x1636b6=_0xb21973[_0x828f42(0x480)](_0xb21973[_0x828f42(0x398)](_0x3d009f,_0x28dc98),_0x2af98e),_0x40d853=_0xb21973[_0x828f42(0x480)](_0xb21973[_0x828f42(0x417)](_0x3d009f,_0x50e638),_0xf245c3),_0x1665b0=_0xb21973[_0x828f42(0x480)](_0xb21973[_0x828f42(0x417)](_0x3d009f,_0x413a45),_0x220eda),_0x1c553=_0xb21973[_0x828f42(0x49b)](_0x5c5dc6,_0x509dab[_0x828f42(0x404)+_0x828f42(0x431)+_0x828f42(0x249)]),_0x14b6ad=_0xb21973[_0x828f42(0x378)](_0x1c553,0x1cf+-0xbde*-0x1+-0x3*0x48f+0.002),_0x41b6d0=_0xb21973[_0x828f42(0x49b)](_0x5c5dc6,_0x509dab[_0x828f42(0x35e)+_0x828f42(0x1a9)+_0x828f42(0x1fe)]),_0x1f41ce=_0xb21973[_0x828f42(0x398)](_0x5c5dc6,_0x509dab[_0x828f42(0x155)+_0x828f42(0x206)+_0x828f42(0x25e)]),_0x3d1180=_0xb21973[_0x828f42(0x398)](_0x1636b6,_0x509dab[_0x828f42(0x404)+_0x828f42(0x2de)+'co']),_0xc2c56c=_0xb21973[_0x828f42(0x28b)](_0x3d1180,0xb2*-0x1d+0x9e1+-0xa49*-0x1+0.002),_0x122f14=_0xb21973[_0x828f42(0x49b)](_0x1636b6,_0x509dab[_0x828f42(0x35e)+_0x828f42(0x1e4)]),_0x520669=_0xb21973[_0x828f42(0x29f)](_0x1636b6,_0x509dab[_0x828f42(0x155)+_0x828f42(0x31f)]),_0x584d2c=_0xb21973[_0x828f42(0x398)](_0x40d853,_0x509dab[_0x828f42(0x404)+_0x828f42(0x172)]),_0x3c225f=_0xb21973[_0x828f42(0x13c)](_0x584d2c,0x1e0a+-0x1c90+-0x17a+0.002),_0x250ab7=_0xb21973[_0x828f42(0x137)](_0x40d853,_0x509dab[_0x828f42(0x35e)+_0x828f42(0x419)]),_0x2cd99e=_0xb21973[_0x828f42(0x13c)](_0x40d853,_0x509dab[_0x828f42(0x155)+_0x828f42(0x246)]),_0x2633ed=_0xb21973[_0x828f42(0x40b)](_0x1665b0,_0x509dab[_0x828f42(0x404)+_0x828f42(0x2c8)]),_0x3490d3=_0xb21973[_0x828f42(0x2bf)](_0x2633ed,0x61*-0x25+0x969+0x49c+0.002),_0x29a89b=_0xb21973[_0x828f42(0x378)](_0x1665b0,_0x509dab[_0x828f42(0x35e)+_0x828f42(0x30b)]),_0x2baa82=_0xb21973[_0x828f42(0xec)](_0x1665b0,_0x509dab[_0x828f42(0x155)+_0x828f42(0x381)]),_0x21a17e=_0xb21973[_0x828f42(0x199)](_0xb21973[_0x828f42(0x1a7)](_0xb21973[_0x828f42(0x21e)](_0x1c553,_0x3d1180),_0x584d2c),_0x2633ed),_0x35508f=_0xb21973[_0x828f42(0x261)](_0xb21973[_0x828f42(0x25f)](_0xb21973[_0x828f42(0x21e)](_0x14b6ad,_0xc2c56c),_0x3c225f),_0x3490d3),_0x176a1b=_0xb21973[_0x828f42(0x25f)](_0xb21973[_0x828f42(0x2d0)](_0xb21973[_0x828f42(0x25f)](_0x41b6d0,_0x122f14),_0x250ab7),_0x29a89b),_0x2e7b68=_0xb21973[_0x828f42(0x1a7)](_0xb21973[_0x828f42(0x25f)](_0xb21973[_0x828f42(0x43b)](_0x1f41ce,_0x520669),_0x2cd99e),_0x2baa82),_0xe6e643=_0xb21973[_0x828f42(0x36e)](_0x53dfa8,_0x50c48c),_0x2bfd47=_0xb21973[_0x828f42(0x207)](_0x21a17e,_0x509dab[_0x828f42(0x283)+_0x828f42(0x12c)]),_0x433d07=_0xb21973[_0x828f42(0x1f6)](_0x35508f,_0x509dab[_0x828f42(0x324)+_0x828f42(0x1b9)+_0x828f42(0x399)]),_0x4e14d8=_0xb21973[_0x828f42(0x29f)](_0x176a1b,_0x509dab[_0x828f42(0x1d7)+_0x828f42(0x13f)]),_0x5b48b9=_0xb21973[_0x828f42(0x480)](_0x2e7b68,_0x509dab[_0x828f42(0x186)+_0x828f42(0x1cc)]);_0x5ef49f[_0x828f42(0x202)]=_0x53dfa8,_0x5ef49f[_0x828f42(0x26f)]=_0xb21973[_0x828f42(0x199)](_0xb21973[_0x828f42(0x1e7)](_0xb21973[_0x828f42(0x1e7)](_0xb21973[_0x828f42(0x2d0)](_0xe6e643,_0x2bfd47),_0x433d07),_0x4e14d8),_0x5b48b9);const _0x518401=_0xb21973[_0x828f42(0x3ae)](_0xb21973[_0x828f42(0xaa)](_0x509dab[_0x828f42(0x18e)+_0x828f42(0xe4)],_0x53dfa8),_0x2e7b68);_0x5ef49f[_0x828f42(0x2d5)]=_0x518401;const _0x56e1a8=_0xb21973[_0x828f42(0x207)](_0x2ccfd2,_0x509dab[_0x828f42(0x1db)+_0x828f42(0x3d2)+_0x828f42(0x227)]);return dist_transporte=_0xb21973[_0x828f42(0x199)](_0xb21973[_0x828f42(0x137)](_0x5d9548,-0x1706+0xc1b+0xaed),_0xb21973[_0x828f42(0x334)](_0x55efca,0x242b+-0x1d63*0x1+-0x1*0x6c6)),co2_transporte=_0xb21973[_0x828f42(0x417)](_0xb21973[_0x828f42(0x480)](dist_transporte,_0xb21973[_0x828f42(0x44c)](_0x2ccfd2,0x120c*0x1+0x87*-0x27+0x66d)),_0x509dab[_0x828f42(0x1db)+_0x828f42(0x239)+_0x828f42(0x104)]),_0x5ef49f[_0x828f42(0x33d)]=_0xb21973[_0x828f42(0x43b)](_0x56e1a8,co2_transporte),_0x5ef49f[_0x828f42(0x3a6)]=_0xb21973[_0x828f42(0x12f)](_0x509dab[_0x828f42(0x1d1)+'2'],_0x3d009f),_0x5ef49f[_0x828f42(0x3d4)]=_0xb21973[_0x828f42(0x28b)](_0x509dab[_0x828f42(0x342)],_0x3d009f),console[_0x828f42(0x209)](_0x828f42(0x2ec)+_0x828f42(0x436)+_0x828f42(0x215)+_0x828f42(0x443)+'--'),console[_0x828f42(0x209)](_0x828f42(0x2b3)+_0x828f42(0x441)+_0xb21973[_0x828f42(0x2aa)](formatNumber,_0x3d009f)+_0x828f42(0x13e)),console[_0x828f42(0x209)](_0x828f42(0x292)+_0x828f42(0x3e1)+_0xb21973[_0x828f42(0x19d)](formatNumber,_0x53dfa8)),console[_0x828f42(0x209)](_0x828f42(0x3ef)+_0x828f42(0x3e1)+_0xb21973[_0x828f42(0x3b9)](formatNumber,_0x2ccfd2)+_0x828f42(0x351)),console[_0x828f42(0x209)](_0x828f42(0xbb)+_0x828f42(0x3e1)+_0xb21973[_0x828f42(0x2aa)](formatNumber,_0x3a629f)+_0x828f42(0x459)),console[_0x828f42(0x209)](_0x828f42(0xbb)+_0x828f42(0x44b)+_0x828f42(0xcd)+_0x828f42(0xe9)+_0xb21973[_0x828f42(0x3c3)](formatNumber,_0x5c5dc6)+_0x828f42(0x459)),console[_0x828f42(0x209)](_0x828f42(0xbb)+_0x828f42(0x17f)+_0xb21973[_0x828f42(0x2aa)](formatNumber,_0x1636b6)+_0x828f42(0x459)),console[_0x828f42(0x209)](_0x828f42(0xbb)+_0x828f42(0x317)+_0xb21973[_0x828f42(0x191)](formatNumber,_0x40d853)+_0x828f42(0x459)),console[_0x828f42(0x209)](_0x828f42(0xbb)+_0x828f42(0x387)+_0xb21973[_0x828f42(0x3c3)](formatNumber,_0x1665b0)+_0x828f42(0x459)),console[_0x828f42(0x209)](_0x828f42(0x2fd)+_0x828f42(0x162)+'$\x20'+_0xb21973[_0x828f42(0x3c3)](formatNumber,_0xe6e643)),console[_0x828f42(0x209)](_0x828f42(0x267)+_0x828f42(0x491)+'\x20'+_0xb21973[_0x828f42(0x103)](formatNumber,_0x2bfd47)),console[_0x828f42(0x209)](_0x828f42(0x22c)+_0x828f42(0x354)+_0x828f42(0x3c8)+_0xb21973[_0x828f42(0x103)](formatNumber,_0x433d07)),console[_0x828f42(0x209)](_0x828f42(0x260)+_0x828f42(0x407)+_0xb21973[_0x828f42(0x3b9)](formatNumber,_0x4e14d8)),console[_0x828f42(0x209)](_0x828f42(0x27c)+_0x828f42(0x228)+_0xb21973[_0x828f42(0x11b)](formatNumber,_0x5b48b9)),console[_0x828f42(0x209)](_0x828f42(0x130)+_0x828f42(0x3e2)+_0x828f42(0x251)+_0xb21973[_0x828f42(0x42b)](formatNumber,_0x5ef49f[_0x828f42(0x26f)])),console[_0x828f42(0x209)](_0x828f42(0x259)+_0x828f42(0x388)+_0xb21973[_0x828f42(0x191)](formatNumber,_0x56e1a8)+_0x828f42(0x351)),console[_0x828f42(0x209)](_0x828f42(0x10c)+_0x828f42(0x149)+_0xb21973[_0x828f42(0x3b9)](formatNumber,co2_transporte)+_0x828f42(0x351)),_0x5ef49f;}function calcularRejunte(_0x34fda8,_0x3e26c4){const _0x4f1456=_0x36c02f,_0x27ff22={'Bflya':function(_0x554667,_0x545fd3){return _0x554667+_0x545fd3;},'bGHCX':function(_0xa88310,_0x206fc7){return _0xa88310/_0x206fc7;},'QZXuI':function(_0x11e196,_0x5c51e8){return _0x11e196*_0x5c51e8;},'LSgwx':function(_0x1c4af9,_0x132bba){return _0x1c4af9/_0x132bba;},'xOrIr':function(_0x18edbf,_0x491585){return _0x18edbf*_0x491585;},'lgZwW':function(_0x2224e1,_0x5ba4b9){return _0x2224e1*_0x5ba4b9;},'GeoKI':function(_0x1729ef,_0xe8afbb){return _0x1729ef*_0xe8afbb;}},_0x34b086=0x36f*-0x1+-0x1705*-0x1+-0x2e*0x6d+0.25,_0x384b67=-0x201e+0xd38+0x12e6+0.07,_0x332253=_0x27ff22[_0x4f1456(0x46f)](_0x27ff22[_0x4f1456(0x3ba)](-0x16a9+-0x1aa*0x4+0x1d52*0x1,_0x34b086),_0x27ff22[_0x4f1456(0x3ba)](-0x268a*-0x1+0x1cad+-0x2*0x219b,_0x384b67)),_0x51aa6b=_0x27ff22[_0x4f1456(0x42c)](_0x34fda8,_0x332253),_0x63f422=_0x27ff22[_0x4f1456(0x3ba)](_0x3e26c4,-0x240a+0x97b*0x2+0x14fc),_0x3558c8=_0x27ff22[_0x4f1456(0x33e)](_0x63f422,0x39b+0x39*-0x60+0x1*0x11c7),_0x1f41aa=_0x27ff22[_0x4f1456(0xe3)](_0x27ff22[_0x4f1456(0xbf)](Math['PI'],_0x3558c8),_0x3558c8),_0xae9fe1=_0x27ff22[_0x4f1456(0x3ca)](_0x1f41aa,_0x51aa6b),_0x11d64b=_0x27ff22[_0x4f1456(0xbf)](_0xae9fe1,-0x124*0x14+0x2317+-0x85f);return _0x11d64b;}function calculaMetricasParedeEcologica(_0x420f36,_0xb2badb,_0x222c1c,_0x4a3376,_0xc9bacf,_0x5d8678,_0x1608bd,_0x16a0f3=!![]){const _0x170f33=_0x36c02f,_0x3ae4d3={'MnSDu':function(_0x4b4037,_0x76b542){return _0x4b4037*_0x76b542;},'bqwUc':function(_0x1c9bb0,_0x130afe){return _0x1c9bb0/_0x130afe;},'YJCFs':function(_0x5347bd,_0x2a4962){return _0x5347bd*_0x2a4962;},'zGeQz':function(_0x1b5c03,_0x7b7e41){return _0x1b5c03*_0x7b7e41;},'AYmIJ':function(_0x49ca35,_0x591013){return _0x49ca35*_0x591013;},'AiTvn':function(_0x91d208,_0x25bfa0){return _0x91d208/_0x25bfa0;},'cnchC':function(_0x1e334e,_0x4cf2ee){return _0x1e334e*_0x4cf2ee;},'Yyhzc':function(_0x4353b4,_0x457eb8){return _0x4353b4*_0x457eb8;},'KhTwS':function(_0x4bc8c0,_0x113a66){return _0x4bc8c0+_0x113a66;},'qhpAR':function(_0x1e0280,_0x4dbf12,_0x5e8665){return _0x1e0280(_0x4dbf12,_0x5e8665);},'SLSdh':function(_0x322642,_0x22eaae){return _0x322642*_0x22eaae;},'wyFYZ':function(_0x2b0caf,_0x2c0db6){return _0x2b0caf*_0x2c0db6;},'JVNHY':function(_0x336e60,_0x1952fe){return _0x336e60*_0x1952fe;},'PMkob':function(_0x34e165,_0x1ca22a){return _0x34e165*_0x1ca22a;},'RJakX':function(_0x102aae,_0x4f71be){return _0x102aae+_0x4f71be;},'ySEdp':function(_0x4e6408,_0xd5ffd5){return _0x4e6408+_0xd5ffd5;},'VoUhe':function(_0x5c49f2,_0x58b9cb){return _0x5c49f2*_0x58b9cb;},'hdPhY':function(_0x34e03d,_0x22bdc2){return _0x34e03d*_0x22bdc2;},'zSeXQ':function(_0x3bfa6b,_0x49ac73){return _0x3bfa6b*_0x49ac73;},'ufzqY':function(_0x1de18d,_0x55c3cd){return _0x1de18d*_0x55c3cd;},'iJlIt':function(_0x2eff90,_0x518d82){return _0x2eff90*_0x518d82;},'AFSRq':function(_0xd891be,_0x1698c2){return _0xd891be-_0x1698c2;},'MnQsL':_0x170f33(0x37d)+_0x170f33(0x319)+_0x170f33(0x1e1)+_0x170f33(0x2e8),'gFVfe':function(_0x3cc92d,_0x3698ff){return _0x3cc92d(_0x3698ff);},'caanS':function(_0x5a3f0a,_0x5d8d83){return _0x5a3f0a(_0x5d8d83);},'OwHRK':function(_0x27d85d,_0x24059b,_0x2907b9){return _0x27d85d(_0x24059b,_0x2907b9);},'kBxiE':function(_0x58b687,_0x1b4c47){return _0x58b687(_0x1b4c47);}},_0x5616e1={},_0x53cd6e=_0x3ae4d3[_0x170f33(0x1ae)](_0xb2badb,_0x222c1c),_0x5786e6=_0x420f36[_0x170f33(0x13b)+_0x170f33(0x343)],_0x3ac4c0=_0x420f36[_0x170f33(0x25a)+_0x170f33(0x428)],_0x3c06d5=Math[_0x170f33(0x424)](_0x3ae4d3[_0x170f33(0x1d2)](_0x53cd6e,_0x3ae4d3[_0x170f33(0x1ae)](_0x5786e6,_0x3ac4c0))),_0x9c5986=_0x3ae4d3[_0x170f33(0x32e)](_0x53cd6e,_0x420f36[_0x170f33(0x1a1)+_0x170f33(0x4a2)]),_0x1cbb8f=_0x3ae4d3[_0x170f33(0xdb)](_0x3c06d5,_0x420f36[_0x170f33(0xea)+'lo']),_0x4efb24=_0x3ae4d3[_0x170f33(0xdb)](_0x3c06d5,_0x3ae4d3[_0x170f33(0x32e)](_0x3ae4d3[_0x170f33(0x192)](_0x420f36[_0x170f33(0x13b)+_0x170f33(0x343)],_0x420f36[_0x170f33(0x25a)+_0x170f33(0x428)]),_0x420f36[_0x170f33(0x1a1)+_0x170f33(0x4a2)])),_0xe3c46=_0x3ae4d3[_0x170f33(0x297)](_0x3c06d5,_0xc9bacf),_0x415ec9=_0x3ae4d3[_0x170f33(0x32e)](_0x3ae4d3[_0x170f33(0x1ae)](Math['PI'],_0x3ae4d3[_0x170f33(0x297)](_0x5d8678,-0x7*-0x41b+-0x264b+0x6*0x198)),_0x3ae4d3[_0x170f33(0x1d2)](_0x5d8678,0x12ef+-0x1*0x1172+-0x17b)),_0x317e83=_0x3ae4d3[_0x170f33(0x2be)](_0x3ae4d3[_0x170f33(0x35d)](_0x415ec9,_0x3ae4d3[_0x170f33(0x1ae)](_0x3c06d5,_0x3ae4d3[_0x170f33(0x2f2)](_0x420f36[_0x170f33(0x13b)+_0x170f33(0x343)],_0x420f36[_0x170f33(0x25a)+_0x170f33(0x428)]))),0x1b*0x12+0x727*0x1+-0x525*0x1),_0x1b6012=_0x3ae4d3[_0x170f33(0x385)](calcularRejunte,_0x53cd6e,_0x3ae4d3[_0x170f33(0x32e)](_0x5d8678,0x1*0x2437+0x5ef*0x4+-0x1*0x380b)),_0x30a86b=_0x3ae4d3[_0x170f33(0x3b0)](_0x1cbb8f,_0x420f36[_0x170f33(0x3b1)+_0x170f33(0x435)+_0x170f33(0x1d5)]),_0x2da513=_0x3ae4d3[_0x170f33(0x49f)](_0x3c06d5,-0x3f*0x61+0x1a28+-0xc3*0x3+0.1),_0x45019e=_0x3ae4d3[_0x170f33(0xeb)](_0x3c06d5,_0x4a3376),_0x75045a=_0x3ae4d3[_0x170f33(0x32e)](_0x30a86b,_0x420f36[_0x170f33(0x283)+_0x170f33(0x12c)]),_0x412617=_0x3ae4d3[_0x170f33(0x2b1)](_0xe3c46,_0x420f36[_0x170f33(0x37c)+_0x170f33(0x1cc)]),_0x4e1583=_0x3ae4d3[_0x170f33(0x2b1)](_0x1b6012,_0x420f36[_0x170f33(0x39a)+_0x170f33(0x3a8)]),_0x2a13d5=_0x3ae4d3[_0x170f33(0x2be)](_0x2da513,_0x420f36[_0x170f33(0x186)+_0x170f33(0x1cc)]);_0x5616e1[_0x170f33(0x202)]=_0x3c06d5,_0x5616e1[_0x170f33(0x26f)]=_0x3ae4d3[_0x170f33(0x2f2)](_0x3ae4d3[_0x170f33(0x113)](_0x3ae4d3[_0x170f33(0x136)](_0x3ae4d3[_0x170f33(0x2f2)](_0x45019e,_0x75045a),_0x412617),_0x4e1583),_0x2a13d5);const _0x38253c=_0x3ae4d3[_0x170f33(0x113)](_0x3ae4d3[_0x170f33(0x3df)](_0x420f36[_0x170f33(0x18e)+_0x170f33(0xe4)],_0x3c06d5),_0x2da513);_0x5616e1[_0x170f33(0x2d5)]=_0x38253c;const _0x46f5b1=_0x3ae4d3[_0x170f33(0x29a)](_0x30a86b,_0x420f36[_0x170f33(0x476)+_0x170f33(0x116)]);dist_transporte=_0x3ae4d3[_0x170f33(0x1ae)](_0x1608bd,0x176f+-0x1b64+0x5*0xcb),co2_transporte=_0x3ae4d3[_0x170f33(0x2ce)](_0x3ae4d3[_0x170f33(0xeb)](dist_transporte,_0x3ae4d3[_0x170f33(0x297)](_0x1cbb8f,0x22c6+0x868+-0x2746*0x1)),_0x420f36[_0x170f33(0x1db)+_0x170f33(0x239)+_0x170f33(0x104)]),_0x5616e1[_0x170f33(0x33d)]=_0x3ae4d3[_0x170f33(0x136)](_0x46f5b1,co2_transporte),_0x5616e1[_0x170f33(0x3a6)]=_0x3ae4d3[_0x170f33(0xeb)](_0x420f36[_0x170f33(0x1d1)+'2'],_0x53cd6e),_0x5616e1[_0x170f33(0x3d4)]=_0x3ae4d3[_0x170f33(0x198)](_0x420f36[_0x170f33(0x342)],_0x53cd6e),_0x5616e1[_0x170f33(0x3cd)+_0x170f33(0x432)]=_0x420f36[_0x170f33(0x1db)+_0x170f33(0x263)+_0x170f33(0x449)+_0x170f33(0x22f)]?_0x3ae4d3[_0x170f33(0x326)](_0x3ae4d3[_0x170f33(0x1d2)](-0x2207+0x1*-0x1e6d+-0x1*-0x407c+0.5999999999999996,-0x85*0x2c+-0x5c8+0x208c),_0x3c06d5):-0x2*-0x124f+0x1939+-0x3dd7*0x1,_0x5616e1[_0x170f33(0x406)+_0x170f33(0x368)]=_0x3ae4d3[_0x170f33(0x2ce)](_0x5616e1[_0x170f33(0x3cd)+_0x170f33(0x432)],_0x420f36[_0x170f33(0x1db)+_0x170f33(0x263)+_0x170f33(0x449)+_0x170f33(0x22f)]),_0x5616e1[_0x170f33(0x47e)+_0x170f33(0x2c4)]=_0x3ae4d3[_0x170f33(0x38f)](_0x5616e1[_0x170f33(0x33d)],_0x5616e1[_0x170f33(0x406)+_0x170f33(0x368)]);if(_0x16a0f3){const _0x3cdb1=_0x3ae4d3[_0x170f33(0x20b)][_0x170f33(0x1df)]('|');let _0x3d12c5=0x175*0x8+-0x1d82+0x11da;while(!![]){switch(_0x3cdb1[_0x3d12c5++]){case'0':console[_0x170f33(0x209)](_0x170f33(0x260)+_0x170f33(0x464)+_0x170f33(0x2af)+_0x170f33(0xe1)+_0x3ae4d3[_0x170f33(0xcc)](formatNumber,_0x412617));continue;case'1':console[_0x170f33(0x209)](_0x170f33(0x3ef)+_0x170f33(0x3e1)+_0x3ae4d3[_0x170f33(0x1fd)](formatNumber,_0x1cbb8f)+_0x170f33(0x351));continue;case'2':console[_0x170f33(0x209)](_0x170f33(0xbb)+_0x170f33(0x3e1)+_0x3ae4d3[_0x170f33(0x1fd)](formatNumber,_0x4efb24)+_0x170f33(0x459));continue;case'3':console[_0x170f33(0x209)](_0x170f33(0x32f)+_0x170f33(0xa7)+'\x20'+_0x3ae4d3[_0x170f33(0xcc)](formatNumber,_0x4e1583));continue;case'4':console[_0x170f33(0x209)](_0x170f33(0x27c)+_0x170f33(0x228)+_0x3ae4d3[_0x170f33(0xcc)](formatNumber,_0x2a13d5));continue;case'5':console[_0x170f33(0x209)](_0x170f33(0x10c)+_0x170f33(0x149)+_0x3ae4d3[_0x170f33(0x1fd)](formatNumber,co2_transporte)+_0x170f33(0x351));continue;case'6':console[_0x170f33(0x209)](_0x170f33(0xbb)+_0x170f33(0x1a2)+_0x3ae4d3[_0x170f33(0xcc)](formatNumber,_0x317e83)+'\x20L');continue;case'7':console[_0x170f33(0x209)](_0x170f33(0xbb)+_0x170f33(0x44b)+_0x170f33(0xcd)+_0x170f33(0xe9)+_0x3ae4d3[_0x170f33(0xcc)](formatNumber,_0xe3c46)+'\x20L');continue;case'8':console[_0x170f33(0x209)](_0x170f33(0xbb)+_0x170f33(0x109)+_0x170f33(0x374)+'\x20'+_0x3ae4d3[_0x170f33(0x43c)](formatNumber,_0x1b6012,{'minimumFractionDigits':0x3,'maximumFractionDigits':0x3})+'\x20L');continue;case'9':console[_0x170f33(0x209)](_0x170f33(0x267)+_0x170f33(0x491)+'\x20'+_0x3ae4d3[_0x170f33(0x393)](formatNumber,_0x75045a));continue;case'10':console[_0x170f33(0x209)](_0x170f33(0x2ec)+_0x170f33(0x436)+_0x170f33(0x33a)+_0x170f33(0x409));continue;case'11':console[_0x170f33(0x209)](_0x170f33(0x259)+_0x170f33(0x388)+_0x3ae4d3[_0x170f33(0x393)](formatNumber,_0x46f5b1)+_0x170f33(0x351));continue;case'12':console[_0x170f33(0x209)](_0x170f33(0x130)+_0x170f33(0x3e2)+_0x170f33(0x251)+_0x3ae4d3[_0x170f33(0xcc)](formatNumber,_0x5616e1[_0x170f33(0x26f)]));continue;case'13':console[_0x170f33(0x209)](_0x170f33(0x2fd)+_0x170f33(0x162)+'$\x20'+_0x3ae4d3[_0x170f33(0x1fd)](formatNumber,_0x45019e));continue;case'14':console[_0x170f33(0x209)](_0x170f33(0x292)+_0x170f33(0x3e1)+_0x3ae4d3[_0x170f33(0xcc)](formatNumber,_0x3c06d5));continue;case'15':console[_0x170f33(0x209)](_0x170f33(0x2b3)+_0x170f33(0x441)+_0x3ae4d3[_0x170f33(0x1fd)](formatNumber,_0x53cd6e)+_0x170f33(0x13e));continue;}break;}}return _0x5616e1;}function getEditedReferenceData(){const _0x42ad33=_0x36c02f,_0x23f6f2={'qumkw':function(_0x4caa3a,_0x40d653){return _0x4caa3a(_0x40d653);},'NmNHd':_0x42ad33(0x30d)+_0x42ad33(0x460),'qoMzV':function(_0x35edc0,_0x58ff73){return _0x35edc0(_0x58ff73);},'gzadn':_0x42ad33(0x30d)+_0x42ad33(0x295),'lwMpI':_0x42ad33(0x457)+_0x42ad33(0x14b)+_0x42ad33(0x329)+'te','nEPVX':function(_0x3578e4,_0x1cfd8b){return _0x3578e4(_0x1cfd8b);},'ORZJB':_0x42ad33(0x42a)+_0x42ad33(0x453)+_0x42ad33(0x1fe),'kLFEh':function(_0x43a289,_0x32b108){return _0x43a289(_0x32b108);},'afFZL':_0x42ad33(0x457)+_0x42ad33(0x14b)+_0x42ad33(0x27f)+'ao','PQpBG':_0x42ad33(0x30d)+_0x42ad33(0x389)+_0x42ad33(0x3a8),'qLGpG':function(_0x32c28f,_0x10fa94){return _0x32c28f(_0x10fa94);},'lhHiN':_0x42ad33(0x30d)+_0x42ad33(0x27b),'teFVm':_0x42ad33(0x18d)+_0x42ad33(0x243)+_0x42ad33(0x14e),'lnGNA':_0x42ad33(0x248)+_0x42ad33(0x345),'xkMKO':function(_0x31f5f6,_0x440a08){return _0x31f5f6(_0x440a08);},'YiFzr':_0x42ad33(0x3a1)+_0x42ad33(0x3ad)+_0x42ad33(0xc6),'ikyKz':_0x42ad33(0x3a1)+_0x42ad33(0x3fe)+_0x42ad33(0x322),'Siyip':function(_0x882f59,_0x2d3b26){return _0x882f59(_0x2d3b26);},'jCcdq':_0x42ad33(0x3a1)+_0x42ad33(0x405)+_0x42ad33(0x494),'PjWiP':function(_0x116c36,_0x2c7f03){return _0x116c36(_0x2c7f03);},'BiexR':_0x42ad33(0x3a1)+_0x42ad33(0x2c6)+_0x42ad33(0x494),'lXNNU':function(_0x31a3dc,_0x1d65cc){return _0x31a3dc/_0x1d65cc;},'jQDgH':function(_0x2f0211,_0xe2c5ed){return _0x2f0211(_0xe2c5ed);},'YcsNu':_0x42ad33(0xae)+_0x42ad33(0x33c)+_0x42ad33(0x262),'LUmLp':_0x42ad33(0x30d)+_0x42ad33(0x131),'bYIeI':function(_0x27a6ad,_0x134532){return _0x27a6ad(_0x134532);},'WMeTl':_0x42ad33(0x30d)+_0x42ad33(0x39c)+_0x42ad33(0x29c),'vvbun':_0x42ad33(0x18d)+_0x42ad33(0x243)+_0x42ad33(0xa8),'mKoEu':function(_0x5c2b2e,_0x9f02e1){return _0x5c2b2e(_0x9f02e1);},'zkNal':_0x42ad33(0x248)+_0x42ad33(0x11a)},_0x4343fc={...DEFAULT_DATA_CONVENCIONAL},_0x2f6f53={...DEFAULT_DATA_ECOLOGICO},_0x17ef9b={...DEFAULT_DATA_ECOLOGICO_ADITIVADO},_0xd61dbc=_0xed5190=>parseFloat(document[_0x42ad33(0x11d)+_0x42ad33(0x22d)](_0xed5190)[_0x42ad33(0x1cf)]);return _0x4343fc[_0x42ad33(0x283)+_0x42ad33(0x12c)]=_0x2f6f53[_0x42ad33(0x283)+_0x42ad33(0x12c)]=_0x17ef9b[_0x42ad33(0x283)+_0x42ad33(0x12c)]=_0x23f6f2[_0x42ad33(0xce)](_0xd61dbc,_0x23f6f2[_0x42ad33(0x471)]),_0x4343fc[_0x42ad33(0x186)+_0x42ad33(0x1cc)]=_0x2f6f53[_0x42ad33(0x186)+_0x42ad33(0x1cc)]=_0x17ef9b[_0x42ad33(0x186)+_0x42ad33(0x1cc)]=_0x23f6f2[_0x42ad33(0x360)](_0xd61dbc,_0x23f6f2[_0x42ad33(0x11f)]),_0x4343fc[_0x42ad33(0x1db)+_0x42ad33(0x239)+_0x42ad33(0x104)]=_0x2f6f53[_0x42ad33(0x1db)+_0x42ad33(0x239)+_0x42ad33(0x104)]=_0x17ef9b[_0x42ad33(0x1db)+_0x42ad33(0x239)+_0x42ad33(0x104)]=_0x23f6f2[_0x42ad33(0xce)](_0xd61dbc,_0x23f6f2[_0x42ad33(0x483)]),_0x4343fc[_0x42ad33(0x476)+_0x42ad33(0x116)]=_0x2f6f53[_0x42ad33(0x476)+_0x42ad33(0x116)]=_0x17ef9b[_0x42ad33(0x476)+_0x42ad33(0x116)]=_0x23f6f2[_0x42ad33(0x118)](_0xd61dbc,_0x23f6f2[_0x42ad33(0x2a2)]),_0x4343fc[_0x42ad33(0x1db)+_0x42ad33(0x3d2)+_0x42ad33(0x227)]=_0x23f6f2[_0x42ad33(0x285)](_0xd61dbc,_0x23f6f2[_0x42ad33(0x307)]),_0x4343fc[_0x42ad33(0x324)+_0x42ad33(0x1b9)+_0x42ad33(0x399)]=_0x23f6f2[_0x42ad33(0x285)](_0xd61dbc,_0x23f6f2[_0x42ad33(0x32c)]),_0x4343fc[_0x42ad33(0x1d7)+_0x42ad33(0x13f)]=_0x23f6f2[_0x42ad33(0x291)](_0xd61dbc,_0x23f6f2[_0x42ad33(0x273)]),_0x4343fc[_0x42ad33(0x18e)+_0x42ad33(0xe4)]=_0x23f6f2[_0x42ad33(0x360)](_0xd61dbc,_0x23f6f2[_0x42ad33(0x440)]),_0x4343fc[_0x42ad33(0x1d1)+'2']=_0x23f6f2[_0x42ad33(0x291)](_0xd61dbc,_0x23f6f2[_0x42ad33(0x3c9)]),_0x4343fc[_0x42ad33(0x404)+_0x42ad33(0x431)+_0x42ad33(0x249)]=_0x23f6f2[_0x42ad33(0x2fe)](_0xd61dbc,_0x23f6f2[_0x42ad33(0x20a)]),_0x4343fc[_0x42ad33(0x404)+_0x42ad33(0x2de)+'co']=_0x23f6f2[_0x42ad33(0xce)](_0xd61dbc,_0x23f6f2[_0x42ad33(0x446)]),_0x4343fc[_0x42ad33(0x404)+_0x42ad33(0x172)]=_0x23f6f2[_0x42ad33(0x190)](_0xd61dbc,_0x23f6f2[_0x42ad33(0x3c6)]),_0x4343fc[_0x42ad33(0x404)+_0x42ad33(0x2c8)]=_0x23f6f2[_0x42ad33(0x2df)](_0xd61dbc,_0x23f6f2[_0x42ad33(0x3dc)]),_0x2f6f53[_0x42ad33(0x3b1)+_0x42ad33(0x435)+_0x42ad33(0x1d5)]=_0x17ef9b[_0x42ad33(0x3b1)+_0x42ad33(0x435)+_0x42ad33(0x1d5)]=_0x23f6f2[_0x42ad33(0x122)](_0x23f6f2[_0x42ad33(0x250)](_0xd61dbc,_0x23f6f2[_0x42ad33(0x1cb)]),-0xda9*-0x1+-0x14dd+0x798),_0x2f6f53[_0x42ad33(0x37c)+_0x42ad33(0x1cc)]=_0x17ef9b[_0x42ad33(0x37c)+_0x42ad33(0x1cc)]=_0x23f6f2[_0x42ad33(0x118)](_0xd61dbc,_0x23f6f2[_0x42ad33(0x408)]),_0x2f6f53[_0x42ad33(0x39a)+_0x42ad33(0x3a8)]=_0x17ef9b[_0x42ad33(0x39a)+_0x42ad33(0x3a8)]=_0x23f6f2[_0x42ad33(0xf5)](_0xd61dbc,_0x23f6f2[_0x42ad33(0x28d)]),_0x2f6f53[_0x42ad33(0x18e)+_0x42ad33(0xe4)]=_0x17ef9b[_0x42ad33(0x18e)+_0x42ad33(0xe4)]=_0x23f6f2[_0x42ad33(0x118)](_0xd61dbc,_0x23f6f2[_0x42ad33(0x296)]),_0x2f6f53[_0x42ad33(0x1d1)+'2']=_0x17ef9b[_0x42ad33(0x1d1)+'2']=_0x23f6f2[_0x42ad33(0x361)](_0xd61dbc,_0x23f6f2[_0x42ad33(0x1aa)]),{'dataConv':_0x4343fc,'dataEco':_0x2f6f53,'dataEcoAditivado':_0x17ef9b};}function _0x1e0f(_0x4b54c4,_0x1d5096){const _0x30ec11=_0x28dc();return _0x1e0f=function(_0xd457f7,_0x1a9a1f){_0xd457f7=_0xd457f7-(-0x1b31+0x1849+0xb5*0x5);let _0x3174bb=_0x30ec11[_0xd457f7];return _0x3174bb;},_0x1e0f(_0x4b54c4,_0x1d5096);}function calculate(){const _0x45339c=_0x36c02f,_0x265b82={'EhKIf':function(_0x1ee484,_0x2b2ffa){return _0x1ee484(_0x2b2ffa);},'BvVan':_0x45339c(0x32a)+'h','JAXcc':_0x45339c(0x2ee)+'t','OfPsK':function(_0x173465,_0x47bc95){return _0x173465(_0x47bc95);},'PwEUF':_0x45339c(0xb2)+_0x45339c(0x44d),'cMfUt':_0x45339c(0x197)+_0x45339c(0x2fc),'xYffU':_0x45339c(0x2ca)+_0x45339c(0x1bd),'OMsMr':function(_0x3f6f57,_0x2662e4){return _0x3f6f57/_0x2662e4;},'ZcBYk':function(_0x305a4f,_0x577111){return _0x305a4f(_0x577111);},'mpblt':_0x45339c(0x410)+_0x45339c(0x3bd),'OqrTA':function(_0x1eadb6,_0x50a3bb){return _0x1eadb6(_0x50a3bb);},'nGRhb':_0x45339c(0x410)+_0x45339c(0x26b)+_0x45339c(0x15b),'wjvJe':function(_0x527f65,_0x1ad27f){return _0x527f65/_0x1ad27f;},'uBSxs':function(_0x2fccca,_0x131802){return _0x2fccca(_0x131802);},'NOKSL':_0x45339c(0x410)+_0x45339c(0x235)+'v','yZgbD':function(_0x4efce2,_0x32735c){return _0x4efce2(_0x32735c);},'UIwZb':_0x45339c(0x410)+_0x45339c(0x14f)+'v','dbgUC':function(_0x45f87e,_0x5a9b1a){return _0x45f87e(_0x5a9b1a);},'OVjZv':function(_0x3bad75,_0x4e1b32){return _0x3bad75(_0x4e1b32);},'BUoli':function(_0x4c0ee0,_0x3c15bf){return _0x4c0ee0<=_0x3c15bf;},'ROPOy':function(_0x42ac5d,_0x5ee417){return _0x42ac5d<=_0x5ee417;},'wxgmj':function(_0x31c878,_0x4528cf){return _0x31c878*_0x4528cf;},'fyuqV':_0x45339c(0xb2)+_0x45339c(0x301),'LfbdJ':function(_0x14cb1b,_0x3735d3){return _0x14cb1b(_0x3735d3);},'JySkj':_0x45339c(0x1fb)+_0x45339c(0x321),'hYaAO':_0x45339c(0x23f)+_0x45339c(0x177)+_0x45339c(0x2b0),'MmVuK':function(_0x4f9948,_0x47dbd3){return _0x4f9948/_0x47dbd3;},'MCwNu':_0x45339c(0x2d9)+_0x45339c(0x160)+_0x45339c(0x3f1),'FyWYx':function(_0x2d711c){return _0x2d711c();},'oNjnq':function(_0x465e89,_0x7bc84d,_0x3fcf91,_0xb17d20,_0x1a52c7,_0xa38a52,_0x18550c,_0x203407,_0x4d3fcd,_0x10a286,_0x283c13){return _0x465e89(_0x7bc84d,_0x3fcf91,_0xb17d20,_0x1a52c7,_0xa38a52,_0x18550c,_0x203407,_0x4d3fcd,_0x10a286,_0x283c13);},'OhnfR':function(_0x255d19,_0x36edf6,_0x1e940c,_0x578cc0,_0x43a527,_0x354f9c,_0x340c8c,_0x290307,_0x314a58){return _0x255d19(_0x36edf6,_0x1e940c,_0x578cc0,_0x43a527,_0x354f9c,_0x340c8c,_0x290307,_0x314a58);},'TVaHy':function(_0x526404,_0x3082aa,_0x252d3d,_0x25c42b,_0x119db0,_0x4606e1,_0x351404,_0x5de92b,_0x432c03){return _0x526404(_0x3082aa,_0x252d3d,_0x25c42b,_0x119db0,_0x4606e1,_0x351404,_0x5de92b,_0x432c03);},'XrTnB':function(_0x3d23b1,_0x463e24,_0x596e77,_0x2efc4e,_0x2b3361){return _0x3d23b1(_0x463e24,_0x596e77,_0x2efc4e,_0x2b3361);},'SYNDQ':_0x45339c(0x445),'cIMTs':_0x45339c(0x168)+_0x45339c(0x14c),'vgItn':_0x45339c(0x2ab)+_0x45339c(0x277),'BFdwh':_0x45339c(0x101)+_0x45339c(0xb5),'DzsqN':_0x45339c(0xab)+'dy','lSEWq':_0x45339c(0x16d),'JGHqh':function(_0x3453bf,_0x75cee3,_0x4763b5){return _0x3453bf(_0x75cee3,_0x4763b5);}},_0x379341=document[_0x45339c(0x11d)+_0x45339c(0x22d)](_0x265b82[_0x45339c(0x12b)]),_0x2b223e=document[_0x45339c(0x11d)+_0x45339c(0x22d)](_0x265b82[_0x45339c(0x2d6)]),_0x4a1cff=document[_0x45339c(0x11d)+_0x45339c(0x22d)](_0x265b82[_0x45339c(0x208)]),_0x205751=document[_0x45339c(0x11d)+_0x45339c(0x22d)](_0x265b82[_0x45339c(0x452)]);_0x379341[_0x45339c(0x4a1)][_0x45339c(0x328)]=_0x265b82[_0x45339c(0xee)],_0x2b223e[_0x45339c(0x4a1)][_0x45339c(0x328)]=_0x265b82[_0x45339c(0x3e7)],_0x4a1cff[_0x45339c(0x330)]='',_0x205751[_0x45339c(0x330)]='',_0x265b82[_0x45339c(0x171)](setTimeout,()=>{const _0x421344=_0x45339c;try{const _0x55eba4=_0x265b82[_0x421344(0x1c9)](parseFloat,document[_0x421344(0x11d)+_0x421344(0x22d)](_0x265b82[_0x421344(0x225)])[_0x421344(0x1cf)]),_0x493e8e=_0x265b82[_0x421344(0x1c9)](parseFloat,document[_0x421344(0x11d)+_0x421344(0x22d)](_0x265b82[_0x421344(0x2b6)])[_0x421344(0x1cf)]),_0x2a7e71=_0x265b82[_0x421344(0xd7)](parseFloat,document[_0x421344(0x11d)+_0x421344(0x22d)](_0x265b82[_0x421344(0x1a8)])[_0x421344(0x1cf)]),_0x53cc3d=_0x265b82[_0x421344(0xd7)](parseFloat,document[_0x421344(0x11d)+_0x421344(0x22d)](_0x265b82[_0x421344(0x367)])[_0x421344(0x1cf)]),_0x464cc9=_0x265b82[_0x421344(0xd7)](parseFloat,document[_0x421344(0x11d)+_0x421344(0x22d)](_0x265b82[_0x421344(0x2bc)])[_0x421344(0x1cf)]),_0x30275b=_0x265b82[_0x421344(0x127)](_0x265b82[_0x421344(0xf1)](parseFloat,document[_0x421344(0x11d)+_0x421344(0x22d)](_0x265b82[_0x421344(0x3cc)])[_0x421344(0x1cf)]),0x1*-0x1363+0x1ade+-0x717),_0x5f4d70=_0x265b82[_0x421344(0x127)](_0x265b82[_0x421344(0x384)](parseFloat,document[_0x421344(0x11d)+_0x421344(0x22d)](_0x265b82[_0x421344(0x188)])[_0x421344(0x1cf)]),-0x6d*-0x2e+0x5be+-0x18f0),_0x26b1fe=_0x265b82[_0x421344(0x2a1)](_0x265b82[_0x421344(0x478)](parseFloat,document[_0x421344(0x11d)+_0x421344(0x22d)](_0x265b82[_0x421344(0x1af)])[_0x421344(0x1cf)]),-0x603*0x4+0x2399+-0xb29),_0x1e9cde=_0x265b82[_0x421344(0x2a1)](_0x265b82[_0x421344(0xb0)](parseFloat,document[_0x421344(0x11d)+_0x421344(0x22d)](_0x265b82[_0x421344(0x204)])[_0x421344(0x1cf)]),0x1607+0x11*0x49+-0x69f*0x4);if(_0x265b82[_0x421344(0xf1)](isNaN,_0x2a7e71)||_0x265b82[_0x421344(0x454)](isNaN,_0x55eba4)||_0x265b82[_0x421344(0x293)](isNaN,_0x493e8e))throw new Error(translations[currentLang][_0x421344(0x1a3)+_0x421344(0x133)]);if(_0x265b82[_0x421344(0x42f)](_0x55eba4,0x15b0+0x1eee+-0x349e)||_0x265b82[_0x421344(0x220)](_0x493e8e,0x2a1*-0xb+0x1e5c+-0x171))throw new Error(translations[currentLang][_0x421344(0x165)+_0x421344(0x2e7)]);const _0x316a4c=_0x265b82[_0x421344(0x41d)](_0x55eba4,_0x493e8e),_0x37fc74=_0x265b82[_0x421344(0x293)](parseFloat,document[_0x421344(0x11d)+_0x421344(0x22d)](_0x265b82[_0x421344(0x16f)])[_0x421344(0x1cf)]),_0x3046e5=_0x265b82[_0x421344(0x31d)](parseFloat,document[_0x421344(0x11d)+_0x421344(0x22d)](_0x265b82[_0x421344(0x270)])[_0x421344(0x1cf)]),_0x25fb54=_0x265b82[_0x421344(0x454)](parseFloat,document[_0x421344(0x11d)+_0x421344(0x22d)](_0x265b82[_0x421344(0x370)])[_0x421344(0x1cf)]),_0x3963fe=_0x265b82[_0x421344(0x40e)](_0x265b82[_0x421344(0x31d)](parseFloat,document[_0x421344(0x11d)+_0x421344(0x22d)](_0x265b82[_0x421344(0x164)])[_0x421344(0x1cf)]),-0x1*-0x1a07+0x2e3+-0x1c86),{dataConv:_0x5ceb98,dataEco:_0x3069c9,dataEcoAditivado:_0x36b80e}=_0x265b82[_0x421344(0x125)](getEditedReferenceData),_0x3c9c0e=_0x265b82[_0x421344(0x22a)](calculaMetricasParedeConvencional,_0x5ceb98,_0x55eba4,_0x493e8e,_0x2a7e71,_0x30275b,_0x5f4d70,_0x26b1fe,_0x1e9cde,_0x53cc3d,_0x464cc9),_0x550711=_0x265b82[_0x421344(0x46e)](calculaMetricasParedeEcologica,_0x3069c9,_0x55eba4,_0x493e8e,_0x37fc74,_0x25fb54,_0x3963fe,_0x3046e5,showlog=!![]),_0x47dd56=_0x265b82[_0x421344(0x298)](calculaMetricasParedeEcologica,_0x36b80e,_0x55eba4,_0x493e8e,_0x37fc74,_0x25fb54,_0x3963fe,_0x3046e5,showlog=![]);_0x265b82[_0x421344(0x173)](displayResults,_0x3c9c0e,_0x550711,_0x47dd56,_0x316a4c);}catch(_0x2cb93a){_0x379341[_0x421344(0x4a1)][_0x421344(0x328)]=_0x265b82[_0x421344(0x3e7)],_0x2b223e[_0x421344(0x4a1)][_0x421344(0x328)]=_0x265b82[_0x421344(0x3e7)],console[_0x421344(0x396)](_0x2cb93a),_0x4a1cff[_0x421344(0x330)]=_0x421344(0x14a)+_0x421344(0x274)+_0x421344(0x3e0)+'\x22>'+_0x2cb93a[_0x421344(0x264)]+_0x421344(0x327);}},-0x57e*-0x1+0x2b9+-0x1*0x7d3);}function setLanguage(_0x4f1f18){const _0x28f0c2=_0x36c02f,_0x35777f={'uLmtQ':_0x28f0c2(0x364)+_0x28f0c2(0xf8),'vyRbK':function(_0x54d04c,_0x27a8b0){return _0x54d04c===_0x27a8b0;},'uetEZ':_0x28f0c2(0x2a3)+_0x28f0c2(0x315),'xSnUM':_0x28f0c2(0x3a4),'lcuVS':_0x28f0c2(0x1f7)+_0x28f0c2(0x331),'NNjab':_0x28f0c2(0x468)+_0x28f0c2(0xd6),'jkkHT':function(_0x5ca427){return _0x5ca427();}};currentLang=_0x4f1f18,localStorage[_0x28f0c2(0x492)](_0x35777f[_0x28f0c2(0x1ed)],_0x4f1f18),document[_0x28f0c2(0x40c)+_0x28f0c2(0x48e)][_0x28f0c2(0x1e5)]=_0x4f1f18[_0x28f0c2(0x1df)]('-')[-0xac3+0xb*-0x45+-0x7*-0x1f6],document[_0x28f0c2(0x3da)+_0x28f0c2(0x16a)](_0x35777f[_0x28f0c2(0x439)])[_0x28f0c2(0x1ca)](_0x56c984=>{const _0x2fb1c0=_0x28f0c2,_0x362880=_0x56c984[_0x2fb1c0(0xde)+'te'](_0x35777f[_0x2fb1c0(0x3fd)]);translations[_0x4f1f18][_0x362880]&&(_0x35777f[_0x2fb1c0(0x132)](_0x362880,_0x35777f[_0x2fb1c0(0x30a)])?_0x56c984[_0x2fb1c0(0x330)]=translations[_0x4f1f18][_0x362880]:_0x56c984[_0x2fb1c0(0x390)+'t']=translations[_0x4f1f18][_0x362880]);}),document[_0x28f0c2(0x3da)+_0x28f0c2(0x16a)](_0x35777f[_0x28f0c2(0x484)])[_0x28f0c2(0x1ca)](_0x267f60=>{const _0x4de618=_0x28f0c2;_0x267f60[_0x4de618(0x390)+'t']=translations[_0x4f1f18][_0x4de618(0xd0)];}),_0x35777f[_0x28f0c2(0x233)](populateReferenceData);}function populateReferenceData(){const _0x432a1a=_0x36c02f,_0x14ca01={'Utqcq':_0x432a1a(0x3ec)+_0x432a1a(0x41f),'GNSpa':_0x432a1a(0x2ae)+_0x432a1a(0x3f7),'GxQHT':_0x432a1a(0x2fa)+'dy','mxVnJ':_0x432a1a(0xe7)+_0x432a1a(0x18c),'ZgFvG':_0x432a1a(0x161)+'er','SRweY':_0x432a1a(0x41b)+_0x432a1a(0x26a)+'t','FOFvF':_0x432a1a(0x2b4)+_0x432a1a(0x1c0),'soOKU':_0x432a1a(0x41b)+_0x432a1a(0xa5)+'d','MBjou':_0x432a1a(0x1f1)+_0x432a1a(0xe8),'XidwU':_0x432a1a(0x141)+'d','VVEcG':_0x432a1a(0x1c8)+_0x432a1a(0x148)+_0x432a1a(0x280),'qtWMh':_0x432a1a(0x433)+_0x432a1a(0x48f)+'nv','jRNWY':_0x432a1a(0x2a0)+_0x432a1a(0x3b7),'aqXgW':_0x432a1a(0x2a0)+_0x432a1a(0x366)+_0x432a1a(0x309),'LvfeR':_0x432a1a(0x2a0)+_0x432a1a(0x363),'TrYvB':_0x432a1a(0x2a0)+_0x432a1a(0x2cb)+'r','ffnJj':_0x432a1a(0x1f0)+_0x432a1a(0x3f5),'mSSjj':function(_0x57d0be,_0x377207){return _0x57d0be*_0x377207;},'CbToO':_0x432a1a(0x2e4)+_0x432a1a(0x375),'gXZSa':_0x432a1a(0x146)+'ut','CBdhG':_0x432a1a(0x1c8)+_0x432a1a(0x148)+_0x432a1a(0x15a),'UMQlf':_0x432a1a(0x433)+_0x432a1a(0x231)+'o','iXzXA':_0x432a1a(0x41b)+_0x432a1a(0x241)+'r','swEPp':function(_0x1fb8f6,_0x5dc1d3,_0xd7c8d2){return _0x1fb8f6(_0x5dc1d3,_0xd7c8d2);}},_0x578b36=document[_0x432a1a(0x11d)+_0x432a1a(0x22d)](_0x14ca01[_0x432a1a(0x34a)]),_0x25dd89=document[_0x432a1a(0x11d)+_0x432a1a(0x22d)](_0x14ca01[_0x432a1a(0xc2)]),_0x2302b4=document[_0x432a1a(0x11d)+_0x432a1a(0x22d)](_0x14ca01[_0x432a1a(0x10b)]),_0x46da34={'custo_cimento_kg':[_0x14ca01[_0x432a1a(0x257)],DEFAULT_DATA_CONVENCIONAL[_0x432a1a(0x283)+_0x432a1a(0x12c)],-0x239a+-0x1*-0x80b+0x1b8f*0x1+0.01],'custo_agua_litro':[_0x14ca01[_0x432a1a(0x2d8)],DEFAULT_DATA_CONVENCIONAL[_0x432a1a(0x186)+_0x432a1a(0x1cc)],0x393*-0x5+0x6fa+0xae5+0.001],'fator_emissao_co2_transporte':[_0x14ca01[_0x432a1a(0x477)],DEFAULT_DATA_CONVENCIONAL[_0x432a1a(0x1db)+_0x432a1a(0x239)+_0x432a1a(0x104)],-0x1*-0x96c+0x3b8+-0xd24+0.001],'co2_producao_cimento':[_0x14ca01[_0x432a1a(0x16b)],DEFAULT_DATA_ECOLOGICO[_0x432a1a(0x476)+_0x432a1a(0x116)],0x5e*0x43+0x2*-0xa91+0x25*-0x18+0.01]},_0x13e777={'fator_emissao_co2_fabricacao':[_0x14ca01[_0x432a1a(0x37b)],DEFAULT_DATA_CONVENCIONAL[_0x432a1a(0x1db)+_0x432a1a(0x3d2)+_0x432a1a(0x227)],0x24e0+-0x15c8+-0xf18+0.01],'custo_plastificante_litro':[_0x14ca01[_0x432a1a(0x376)],DEFAULT_DATA_CONVENCIONAL[_0x432a1a(0x324)+_0x432a1a(0x1b9)+_0x432a1a(0x399)],0x2c*0x6+0x1*-0x15f5+0x14ed+0.01],'custo_areia_m3':[_0x14ca01[_0x432a1a(0x15d)],DEFAULT_DATA_CONVENCIONAL[_0x432a1a(0x1d7)+_0x432a1a(0x13f)],-0x2690+-0x2114+0x47a5],'agua_producao_tijolo_conv':[_0x14ca01[_0x432a1a(0x316)],DEFAULT_DATA_CONVENCIONAL[_0x432a1a(0x18e)+_0x432a1a(0xe4)],-0xd7b*0x1+0x20f6+-0x1*0x137b+0.01],'residuos_m2_conv':[_0x14ca01[_0x432a1a(0x377)],DEFAULT_DATA_CONVENCIONAL[_0x432a1a(0x1d1)+'2'],0x746+-0x619*-0x1+-0xd5f+0.1],'cimento_traco_assentamento':[_0x14ca01[_0x432a1a(0x134)],DEFAULT_DATA_CONVENCIONAL[_0x432a1a(0x404)+_0x432a1a(0x431)+_0x432a1a(0x249)],0xe9*0x1+0x1fe0+-0x20c8],'cimento_traco_chapisco':[_0x14ca01[_0x432a1a(0x107)],DEFAULT_DATA_CONVENCIONAL[_0x432a1a(0x404)+_0x432a1a(0x2de)+'co'],0x174b+0x8e*-0x29+0x5*-0x1c],'cimento_traco_emboco':[_0x14ca01[_0x432a1a(0x36b)],DEFAULT_DATA_CONVENCIONAL[_0x432a1a(0x404)+_0x432a1a(0x172)],-0x2*-0x45a+-0x887*0x3+-0x1*-0x10e2],'cimento_traco_reboco':[_0x14ca01[_0x432a1a(0x21d)],DEFAULT_DATA_CONVENCIONAL[_0x432a1a(0x404)+_0x432a1a(0x2c8)],-0x828+0x4*-0x4d9+0x1b8d]},_0x280106={'fracao_cimento_por_tijolo':[_0x14ca01[_0x432a1a(0x35f)],_0x14ca01[_0x432a1a(0x3b4)](DEFAULT_DATA_ECOLOGICO[_0x432a1a(0x3b1)+_0x432a1a(0x435)+_0x432a1a(0x1d5)],-0x183+0x1ba8+0x13*-0x15b),-0x223+-0xcfc+0xf1f+0.1],'custo_cola_litro':[_0x14ca01[_0x432a1a(0x289)],DEFAULT_DATA_ECOLOGICO[_0x432a1a(0x37c)+_0x432a1a(0x1cc)],0xa10+-0x141b+0xa0b+0.01],'custo_rejunte_litro':[_0x14ca01[_0x432a1a(0x3f9)],DEFAULT_DATA_ECOLOGICO[_0x432a1a(0x39a)+_0x432a1a(0x3a8)],-0x1e6b+-0x6e0+0x1*0x254b+0.01],'agua_producao_tijolo_eco':[_0x14ca01[_0x432a1a(0x2c0)],DEFAULT_DATA_ECOLOGICO[_0x432a1a(0x18e)+_0x432a1a(0xe4)],0x7b*-0x19+-0x26f7+0x32fa+0.01],'residuos_m2_eco':[_0x14ca01[_0x432a1a(0x3b3)],DEFAULT_DATA_ECOLOGICO[_0x432a1a(0x1d1)+'2'],-0x6a2+-0x1709*-0x1+-0xd*0x143+0.1],'fator_emissao_co2_poliester_incinerado':[_0x14ca01[_0x432a1a(0x359)],DEFAULT_DATA_ECOLOGICO_ADITIVADO[_0x432a1a(0x1db)+_0x432a1a(0x263)+_0x432a1a(0x449)+_0x432a1a(0x22f)],0x1*-0xb7a+-0x254b+0x30c5+0.1]},_0x2874b8=(_0x5cf268,_0x1ad5b3)=>{const _0x2a8d74=_0x432a1a;_0x5cf268[_0x2a8d74(0x330)]='';for(const [_0x49f3b1,[_0x37745e,_0x4fcf11,_0x3dc747]]of Object[_0x2a8d74(0x1c2)](_0x1ad5b3)){const _0x79d99=translations[currentLang][_0x37745e]||_0x37745e,_0x68e1e1=_0x79d99[_0x2a8d74(0x21b)](/\(([^)]+)\)/),_0x2b1732=_0x68e1e1?_0x68e1e1[-0x1*0xab4+0x5*0x112+0x55b]:'',_0x4b4f38=_0x79d99[_0x2a8d74(0x24b)](/\s*\(([^)]+)\)/,'')[_0x2a8d74(0xff)](),_0x355749=_0x5cf268[_0x2a8d74(0x275)](),_0x2c0967=_0x355749[_0x2a8d74(0x26c)](),_0x6a0642=_0x355749[_0x2a8d74(0x26c)]();_0x2c0967[_0x2a8d74(0x390)+'t']=_0x4b4f38,_0x2b1732?_0x6a0642[_0x2a8d74(0x330)]=_0x2a8d74(0x19c)+_0x2a8d74(0xe6)+_0x2a8d74(0x3a0)+_0x2a8d74(0x33f)+_0x2a8d74(0x438)+_0x2a8d74(0x28a)+_0x2a8d74(0x325)+_0x2a8d74(0xe6)+_0x2a8d74(0x391)+_0x2a8d74(0x279)+_0x2a8d74(0x350)+_0x2a8d74(0x1b4)+_0x2a8d74(0x2f8)+_0x2a8d74(0xfc)+_0x49f3b1+_0x2a8d74(0x496)+_0x4fcf11+_0x2a8d74(0x1d4)+_0x3dc747+(_0x2a8d74(0x123)+_0x2a8d74(0xe6)+_0x2a8d74(0x487)+_0x2a8d74(0xf3)+_0x2a8d74(0x2a9)+_0x2a8d74(0x3f2))+_0x2b1732+(_0x2a8d74(0x380)+_0x2a8d74(0xe6)+_0x2a8d74(0x335)+_0x2a8d74(0xc0)):_0x6a0642[_0x2a8d74(0x330)]=_0x2a8d74(0x135)+_0x2a8d74(0x3e4)+_0x2a8d74(0x11c)+_0x2a8d74(0x3c5)+_0x2a8d74(0x45c)+_0x2a8d74(0x422)+_0x2a8d74(0xfc)+_0x49f3b1+_0x2a8d74(0x496)+_0x4fcf11+_0x2a8d74(0x1d4)+_0x3dc747+'\x22>';}};_0x14ca01[_0x432a1a(0x489)](_0x2874b8,_0x578b36,_0x46da34),_0x14ca01[_0x432a1a(0x489)](_0x2874b8,_0x25dd89,_0x13e777),_0x14ca01[_0x432a1a(0x489)](_0x2874b8,_0x2302b4,_0x280106);}function createOrUpdateChart(_0x2e82e6,_0x4c4b33,_0x41a9bf,_0x4900b6,_0x2ba4eb){const _0xd99622=_0x36c02f,_0xa417bd={'BvtUg':function(_0x1d7dd1,_0x3e4ef9){return _0x1d7dd1===_0x3e4ef9;},'ZpmRy':function(_0x5984bd,_0x3bb5fc){return _0x5984bd(_0x3bb5fc);},'bghrr':function(_0x28be06,_0x19801e,_0x405884){return _0x28be06(_0x19801e,_0x405884);},'mumjz':_0xd99622(0x37a),'GPIWx':_0xd99622(0x2e5)+_0xd99622(0x19a)+'6)','bSpkz':_0xd99622(0x36d)+_0xd99622(0x217)+'6)','daAer':_0xd99622(0x2e1)+_0xd99622(0x2a4)+_0xd99622(0x31c),'BwyUx':_0xd99622(0x144)+_0xd99622(0x151),'cEDfe':_0xd99622(0x15e)+_0xd99622(0x182),'Rszdv':_0xd99622(0x48a)+_0xd99622(0x3ce)};_0x2e82e6&&_0x2e82e6[_0xd99622(0x194)]();const _0x24a15b=document[_0xd99622(0x11d)+_0xd99622(0x22d)](_0x4c4b33)[_0xd99622(0x27d)]('2d');return new Chart(_0x24a15b,{'type':_0xa417bd[_0xd99622(0x1ec)],'data':{'labels':[translations[currentLang][_0xd99622(0x2ef)+_0xd99622(0xbe)+'al'],translations[currentLang][_0xd99622(0x2ef)+_0xd99622(0x411)],translations[currentLang][_0xd99622(0x2ef)+_0xd99622(0x411)+_0xd99622(0x33b)]],'datasets':[{'label':_0x41a9bf,'data':_0x2ba4eb,'backgroundColor':[_0xa417bd[_0xd99622(0x166)],_0xa417bd[_0xd99622(0x2b2)],_0xa417bd[_0xd99622(0x3af)]],'borderColor':[_0xa417bd[_0xd99622(0x1c1)],_0xa417bd[_0xd99622(0xc3)],_0xa417bd[_0xd99622(0x1f2)]],'borderWidth':0x1}]},'options':{'responsive':!![],'plugins':{'legend':{'display':![]},'title':{'display':!![],'text':_0x4900b6,'font':{'size':0x10}},'tooltip':{'callbacks':{'label':function(_0x29e29a){const _0x5f29b0=_0xd99622,_0x3f7146=_0x29e29a[_0x5f29b0(0x219)]['y'];if(_0xa417bd[_0x5f29b0(0xd9)](_0x3f7146,null))return'';const _0x1d176e=_0xa417bd[_0x5f29b0(0x37e)](formatNumber,_0x3f7146);if(_0x41a9bf[_0x5f29b0(0x2ba)]('R$'))return _0x5f29b0(0x251)+_0x1d176e;return(_0x29e29a[_0x5f29b0(0x481)][_0x5f29b0(0x2dd)]||'')+':\x20'+_0x1d176e;}}}},'scales':{'y':{'ticks':{'callback':function(_0x15f86f){const _0x3d22db=_0xd99622,_0x5d9069=_0xa417bd[_0x3d22db(0x278)](formatNumber,_0x15f86f,{'maximumFractionDigits':0x0});if(_0x41a9bf[_0x3d22db(0x2ba)]('R$'))return _0x3d22db(0x251)+_0x5d9069;return _0x5d9069;}}}}}});}function displayResults(_0x2e033f,_0x458e10,_0x1a57c5,_0x32fa2f){const _0x37f443=_0x36c02f,_0x1c6909={'SmAVX':_0x37f443(0xab)+'dy','jkUEo':_0x37f443(0xab)+_0x37f443(0x40d)+'do','qxQPb':function(_0x84eb1,_0x2e54ee){return _0x84eb1(_0x2e54ee);},'yDQkw':function(_0xcca80a,_0x798d47,_0x418054){return _0xcca80a(_0x798d47,_0x418054);},'OCMmM':function(_0x21cfc5,_0x420645){return _0x21cfc5(_0x420645);},'XoCUx':function(_0x5201c5,_0x55cddb){return _0x5201c5(_0x55cddb);},'BdzZx':function(_0x54bd33,_0x245dc2){return _0x54bd33(_0x245dc2);},'juPYK':function(_0x3e6350,_0x566c6c){return _0x3e6350(_0x566c6c);},'BTbdU':function(_0xbfd70a,_0x5e0e53){return _0xbfd70a(_0x5e0e53);},'PlDBO':function(_0x19b679,_0x6db6a9,_0x3c4ee7){return _0x19b679(_0x6db6a9,_0x3c4ee7);},'EBrXl':function(_0x2d2828,_0x3982fc,_0x31174b){return _0x2d2828(_0x3982fc,_0x31174b);},'Avdml':function(_0x328bc5,_0x8fef2){return _0x328bc5(_0x8fef2);},'cnnQt':function(_0x3b3dd9,_0x3a9f1f){return _0x3b3dd9(_0x3a9f1f);},'LmcZx':function(_0x3ea671,_0x468ef4){return _0x3ea671(_0x468ef4);},'tiBQk':function(_0xdebd47,_0x284f22){return _0xdebd47(_0x284f22);},'ZPNHH':function(_0x3fc7c0,_0x3c6238){return _0x3fc7c0(_0x3c6238);},'fJgMb':function(_0x44a621,_0xa55719){return _0x44a621(_0xa55719);},'YEeKI':function(_0x45f18b,_0x21933a){return _0x45f18b(_0x21933a);},'MGaNp':function(_0x579131,_0xd5a837,_0x4c8552,_0x3b8eff,_0x1b3f49,_0x1548b4){return _0x579131(_0xd5a837,_0x4c8552,_0x3b8eff,_0x1b3f49,_0x1548b4);},'zIVQV':_0x37f443(0x286),'cndUa':_0x37f443(0xf9)+'t','cPfRI':function(_0x19705e,_0x15ab74,_0x38b3d9,_0x569ec1,_0x313515,_0x509fe7){return _0x19705e(_0x15ab74,_0x38b3d9,_0x569ec1,_0x313515,_0x509fe7);},'nYePX':_0x37f443(0x3dd)+'t','iQHHy':_0x37f443(0x2e3),'jJqde':_0x37f443(0x168)+_0x37f443(0x14c),'ccZlj':_0x37f443(0x445),'IWBVd':_0x37f443(0x2ab)+_0x37f443(0x277),'LQkir':_0x37f443(0x16d)},_0x3a8b39=document[_0x37f443(0x11d)+_0x37f443(0x22d)](_0x1c6909[_0x37f443(0x28c)]),_0x2447ec=document[_0x37f443(0x11d)+_0x37f443(0x22d)](_0x1c6909[_0x37f443(0x284)]),_0x13ea24=_0x37f443(0x3ee)+_0x37f443(0xb6)+_0x37f443(0xd2)+_0x37f443(0x364)+_0x37f443(0x3f4)+_0x37f443(0x39b)+translations[currentLang][_0x37f443(0x355)]+(_0x37f443(0x1ab)+_0x37f443(0x196)+_0x37f443(0xdd)+_0x37f443(0x276)+_0x37f443(0x1d3)+_0x37f443(0xc8)+'>')+_0x1c6909[_0x37f443(0x1dc)](formatNumber,_0x32fa2f)+(_0x37f443(0x230)+_0x37f443(0x3ac)+_0x37f443(0x266)+_0x37f443(0x3ee)+_0x37f443(0xb6)+_0x37f443(0xd2)+_0x37f443(0x364)+_0x37f443(0x31b)+_0x37f443(0x154))+translations[currentLang][_0x37f443(0x311)+'s']+(_0x37f443(0x1ab)+_0x37f443(0x196)+_0x37f443(0x1e3)+_0x37f443(0x333)+_0x37f443(0x2e0))+_0x1c6909[_0x37f443(0x3ed)](formatNumber,_0x2e033f[_0x37f443(0x202)],{'minimumFractionDigits':0x0,'maximumFractionDigits':0x0})+(_0x37f443(0xe5)+_0x37f443(0xe6)+_0x37f443(0x306)+_0x37f443(0x2d2)+_0x37f443(0x13a))+_0x1c6909[_0x37f443(0x3ed)](formatNumber,_0x458e10[_0x37f443(0x202)],{'minimumFractionDigits':0x0,'maximumFractionDigits':0x0})+(_0x37f443(0xe5)+_0x37f443(0x3ac)+_0x37f443(0x1f5)+_0x37f443(0x2c3)+_0x37f443(0x196)+_0x37f443(0x13d)+_0x37f443(0x1c4)+_0x37f443(0x2a5)+_0x37f443(0x2ff))+translations[currentLang][_0x37f443(0x153)+_0x37f443(0x1de)]+(_0x37f443(0x1ab)+_0x37f443(0x196)+_0x37f443(0x1e3)+_0x37f443(0x333)+_0x37f443(0x2e0))+_0x1c6909[_0x37f443(0x1dc)](formatNumber,_0x2e033f[_0x37f443(0x33d)])+(_0x37f443(0x184)+_0x37f443(0x357)+_0x37f443(0x338)+_0x37f443(0xbd)+_0x37f443(0x474)+'\x22>')+_0x1c6909[_0x37f443(0x1dc)](formatNumber,_0x458e10[_0x37f443(0x33d)])+(_0x37f443(0x184)+_0x37f443(0x185)+_0x37f443(0x111)+_0x37f443(0x467)+_0x37f443(0x497)+_0x37f443(0x325)+_0x37f443(0x3d6)+_0x37f443(0x110)+_0x37f443(0xa3)+_0x37f443(0x1d6))+translations[currentLang][_0x37f443(0x302)+_0x37f443(0x43a)]+(_0x37f443(0x1ab)+_0x37f443(0x196)+_0x37f443(0x1e3)+_0x37f443(0x333)+_0x37f443(0x2e0))+_0x1c6909[_0x37f443(0x46d)](formatNumber,_0x2e033f[_0x37f443(0x3a6)])+(_0x37f443(0x1f9)+_0x37f443(0xe6)+_0x37f443(0x306)+_0x37f443(0x2d2)+_0x37f443(0x13a))+_0x1c6909[_0x37f443(0x126)](formatNumber,_0x458e10[_0x37f443(0x3a6)])+(_0x37f443(0x1e0)+_0x37f443(0xe6)+_0x37f443(0x3ee)+_0x37f443(0x2f0)+_0x37f443(0x1ee)+_0x37f443(0xe6)+_0x37f443(0x485)+_0x37f443(0x1ac)+_0x37f443(0x2e6)+_0x37f443(0x1a5))+translations[currentLang][_0x37f443(0xc9)+_0x37f443(0x265)]+(_0x37f443(0x1ab)+_0x37f443(0x196)+_0x37f443(0x1e3)+_0x37f443(0x333)+_0x37f443(0x2e0))+_0x1c6909[_0x37f443(0x36f)](formatNumber,_0x2e033f[_0x37f443(0x2d5)])+(_0x37f443(0x32b)+_0x37f443(0xe6)+_0x37f443(0x1bb)+_0x37f443(0x12a)+_0x37f443(0x2e0))+_0x1c6909[_0x37f443(0x1dc)](formatNumber,_0x458e10[_0x37f443(0x2d5)])+(_0x37f443(0x383)+_0x37f443(0x1c5)+_0x37f443(0x335)+_0x37f443(0xb6)+_0x37f443(0x159)+_0x37f443(0x170)+_0x37f443(0x195)+_0x37f443(0x2f6)+_0x37f443(0x1ba)+'\x22>')+translations[currentLang][_0x37f443(0x282)+'st']+(_0x37f443(0x1ab)+_0x37f443(0x196)+_0x37f443(0x1e3)+_0x37f443(0x333)+_0x37f443(0xa2))+_0x1c6909[_0x37f443(0x3c2)](formatNumber,_0x2e033f[_0x37f443(0x26f)])+(_0x37f443(0x1ab)+_0x37f443(0x196)+_0x37f443(0x2eb)+_0x37f443(0xcf)+_0x37f443(0x121))+_0x1c6909[_0x37f443(0x369)](formatNumber,_0x458e10[_0x37f443(0x26f)])+(_0x37f443(0x1e6)+_0x37f443(0x24a)+_0x37f443(0x2bb)+_0x37f443(0x156));_0x3a8b39[_0x37f443(0x330)]=_0x13ea24;const _0x29dec6=_0x37f443(0x3ee)+_0x37f443(0xb6)+_0x37f443(0xd2)+_0x37f443(0x364)+_0x37f443(0x3f4)+_0x37f443(0x39b)+translations[currentLang][_0x37f443(0x355)]+(_0x37f443(0x1ab)+_0x37f443(0x196)+_0x37f443(0xdd)+_0x37f443(0x41c)+_0x37f443(0x1d3)+_0x37f443(0xc8)+'>')+_0x1c6909[_0x37f443(0x36f)](formatNumber,_0x32fa2f)+(_0x37f443(0x230)+_0x37f443(0x3ac)+_0x37f443(0x1f5)+_0x37f443(0x2c3)+_0x37f443(0x196)+_0x37f443(0x13d)+_0x37f443(0x24e)+_0x37f443(0x145))+translations[currentLang][_0x37f443(0x311)+'s']+(_0x37f443(0x1ab)+_0x37f443(0x196)+_0x37f443(0x1e3)+_0x37f443(0x333)+_0x37f443(0x2e0))+_0x1c6909[_0x37f443(0x2bd)](formatNumber,_0x2e033f[_0x37f443(0x202)],{'minimumFractionDigits':0x0,'maximumFractionDigits':0x0})+(_0x37f443(0xe5)+_0x37f443(0xe6)+_0x37f443(0x306)+_0x37f443(0x2d2)+_0x37f443(0x13a))+_0x1c6909[_0x37f443(0x234)](formatNumber,_0x1a57c5[_0x37f443(0x202)],{'minimumFractionDigits':0x0,'maximumFractionDigits':0x0})+(_0x37f443(0xe5)+_0x37f443(0x3ac)+_0x37f443(0x1f5)+_0x37f443(0x2c3)+_0x37f443(0x196)+_0x37f443(0x13d)+_0x37f443(0x1c4)+_0x37f443(0x2a5)+_0x37f443(0x2ff))+translations[currentLang][_0x37f443(0x153)+_0x37f443(0x1de)]+(_0x37f443(0x1ab)+_0x37f443(0x196)+_0x37f443(0x1e3)+_0x37f443(0x333)+_0x37f443(0x2e0))+_0x1c6909[_0x37f443(0x4a0)](formatNumber,_0x2e033f[_0x37f443(0x33d)])+(_0x37f443(0x184)+_0x37f443(0x357)+_0x37f443(0x338)+_0x37f443(0xbd)+_0x37f443(0x474)+'\x22>')+_0x1c6909[_0x37f443(0x1dc)](formatNumber,_0x1a57c5[_0x37f443(0x33d)])+(_0x37f443(0x184)+_0x37f443(0x357)+_0x37f443(0x394)+_0x37f443(0x341)+_0x37f443(0xe6)+_0x37f443(0x323)+_0x37f443(0x212)+_0x37f443(0x444)+_0x37f443(0x178))+translations[currentLang][_0x37f443(0x302)+_0x37f443(0x43a)]+(_0x37f443(0x1ab)+_0x37f443(0x196)+_0x37f443(0x1e3)+_0x37f443(0x333)+_0x37f443(0x2e0))+_0x1c6909[_0x37f443(0x124)](formatNumber,_0x2e033f[_0x37f443(0x3a6)])+(_0x37f443(0x1f9)+_0x37f443(0xe6)+_0x37f443(0x306)+_0x37f443(0x2d2)+_0x37f443(0x13a))+_0x1c6909[_0x37f443(0x3c2)](formatNumber,_0x1a57c5[_0x37f443(0x3a6)])+(_0x37f443(0x1f9)+_0x37f443(0x3ac)+_0x37f443(0x1f5)+_0x37f443(0x2c3)+_0x37f443(0x196)+_0x37f443(0x13d)+_0x37f443(0x167)+_0x37f443(0x24f)+_0x37f443(0x258))+translations[currentLang][_0x37f443(0xc9)+_0x37f443(0x265)]+(_0x37f443(0x1ab)+_0x37f443(0x196)+_0x37f443(0x1e3)+_0x37f443(0x333)+_0x37f443(0x2e0))+_0x1c6909[_0x37f443(0x3c1)](formatNumber,_0x2e033f[_0x37f443(0x2d5)])+(_0x37f443(0x32b)+_0x37f443(0xe6)+_0x37f443(0x1bb)+_0x37f443(0x12a)+_0x37f443(0x2e0))+_0x1c6909[_0x37f443(0x4a0)](formatNumber,_0x1a57c5[_0x37f443(0x2d5)])+(_0x37f443(0x32b)+_0x37f443(0x2bb)+_0x37f443(0x325)+_0x37f443(0x106)+_0x37f443(0x40a)+_0x37f443(0x470)+_0x37f443(0x268)+_0x37f443(0x1eb))+translations[currentLang][_0x37f443(0x282)+'st']+(_0x37f443(0x1ab)+_0x37f443(0x196)+_0x37f443(0x1e3)+_0x37f443(0x333)+_0x37f443(0xa2))+_0x1c6909[_0x37f443(0x469)](formatNumber,_0x2e033f[_0x37f443(0x26f)])+(_0x37f443(0x1ab)+_0x37f443(0x196)+_0x37f443(0x2eb)+_0x37f443(0xcf)+_0x37f443(0x121))+_0x1c6909[_0x37f443(0x415)](formatNumber,_0x1a57c5[_0x37f443(0x26f)])+(_0x37f443(0x1ab)+_0x37f443(0x211)+_0x37f443(0x196)+_0x37f443(0x1f5)+_0x37f443(0x3d8)+_0x37f443(0x3d9)+_0x37f443(0x269)+_0x37f443(0x45e)+'\x22>')+translations[currentLang][_0x37f443(0x201)+_0x37f443(0x44e)]+(_0x37f443(0x1ab)+_0x37f443(0x196)+_0x37f443(0x1e3)+_0x37f443(0x333)+_0x37f443(0x3a5)+_0x37f443(0x158)+_0x37f443(0xd2)+_0x37f443(0x463)+_0x37f443(0x238)+_0x37f443(0x2a8))+_0x1c6909[_0x37f443(0x45f)](formatNumber,_0x1a57c5[_0x37f443(0x3cd)+_0x37f443(0x432)])+(_0x37f443(0x1f9)+_0x37f443(0x3ac)+_0x37f443(0x1f5)+_0x37f443(0x2c3)+_0x37f443(0x196)+_0x37f443(0x13d)+_0x37f443(0x493)+_0x37f443(0x43f)+_0x37f443(0x17e))+translations[currentLang][_0x37f443(0x24d)+_0x37f443(0xba)]+(_0x37f443(0x1ab)+_0x37f443(0x196)+_0x37f443(0x1e3)+_0x37f443(0x333)+_0x37f443(0x3a5)+_0x37f443(0x158)+_0x37f443(0xd2)+_0x37f443(0x463)+_0x37f443(0x238)+_0x37f443(0x2a8))+_0x1c6909[_0x37f443(0x469)](formatNumber,_0x1a57c5[_0x37f443(0x406)+_0x37f443(0x368)])+(_0x37f443(0x184)+_0x37f443(0x357)+_0x37f443(0x394)+_0x37f443(0x341)+_0x37f443(0xe6)+_0x37f443(0x323)+_0x37f443(0x212)+_0x37f443(0x25b)+_0x37f443(0x3fc))+translations[currentLang][_0x37f443(0x24c)+_0x37f443(0x1de)]+(_0x37f443(0x1ab)+_0x37f443(0x196)+_0x37f443(0x1e3)+_0x37f443(0x333)+_0x37f443(0x2e0))+_0x1c6909[_0x37f443(0x3c2)](formatNumber,_0x2e033f[_0x37f443(0x33d)])+(_0x37f443(0x184)+_0x37f443(0x357)+_0x37f443(0x338)+_0x37f443(0xbd)+_0x37f443(0x474)+'\x22>')+_0x1c6909[_0x37f443(0x23a)](formatNumber,_0x1a57c5[_0x37f443(0x47e)+_0x37f443(0x2c4)])+(_0x37f443(0x184)+_0x37f443(0x357)+_0x37f443(0x394)+'\x20');_0x2447ec[_0x37f443(0x330)]=_0x29dec6;const _0x2b22b6=[_0x2e033f[_0x37f443(0x33d)],_0x458e10[_0x37f443(0x33d)],_0x1a57c5[_0x37f443(0x47e)+_0x37f443(0x2c4)]];co2Chart=_0x1c6909[_0x37f443(0x255)](createOrUpdateChart,co2Chart,_0x1c6909[_0x37f443(0x193)],translations[currentLang][_0x37f443(0x23c)],translations[currentLang][_0x37f443(0x23c)],_0x2b22b6);const _0x2bf451=[_0x2e033f[_0x37f443(0x3a6)],_0x458e10[_0x37f443(0x3a6)],_0x1a57c5[_0x37f443(0x3a6)]];wasteChart=_0x1c6909[_0x37f443(0x255)](createOrUpdateChart,wasteChart,_0x1c6909[_0x37f443(0x42d)],translations[currentLang][_0x37f443(0x281)],translations[currentLang][_0x37f443(0x281)],_0x2bf451);const _0x35a806=[_0x2e033f[_0x37f443(0x2d5)],_0x458e10[_0x37f443(0x2d5)],_0x1a57c5[_0x37f443(0x2d5)]];waterChart=_0x1c6909[_0x37f443(0xc1)](createOrUpdateChart,waterChart,_0x1c6909[_0x37f443(0x340)],translations[currentLang][_0x37f443(0x242)],translations[currentLang][_0x37f443(0x242)],_0x35a806);const _0x353cf4=[_0x2e033f[_0x37f443(0x26f)],_0x458e10[_0x37f443(0x26f)],_0x1a57c5[_0x37f443(0x26f)]];costChart=_0x1c6909[_0x37f443(0x255)](createOrUpdateChart,costChart,_0x1c6909[_0x37f443(0x100)],translations[currentLang][_0x37f443(0x42e)],translations[currentLang][_0x37f443(0x42e)],_0x353cf4),document[_0x37f443(0x11d)+_0x37f443(0x22d)](_0x1c6909[_0x37f443(0x3b8)])[_0x37f443(0x4a1)][_0x37f443(0x328)]=_0x1c6909[_0x37f443(0x23e)],document[_0x37f443(0x11d)+_0x37f443(0x22d)](_0x1c6909[_0x37f443(0x21a)])[_0x37f443(0x4a1)][_0x37f443(0x328)]=_0x1c6909[_0x37f443(0xf6)];}
+let currentLang = 'en-US'; // Default language
+
+const translations = {
+    'en-US': {
+        pageTitle: "Construction Impact Analysis",
+        mainTitle: "Construction Impact Analysis",
+        subTitle: "Compare the environmental and financial impact between conventional and ecological masonry.",
+        wallWidth: "Wall Width",
+        wallHeight: "Wall Height",
+        configConventional: "Configure Conventional Masonry Parameters",
+        brickType: "Brick Type",
+        selectBrickType: "Select brick type",
+        unitCost: "Unit Cost",
+        distFactoryReseller: "Distance from Factory to Reseller",
+        distResellerSite: "Distance from Reseller to Site",
+        mortarJoint: "Mortar Joint",
+        roughcastThickness: "Roughcast Thickness",
+        renderCoatThickness: "Render Coat Thickness",
+        plasterThickness: "Plaster Thickness",
+        configEcological: "Configure Ecological Masonry Parameters",
+        distFactorySite: "Distance from Factory to Site",
+        mortarAdhesiveYield: "Mortar Adhesive Yield",
+        groutThickness: "Grout Thickness",
+        unitBricksPerLiter: "bricks / L",
+        referenceData: "Reference Data",
+        referenceDataDesc: "This section allows you to edit the reference data used in the calculations.",
+        commonData: "Common Data",
+        description: "Description",
+        value: "Value",
+        conventionalMasonry: "Conventional Masonry",
+        ecologicalMasonry: "Ecological Masonry",
+        calculateButton: "Calculate Comparison",
+        calculating: "Calculating...",
+        comparisonStandardEco: "Comparison with Standard Ecological Brick",
+        indicator: "Indicator",
+        conventional: "Conventional",
+        ecological: "Ecological",
+        comparisonAdditiveEco: "Comparison with Ecological Brick with Additive",
+        ecologicalAdditive: "Ecological with Additive",
+        additiveEcoNote: "¹ The ecological brick with additives considers the use of a mixture with 15% polyester in its production.",
+        errorInvalidValues: "Please enter valid numeric values in all fields.",
+        errorPositiveValues: "Width and height must be positive values.",
+        // Table rows
+        wallArea: "Total Wall Area",
+        totalBricks: "Total Bricks",
+        carbonEmission: "Carbon Emission",
+        wasteGeneration: "Waste Generation",
+        waterConsumption: "Water Consumption",
+        materialCost: "Material Cost",
+        polyesterResidue: "Incorporated Polyester Residue",
+        co2EmissionReduction: "CO₂ Emission Reduction",
+        netCo2Emission: "Net CO₂ Emission",
+        // Charts
+        chartCO2: "Carbon Emission (kg CO₂)",
+        chartWaste: "Waste Generation (kg)",
+        chartWater: "Water Consumption (L)",
+        chartCost: "Material Cost (R$)",
+        // Chart Labels
+        chartLabelConventional: "Conventional",
+        chartLabelEcological: "Ecological",
+        chartLabelEcologicalAdditive: "Ecological with Additive",
+        // Reference Data Descriptions
+        refCostCement: "Cement Cost (R$/kg)",
+        refCostWater: "Water Cost (R$/L)",
+        refCO2FactorTransport: "CO₂ Emission Factor in Transport (kg CO₂/ton.km)",
+        refCO2ProdCement: "CO₂ Emission in Cement Production (kg/kg)",
+        refCO2FactorBrickProd: "CO₂ Emission in Brick Manufacturing (kg CO₂/kg)",
+        refCostPlasticizer: "Plasticizer Cost (R$/L)",
+        refCostSand: "Sand Cost (R$/m³)",
+        refWaterConsumptionBrickConv: "Water Consumption in Brick Production (L/unit)",
+        refWasteGenerationConv: "Waste Generation (kg/m²)",
+        refCementRatioMortar: "Mortar Mix: Cement Proportion (kg/m³)",
+        refCementRatioRoughcast: "Roughcast Mix: Cement Proportion (kg/m³)",
+        refCementRatioRender: "Render Coat Mix: Cement Proportion (kg/m³)",
+        refCementRatioPlaster: "Plaster Mix: Cement Proportion (kg/m³)",
+        refCementFractionEco: "Cement Fraction per Brick (%)",
+        refCostAdhesive: "Mortar Adhesive Cost (R$/L)",
+        refCostGrout: "Grout Cost (R$/L)",
+        refWaterConsumptionBrickEco: "Water Consumption in Brick Production (L/unit)",
+        refWasteGenerationEco: "Waste Generation (kg/m²)",
+        refCO2FactorPolyester: "CO₂ Emission Factor of Incinerated Polyester (kg CO₂/kg)",
+        langButton: "Mudar para Português",
+    },
+    'pt-BR': {
+        pageTitle: "Análise de Impacto Construtivo",
+        mainTitle: "Análise de Impacto Construtivo",
+        subTitle: "Compare o impacto ambiental e financeiro entre a alvenaria convencional e a ecológica.",
+        wallWidth: "Largura da Parede",
+        wallHeight: "Altura da Parede",
+        configConventional: "Configurar parâmetros da alvenaria convencional",
+        brickType: "Tipo de Tijolo",
+        selectBrickType: "Selecione o tipo de tijolo",
+        unitCost: "Custo unitário",
+        distFactoryReseller: "Distância da Fábrica até o revendedor",
+        distResellerSite: "Distância do revendedor até a obra",
+        mortarJoint: "Junta de assentamento",
+        roughcastThickness: "Espessura do chapisco",
+        renderCoatThickness: "Espessura do emboço",
+        plasterThickness: "Espessura do reboco",
+        configEcological: "Configurar parâmetros da alvenaria ecológica",
+        distFactorySite: "Distância da Fábrica até à obra",
+        mortarAdhesiveYield: "Rendimento cola assentamento",
+        groutThickness: "Espessura do rejunte",
+        unitBricksPerLiter: "tijolos / L",
+        referenceData: "Dados de Referência",
+        referenceDataDesc: "Esta seção permite editar os dados de referência utilizados nos cálculos.",
+        commonData: "Dados Comuns",
+        description: "Descrição",
+        value: "Valor",
+        conventionalMasonry: "Alvenaria Convencional",
+        ecologicalMasonry: "Alvenaria Ecológica",
+        calculateButton: "Calcular Comparativo",
+        calculating: "Calculando...",
+        comparisonStandardEco: "Comparação com o Tijolo Ecológico Padrão",
+        indicator: "Indicador",
+        conventional: "Convencional",
+        ecological: "Ecológico",
+        comparisonAdditiveEco: "Comparação com o Tijolo Ecológico com Aditivo",
+        ecologicalAdditive: "Ecológico Aditivado",
+        additiveEcoNote: "¹ O tijolo ecológico aditivado considera o uso de uma mistura com 15% de poliéster em sua produção.",
+        errorInvalidValues: "Por favor, insira valores numéricos válidos em todos os campos.",
+        errorPositiveValues: "A largura e a altura devem ser valores positivos.",
+        wallArea: "Área Total da Parede",
+        totalBricks: "Total de Tijolos",
+        carbonEmission: "Emissão de Carbono",
+        wasteGeneration: "Geração de Resíduos",
+        waterConsumption: "Consumo de Água",
+        materialCost: "Custo de Materiais",
+        polyesterResidue: "Resíduo de Poliéster incorporado",
+        co2EmissionReduction: "Redução na emissão CO₂",
+        netCo2Emission: "Emissão Líquida de CO₂",
+        chartCO2: "Emissão de Carbono (kg CO₂)",
+        chartWaste: "Geração de Resíduos (kg)",
+        chartWater: "Consumo de Água (L)",
+        chartCost: "Custo de Materiais (R$)",
+        // Rótulos dos Gráficos
+        chartLabelConventional: "Convencional",
+        chartLabelEcological: "Ecológico",
+        chartLabelEcologicalAdditive: "Ecológico Aditivado",
+        // Descrições dos Dados de Referência
+        refCostCement: "Custo do Cimento (R$/kg)",
+        refCostWater: "Custo da Água (R$/L)",
+        refCO2FactorTransport: "Fator de Emissão de CO₂ no Transporte (kg CO₂/ton.km)",
+        refCO2ProdCement: "Emissão de CO₂ na Produção do Cimento (kg/kg)",
+        refCO2FactorBrickProd: "Emissão de CO₂ na Fabricação do Tijolo (kg CO₂/kg)",
+        refCostPlasticizer: "Custo do Plastificante (R$/L)",
+        refCostSand: "Custo da Areia (R$/m³)",
+        refWaterConsumptionBrickConv: "Consumo de Água na Produção do Tijolo (L/un)",
+        refWasteGenerationConv: "Geração de Resíduos (kg/m²)",
+        refCementRatioMortar: "Traço do Assentamento: Proporção de Cimento (kg/m³)",
+        refCementRatioRoughcast: "Traço do Chapisco: Proporção de Cimento (kg/m³)",
+        refCementRatioRender: "Traço do Emboço: Proporção de Cimento (kg/m³)",
+        refCementRatioPlaster: "Traço do Reboco: Proporção de Cimento (kg/m³)",
+        refCementFractionEco: "Fração de Cimento por Tijolo (%)",
+        refCostAdhesive: "Custo da Cola de Assentamento (R$/L)",
+        refCostGrout: "Custo do Rejunte (R$/L)",
+        refWaterConsumptionBrickEco: "Consumo de Água na Produção do Tijolo (L/un)",
+        refWasteGenerationEco: "Geração de Resíduos (kg/m²)",
+        refCO2FactorPolyester: "Fator de Emissão de CO₂ do Poliéster Incinerado (kg CO₂/kg)",
+        langButton: "Switch to English",
+    }
+};
+
+const DEFAULT_DATA_CONVENCIONAL = {
+    altura_tijolo: 0.19,
+    largura_tijolo: 0.19,
+    profundidade_tijolo: 0.09,
+    massa_tijolo: 2.2, // kg/un
+    fator_emissao_co2_transporte: 0.062, // kg CO2 / (tonelada * km)
+    fator_emissao_co2_fabricacao: 0.3, // kg CO2 / kg de tijolo
+    
+    cimento_traco_assentamento: 230, // kg/m3
+    areia_traco_assentamento: 1, // m3
+    agua_traco_assentamento: 250, // L/m3
+    
+    cimento_traco_chapisco: 450, // kg/m3
+    areia_traco_chapisco: 1, // m3
+    agua_traco_chapisco: 225, // L/m3
+    
+    cimento_traco_emboco: 230, // kg/m3
+    areia_traco_emboco: 1, // m3
+    agua_traco_emboco: 250, // L/m3
+
+    cimento_traco_reboco: 170,
+    areia_traco_reboco: 1,
+    agua_traco_reboco: 250,
+
+    custo_cimento_kg: 0.50, // R$ por kg
+    custo_plastificante_litro: 20.00, // R$ por litro
+    custo_areia_m3: 200.00, // R$ por m3
+    custo_agua_litro: 0.006, // R$ por litro
+
+    argamassa_m2: 15, // kg
+    agua_producao_tijolo: 0.20, // L/un
+    agua_argamassa_saco: 5.00, // L/saco
+    co2_producao_tijolo: 0.50, // kg/un
+    co2_producao_cimento: 0.60, // kg/kg
+    co2_producao_argamassa: 2.50, // kg/saco
+    residuos_m2: 10.00, // kg
+    energia_m2: 150 // Wh
+};
+const DEFAULT_DATA_ECOLOGICO = {
+    altura_tijolo: 0.07,
+    largura_tijolo: 0.25,
+    profundidade_tijolo: 0.125,
+    massa_tijolo: 2.8, // kg/un
+    fator_emissao_co2_transporte: 0.062, // kg CO2 / (tonelada * km)
+    fracao_cimento_por_tijolo: 0.125, // 1/8 = 0,125 (ou 12,5%) [Traço Cimento:Solo = 1:7]
+    // fracao_cimento_por_tijolo: 0.111, // 1/9 = 0,111 (ou 11,1%) [Traço Cimento:Solo = 1:8]
+
+    custo_cimento_kg: 0.50, // R$ por kg
+    custo_cola_litro: 50.00, // R$ por litro
+    custo_rejunte_litro: 10.00, // R$ por m3
+    custo_agua_litro: 0.006, // R$ por litro
+
+    argamassa_m2: 8, // kg
+    agua_producao_tijolo: 0.05, // L/un
+    agua_argamassa_saco: 5.00, // L/saco
+    co2_producao_tijolo: 0.15, // kg/un
+    co2_producao_cimento: 0.60, // kg CO2/kg
+    residuos_m2: 2.00, // kg
+    energia_m2: 30 // Wh
+};
+const DEFAULT_DATA_ECOLOGICO_ADITIVADO = {
+    altura_tijolo: 0.07,
+    largura_tijolo: 0.25,
+    profundidade_tijolo: 0.125,
+    massa_tijolo: 2.8, // kg/un
+    fator_emissao_co2_transporte: 0.062, // kg CO2 / (tonelada * km)
+    fracao_cimento_por_tijolo: 0.125, // 1/8 = 0,125 (ou 12,5%) [Traço Cimento:Solo = 1:7]
+    // fracao_cimento_por_tijolo: 0.111, // 1/9 = 0,111 (ou 11,1%) [Traço Cimento:Solo = 1:8]
+    fator_emissao_co2_poliester_incinerado: 2.8, // kg CO2 / kg
+
+    custo_cimento_kg: 0.50, // R$ por kg
+    custo_cola_litro: 50.00, // R$ por litro
+    custo_rejunte_litro: 10.00, // R$ por m3
+    custo_agua_litro: 0.006, // R$ por litro
+
+    argamassa_m2: 8, // kg
+    agua_producao_tijolo: 0.05, // L/un
+    agua_argamassa_saco: 5.00, // L/saco
+    co2_producao_tijolo: 0.15, // kg/un
+    co2_producao_cimento: 0.60,
+    residuos_m2: 2.00, // kg
+    energia_m2: 30 // Wh
+};
+const PRICE_ARGAMASSA = 25.00; // R$ por saco
+
+let co2Chart; // Variável para armazenar a instância do gráfico
+let wasteChart; // Variável para o gráfico de resíduos
+let waterChart;
+let energyChart;
+let costChart;
+
+/**
+ * Formata um número para o padrão pt-BR.
+ * @param {number} value O número a ser formatado.
+ * @param {Intl.NumberFormatOptions} options Opções de formatação.
+ * @returns {string} O número formatado.
+ */
+function formatNumber(value, options = {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+}) {
+    if (typeof value !== 'number' || isNaN(value)) {
+        // Retorna um valor padrão ou string vazia para entradas inválidas
+        const emptyFormatted = (0).toLocaleString(currentLang, options);
+        return emptyFormatted;
+    }
+    return value.toLocaleString(currentLang, options);
+}
+
+document.getElementById('calculate-button').addEventListener('click', calculate);
+document.addEventListener('DOMContentLoaded', () => {
+    let savedLang = localStorage.getItem('language') || navigator.language || 'en-US';
+    // Handle cases like 'pt' from navigator.language to match 'pt-BR'
+    if (savedLang.startsWith('pt')) savedLang = 'pt-BR';    
+    const langToLoad = translations[savedLang] ? savedLang : 'en-US'; // Fallback to en-US    
+
+    document.getElementById('language-switcher').addEventListener('click', (event) => {
+        event.preventDefault();
+        // Alterna para o idioma oposto
+        const newLang = currentLang === 'en-US' ? 'pt-BR' : 'en-US';
+        setLanguage(newLang);
+    });
+    
+    populateReferenceData();
+    setLanguage(langToLoad);
+});
+
+
+function calculaMetricasParedeConvencional(materialData, larguraParede, alturaParede, custoTijolo, 
+    espessuraJunta, espessuraChapisco, espessuraEmboco, espessuraReboco, dist_fab_rev, dist_rev_obra) {
+    const metrics = {};
+    
+    // Quantidade de tijolos
+    const areaParede = larguraParede * alturaParede;
+    const alturaEfetivaTijolo  = espessuraJunta + materialData.altura_tijolo;
+    const larguraEfetivaTijolo = espessuraJunta + materialData.largura_tijolo;
+    const numTijolos = Math.ceil(areaParede / (alturaEfetivaTijolo * larguraEfetivaTijolo));
+    const volumeParede = areaParede * materialData.profundidade_tijolo
+    const volumeTijolo = materialData.altura_tijolo * materialData.largura_tijolo * materialData.profundidade_tijolo;
+    const massaTijolos = numTijolos * materialData.massa_tijolo;
+
+    // Perdas
+    const perdasAssentamento = 1.1; // 10% de perda na argamassa de assentamento
+    const perdasChapisco = 1.2; // 20% de perda no chapisco
+    const perdasEmboco = 1.5; // 50% de perda no emboço
+    const perdasReboco = 1.2; // 20% de perda no reboco
+
+    // Volumes necessários ao cálculo de consumo por etapa
+    const volumeTijolos = numTijolos * volumeTijolo;
+    const volumeAssentamento = (volumeParede - volumeTijolos) * perdasAssentamento; 
+    const volumeChapisco = (areaParede * espessuraChapisco) * perdasChapisco; 
+    const volumeEmboco = (areaParede * espessuraEmboco) * perdasEmboco;
+    const volumeReboco = (areaParede * espessuraReboco) * perdasReboco;
+
+    // Etapa de assentamento
+    const cimentoAssentamento   = volumeAssentamento * materialData.cimento_traco_assentamento;
+    const plastifAssentamento   = cimentoAssentamento * 0.002;
+    const areiaAssentamento     = volumeAssentamento * materialData.areia_traco_assentamento;
+    const aguaAssentamento      = volumeAssentamento * materialData.agua_traco_assentamento;
+
+    // Etapa de chapisco
+    const cimentoChapisco   = volumeChapisco * materialData.cimento_traco_chapisco;
+    const plastifChapisco   = cimentoChapisco * 0.002;
+    const areiaChapisco     = volumeChapisco * materialData.areia_traco_chapisco;
+    const aguaChapisco      = volumeChapisco * materialData.agua_traco_chapisco;
+
+    // Etapa de emboço
+    const cimentoEmboco   = volumeEmboco * materialData.cimento_traco_emboco; 
+    const plastifEmboco   = cimentoEmboco * 0.002;
+    const areiaEmboco     = volumeEmboco * materialData.areia_traco_emboco;
+    const aguaEmboco      = volumeEmboco * materialData.agua_traco_emboco;
+
+    // Etapa de reboco
+    const cimentoReboco   = volumeReboco * materialData.cimento_traco_reboco; 
+    const plastifReboco   = cimentoReboco * 0.002;
+    const areiaReboco     = volumeReboco * materialData.areia_traco_reboco;
+    const aguaReboco      = volumeReboco * materialData.agua_traco_reboco;
+    
+    
+    const totalCimento = cimentoAssentamento + cimentoChapisco + cimentoEmboco + cimentoReboco;
+    const totalPlastificante = plastifAssentamento + plastifChapisco + plastifEmboco + plastifReboco;
+    const totalAreia = areiaAssentamento + areiaChapisco + areiaEmboco + areiaReboco;
+    const totalAguaConstrucao = aguaAssentamento + aguaChapisco + aguaEmboco + aguaReboco;
+    
+    // Custo (materiais)
+    const custoTijolos = numTijolos * custoTijolo;
+    const custoCimento = totalCimento * materialData.custo_cimento_kg;
+    const custoPlastificante = totalPlastificante * materialData.custo_plastificante_litro;
+    const custoAreia = totalAreia * materialData.custo_areia_m3;
+    const custoAgua = totalAguaConstrucao * materialData.custo_agua_litro;
+
+    metrics.numTijolos = numTijolos;
+    metrics.custo = custoTijolos + custoCimento + custoPlastificante + custoAreia + custoAgua;
+
+    // Água
+    const totalAgua = (materialData.agua_producao_tijolo * numTijolos) + totalAguaConstrucao;                       
+    metrics.agua = totalAgua;
+
+    // CO2 Tijolo Cerâmico
+    const co2_producao = massaTijolos * materialData.fator_emissao_co2_fabricacao;
+                
+    dist_transporte = (dist_fab_rev * 2) + (dist_rev_obra * 2); // ida e volta
+    co2_transporte = dist_transporte * (massaTijolos/1000.0) * materialData.fator_emissao_co2_transporte;
+    // kg = km * ton * (kg CO2 / (ton * km))
+    metrics.co2 = co2_producao + co2_transporte;
+
+    // Resíduos por m²
+    metrics.residuos = materialData.residuos_m2 * areaParede;
+
+    // Energia por m²
+    metrics.energia = materialData.energia_m2 * areaParede;
+
+    // Relatório detalhado (para debug)
+    console.log(`--- Detalhes da alvenaria convencional ---`);
+    console.log(`Área da parede: ${formatNumber(areaParede)} m²`);
+    console.log(`Número de tijolos: ${formatNumber(numTijolos)}`);
+    console.log(`Massa dos tijolos: ${formatNumber(massaTijolos)} kg`);
+    console.log(`Volume de tijolos: ${formatNumber(volumeTijolos)} m³`);
+    console.log(`Volume de argamassa de assentamento: ${formatNumber(volumeAssentamento)} m³`);
+    console.log(`Volume de chapisco: ${formatNumber(volumeChapisco)} m³`);
+    console.log(`Volume de emboço: ${formatNumber(volumeEmboco)} m³`);
+    console.log(`Volume de reboco: ${formatNumber(volumeReboco)} m³`);
+    console.log(`Custo dos tijolos: R$ ${formatNumber(custoTijolos)}`);
+    console.log(`Custo do cimento: R$ ${formatNumber(custoCimento)}`);
+    console.log(`Custo do plastificante: R$ ${formatNumber(custoPlastificante)}`);
+    console.log(`Custo da areia: R$ ${formatNumber(custoAreia)}`);
+    console.log(`Custo da água: R$ ${formatNumber(custoAgua)}`);
+    console.log(`Custo de materiais: R$ ${formatNumber(metrics.custo)}`);
+    console.log(`CO2 da produção: ${formatNumber(co2_producao)} kg`);
+    console.log(`CO2 do transporte: ${formatNumber(co2_transporte)} kg`);
+
+    return metrics;
+}
+
+function calcularRejunte(area, diametroCordao) {
+  // area: área da parede em m² (número positivo)
+  // diametroCordao: diâmetro do cordão em mm (número positivo, ex.: 5 para 5mm)
+  
+  const l = 0.25; // comprimento do tijolo em metros
+  const h = 0.07; // altura do tijolo em metros
+  
+  // Densidade linear de canais (metros lineares por m²)
+  const densidadeLinear = (1 / l) + (1 / h); // ≈ 18.2857 m/m²
+  
+  // Comprimento total de canais (em metros)
+  const comprimentoTotal = area * densidadeLinear;
+  
+  // Conversão de diâmetro para metros
+  const diametroM = diametroCordao / 1000;
+  const raio = diametroM / 2;
+  
+  // Área da seção transversal do cordão (em m²)
+  const areaSecao = Math.PI * raio * raio;
+  
+  // Volume total em m³
+  const volumeM3 = areaSecao * comprimentoTotal;
+  
+  // Conversão para litros (1 m³ = 1000 L)
+  const litros = volumeM3 * 1000;
+  
+  return litros; // Retorna o valor numérico para permitir cálculos
+}
+
+function calculaMetricasParedeEcologica(materialData, larguraParede, alturaParede, custoTijolo, 
+    rendimentoAssentamento, espessuraRejunte, dist_fab_obra, showlog=true) {
+    const metrics = {};
+    
+    // Quantidade de tijolos
+    const areaParede = larguraParede * alturaParede;
+    const alturaEfetivaTijolo  = materialData.altura_tijolo;
+    const larguraEfetivaTijolo = materialData.largura_tijolo;
+    const numTijolos = Math.ceil(areaParede / (alturaEfetivaTijolo * larguraEfetivaTijolo));
+    const volumeParede = areaParede * materialData.profundidade_tijolo
+    const massaTijolos = numTijolos * materialData.massa_tijolo;
+
+    // Volumes necessários ao cálculo de consumo por etapa
+    const volumeTijolos = numTijolos * (materialData.altura_tijolo * materialData.largura_tijolo * materialData.profundidade_tijolo);
+    
+    // Volume de cola para assentamento
+    const volumeAssentamento = numTijolos / rendimentoAssentamento; // litros
+
+    // Volume de rejunte
+    const areaRejunte = Math.PI * (espessuraRejunte / 2) * (espessuraRejunte / 2);
+    const volumeRejunte = areaRejunte * (numTijolos * (materialData.altura_tijolo + materialData.largura_tijolo)) * 1000; // litros
+    const volumeRejunteCorrigido = calcularRejunte(areaParede, espessuraRejunte * 1000); // litros
+    
+    const totalCimento = massaTijolos * materialData.fracao_cimento_por_tijolo;
+    // Adicionar a água utilizada no rejunte + limpeza dos tijolos
+    const totalAguaConstrucao = numTijolos * 0.1;
+    
+    // Custo (materiais)
+    const custoTijolos = numTijolos * custoTijolo;
+    const custoCimento = totalCimento * materialData.custo_cimento_kg;
+    const custoAssentamento = volumeAssentamento * materialData.custo_cola_litro;
+    const custoRejunte = volumeRejunteCorrigido * materialData.custo_rejunte_litro;
+    const custoAgua = totalAguaConstrucao * materialData.custo_agua_litro;
+
+    metrics.numTijolos = numTijolos;
+    metrics.custo = custoTijolos + custoCimento + custoAssentamento + custoRejunte + custoAgua;
+
+    // Água
+    const totalAgua = (materialData.agua_producao_tijolo * numTijolos) + totalAguaConstrucao;                       
+    metrics.agua = totalAgua;
+
+    // CO2 Tijolo Ecológico
+    const co2_producao = totalCimento * materialData.co2_producao_cimento;
+    dist_transporte = (dist_fab_obra * 2) ; // ida e volta
+    co2_transporte = dist_transporte * (massaTijolos/1000.0) * materialData.fator_emissao_co2_transporte;
+    // kg = km * ton * (kg CO2 / (ton * km))
+    metrics.co2 = co2_producao + co2_transporte;
+
+    // Resíduos por m²
+    metrics.residuos = materialData.residuos_m2 * areaParede;
+
+    // Energia por m²
+    metrics.energia = materialData.energia_m2 * areaParede;
+
+    // Resíduo de poliéster (apenas para o aditivado)
+    metrics.residuo_poliester = (materialData.fator_emissao_co2_poliester_incinerado) ? (8.6/1000 * numTijolos) : 0; // kg
+
+    metrics.reducao_emissao = metrics.residuo_poliester * materialData.fator_emissao_co2_poliester_incinerado;
+    metrics.emissao_liquida_co2 = metrics.co2 - metrics.reducao_emissao;
+
+    // Relatório detalhado (para debug)
+    if (showlog) {
+    console.log(`--- Detalhes da alvenaria ecológica ---`);
+    console.log(`Área da parede: ${formatNumber(areaParede)} m²`);
+    console.log(`Número de tijolos: ${formatNumber(numTijolos)}`);
+    console.log(`Massa dos tijolos: ${formatNumber(massaTijolos)} kg`);
+    console.log(`Volume de tijolos: ${formatNumber(volumeTijolos)} m³`);
+    console.log(`Volume de argamassa de assentamento: ${formatNumber(volumeAssentamento)} L`);
+    console.log(`Volume de rejunte: ${formatNumber(volumeRejunte)} L`);
+    console.log(`Volume de rejunte (calculado): ${formatNumber(volumeRejunteCorrigido, { minimumFractionDigits: 3, maximumFractionDigits: 3 })} L`);
+    console.log(`Custo dos tijolos: R$ ${formatNumber(custoTijolos)}`);
+    console.log(`Custo da argamassa de assentamento: R$ ${formatNumber(custoAssentamento)}`);
+    console.log(`Custo do rejunte: R$ ${formatNumber(custoRejunte)}`);
+    console.log(`Custo do cimento: R$ ${formatNumber(custoCimento)}`);
+    console.log(`Custo da água: R$ ${formatNumber(custoAgua)}`);
+    console.log(`Custo de materiais: R$ ${formatNumber(metrics.custo)}`);
+    console.log(`CO2 da produção: ${formatNumber(co2_producao)} kg`);
+    console.log(`CO2 do transporte: ${formatNumber(co2_transporte)} kg`);
+    }
+
+    return metrics;
+}
+
+function getEditedReferenceData() {
+    const dataConv = { ...DEFAULT_DATA_CONVENCIONAL };
+    const dataEco = { ...DEFAULT_DATA_ECOLOGICO };
+    const dataEcoAditivado = { ...DEFAULT_DATA_ECOLOGICO_ADITIVADO };
+
+    // Helper para ler valor do input
+    const getValue = (id) => parseFloat(document.getElementById(id).value);
+
+    // Dados Comuns
+    dataConv.custo_cimento_kg = dataEco.custo_cimento_kg = dataEcoAditivado.custo_cimento_kg = getValue('ref-custo_cimento_kg');
+    dataConv.custo_agua_litro = dataEco.custo_agua_litro = dataEcoAditivado.custo_agua_litro = getValue('ref-custo_agua_litro');
+    dataConv.fator_emissao_co2_transporte = dataEco.fator_emissao_co2_transporte = dataEcoAditivado.fator_emissao_co2_transporte = getValue('ref-fator_emissao_co2_transporte');
+    dataConv.co2_producao_cimento = dataEco.co2_producao_cimento = dataEcoAditivado.co2_producao_cimento = getValue('ref-co2_producao_cimento');
+
+    // Dados Convencionais
+    dataConv.fator_emissao_co2_fabricacao = getValue('ref-fator_emissao_co2_fabricacao');
+    dataConv.custo_plastificante_litro = getValue('ref-custo_plastificante_litro');
+    dataConv.custo_areia_m3 = getValue('ref-custo_areia_m3');
+    dataConv.agua_producao_tijolo = getValue('ref-agua_producao_tijolo_conv');
+    dataConv.residuos_m2 = getValue('ref-residuos_m2_conv');
+    dataConv.cimento_traco_assentamento = getValue('ref-cimento_traco_assentamento');
+    dataConv.cimento_traco_chapisco = getValue('ref-cimento_traco_chapisco');
+    dataConv.cimento_traco_emboco = getValue('ref-cimento_traco_emboco');
+    dataConv.cimento_traco_reboco = getValue('ref-cimento_traco_reboco');
+
+    // Dados Ecológicos
+    dataEco.fracao_cimento_por_tijolo = dataEcoAditivado.fracao_cimento_por_tijolo = getValue('ref-fracao_cimento_por_tijolo') / 100; // Converte de % para decimal
+    dataEco.custo_cola_litro = dataEcoAditivado.custo_cola_litro = getValue('ref-custo_cola_litro');
+    dataEco.custo_rejunte_litro = dataEcoAditivado.custo_rejunte_litro = getValue('ref-custo_rejunte_litro');
+    dataEco.agua_producao_tijolo = dataEcoAditivado.agua_producao_tijolo = getValue('ref-agua_producao_tijolo_eco');
+    dataEco.residuos_m2 = dataEcoAditivado.residuos_m2 = getValue('ref-residuos_m2_eco');
+
+    return { dataConv, dataEco, dataEcoAditivado };
+}
+
+
+function calculate() {
+    const loading = document.getElementById('loading-message');
+    const resultsSection = document.getElementById('results-section');
+    const alertContainer = document.getElementById('alert-container');
+    const resultsBody = document.getElementById('results-body');
+
+    loading.style.display = 'block';
+    resultsSection.style.display = 'none';
+    alertContainer.innerHTML = ''; // Limpa alertas anteriores
+
+    resultsBody.innerHTML = ''; // Limpa resultados anteriores
+
+    setTimeout(() => {
+        try {
+            // Parâmetros de entrada do usuário
+            const larguraParede = parseFloat(document.getElementById('wall-length').value);
+            const alturaParede = parseFloat(document.getElementById('wall-height').value);
+            
+            // Parâmetros da alvenaria com tijolo convencional
+            const custoTijoloConv = parseFloat(document.getElementById('custo-tijolo-conv').value);
+            const dist_fab_rev = parseFloat(document.getElementById('dist-fab-rev-conv').value); // km
+            const dist_rev_obra = parseFloat(document.getElementById('dist-rev-obra-conv').value); // km
+
+            const espessuraJunta = parseFloat(document.getElementById('espessura-junta-conv').value) / 100.0; // Espessura da junta de assentamento (m)
+            const espessuraChapisco = parseFloat(document.getElementById('espessura-chapisco-conv').value) / 100.0; // Espessura do chapisco (m)
+            const espessuraEmboco = parseFloat(document.getElementById('espessura-emboco-conv').value) / 100.0; // Espessura do emboço (m)
+            const espessuraReboco = parseFloat(document.getElementById('espessura-reboco-conv').value) / 100.0; // Espessura do reboco (m)
+            
+            
+            
+
+            if (isNaN(custoTijoloConv) || isNaN(larguraParede) || isNaN(alturaParede)) {
+                throw new Error(translations[currentLang].errorInvalidValues);
+            }
+            if (larguraParede <= 0 || alturaParede <= 0) {
+                throw new Error(translations[currentLang].errorPositiveValues);
+            }
+
+            const totalM2 = larguraParede * alturaParede;
+
+            // Parâmetros da alvenaria com tijolo ecológico
+            const custoTijoloEco = parseFloat(document.getElementById('custo-tijolo-eco').value);
+            const dist_fab_obra = parseFloat(document.getElementById('dist-fab-obra-eco').value); // km
+            const rendimentoAssentamento = parseFloat(document.getElementById('valor-rendimento-assentamento').value); // tijolos por litro
+            const espessuraRejunte = parseFloat(document.getElementById('valor-espessura-rejunte').value) / 100.0; // m
+
+            // Pega os dados de referência (editáveis) da UI
+            const { dataConv, dataEco, dataEcoAditivado } = getEditedReferenceData();
+
+            // Cálculos
+            const conv = calculaMetricasParedeConvencional(dataConv, larguraParede, alturaParede, custoTijoloConv, 
+                espessuraJunta, espessuraChapisco, espessuraEmboco, espessuraReboco, dist_fab_rev, dist_rev_obra);
+            const eco = calculaMetricasParedeEcologica(dataEco, larguraParede, alturaParede, custoTijoloEco, 
+                rendimentoAssentamento, espessuraRejunte, dist_fab_obra, showlog=true);
+            // NOTA: Usando o mesmo preço do ecológico para o aditivado.
+            const ecoAditivado = calculaMetricasParedeEcologica(dataEcoAditivado, larguraParede, alturaParede, custoTijoloEco, 
+                rendimentoAssentamento, espessuraRejunte, dist_fab_obra, showlog=false);
+
+            // Exibe os resultados
+            displayResults(conv, eco, ecoAditivado, totalM2);
+
+        } catch (error) {
+            loading.style.display = 'none';
+            resultsSection.style.display = 'none';
+            console.error(error);            
+            // Exibe o erro no contêiner dedicado, sem destruir a estrutura da página.
+            alertContainer.innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
+        }
+    }, 100);
+}
+
+function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('language', lang);
+    document.documentElement.lang = lang.split('-')[0];
+
+    document.querySelectorAll('[data-lang-key]').forEach(element => {
+        const key = element.getAttribute('data-lang-key');
+        if (translations[lang][key]) {
+            // Use innerHTML for keys that might contain superscripts like <sup>1</sup>
+            if (key === 'additiveEcoNote') {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+
+    document.querySelectorAll('#language-switcher').forEach(button => {
+        button.textContent = translations[lang].langButton;
+    });
+
+    // Re-populate reference data to update descriptions
+    populateReferenceData();
+}
+
+function populateReferenceData() {
+    const comumBody = document.getElementById('ref-comum-body');
+    const convBody = document.getElementById('ref-conv-body');
+    const ecoBody = document.getElementById('ref-eco-body');
+
+    // Usando os dados default para popular os campos
+    const dataComum = {
+        "custo_cimento_kg": ["refCostCement", DEFAULT_DATA_CONVENCIONAL.custo_cimento_kg, 0.01],
+        "custo_agua_litro": ["refCostWater", DEFAULT_DATA_CONVENCIONAL.custo_agua_litro, 0.001],
+        "fator_emissao_co2_transporte": ["refCO2FactorTransport", DEFAULT_DATA_CONVENCIONAL.fator_emissao_co2_transporte, 0.001],
+        "co2_producao_cimento": ["refCO2ProdCement", DEFAULT_DATA_ECOLOGICO.co2_producao_cimento, 0.01]
+    };
+
+    const dataConv = {
+        "fator_emissao_co2_fabricacao": ["refCO2FactorBrickProd", DEFAULT_DATA_CONVENCIONAL.fator_emissao_co2_fabricacao, 0.01],
+        "custo_plastificante_litro": ["refCostPlasticizer", DEFAULT_DATA_CONVENCIONAL.custo_plastificante_litro, 0.01],
+        "custo_areia_m3": ["refCostSand", DEFAULT_DATA_CONVENCIONAL.custo_areia_m3, 1],
+        "agua_producao_tijolo_conv": ["refWaterConsumptionBrickConv", DEFAULT_DATA_CONVENCIONAL.agua_producao_tijolo, 0.01],
+        "residuos_m2_conv": ["refWasteGenerationConv", DEFAULT_DATA_CONVENCIONAL.residuos_m2, 0.1],
+        "cimento_traco_assentamento": ["refCementRatioMortar", DEFAULT_DATA_CONVENCIONAL.cimento_traco_assentamento, 1],
+        "cimento_traco_chapisco": ["refCementRatioRoughcast", DEFAULT_DATA_CONVENCIONAL.cimento_traco_chapisco, 1],
+        "cimento_traco_emboco": ["refCementRatioRender", DEFAULT_DATA_CONVENCIONAL.cimento_traco_emboco, 1],
+        "cimento_traco_reboco": ["refCementRatioPlaster", DEFAULT_DATA_CONVENCIONAL.cimento_traco_reboco, 1],
+    };
+
+    const dataEco = {
+        "fracao_cimento_por_tijolo": ["refCementFractionEco", DEFAULT_DATA_ECOLOGICO.fracao_cimento_por_tijolo * 100, 0.1],
+        "custo_cola_litro": ["refCostAdhesive", DEFAULT_DATA_ECOLOGICO.custo_cola_litro, 0.01],
+        "custo_rejunte_litro": ["refCostGrout", DEFAULT_DATA_ECOLOGICO.custo_rejunte_litro, 0.01],
+        "agua_producao_tijolo_eco": ["refWaterConsumptionBrickEco", DEFAULT_DATA_ECOLOGICO.agua_producao_tijolo, 0.01],
+        "residuos_m2_eco": ["refWasteGenerationEco", DEFAULT_DATA_ECOLOGICO.residuos_m2, 0.1],
+        "fator_emissao_co2_poliester_incinerado": ["refCO2FactorPolyester", DEFAULT_DATA_ECOLOGICO_ADITIVADO.fator_emissao_co2_poliester_incinerado, 0.1]
+    };
+
+    const fillTable = (tbody, data) => {
+        tbody.innerHTML = '';
+        for (const [key, [descriptionKey, value, step]] of Object.entries(data)) {
+            const description = translations[currentLang][descriptionKey] || descriptionKey;
+            // Extrai a unidade da descrição (texto entre parênteses)
+            const match = description.match(/\(([^)]+)\)/);
+            const unit = match ? match[1] : '';
+            const cleanDescription = description.replace(/\s*\(([^)]+)\)/, '').trim();
+
+            const row = tbody.insertRow();
+            const cell1 = row.insertCell();
+            const cell2 = row.insertCell();
+            cell1.textContent = cleanDescription;
+
+            if (unit) {
+                cell2.innerHTML = `
+                    <div class="input-group input-group-sm">
+                        <input type="number" class="form-control" id="ref-${key}" value="${value}" step="${step}">
+                        <span class="input-group-text">${unit}</span>
+                    </div>`;
+            } else {
+                cell2.innerHTML = `<input type="number" class="form-control form-control-sm" id="ref-${key}" value="${value}" step="${step}">`;
+            }
+        }
+    };
+
+    fillTable(comumBody, dataComum);
+    fillTable(convBody, dataConv);
+    fillTable(ecoBody, dataEco);
+}
+
+/**
+ * Cria ou atualiza um gráfico Chart.js.
+ * @param {Chart} chartInstance - A instância do gráfico existente (pode ser nula).
+ * @param {string} canvasId - O ID do elemento canvas.
+ * @param {string} chartLabel - O rótulo para o conjunto de dados.
+ * @param {string} chartTitle - O título do gráfico.
+ * @param {Array<number>} chartData - Os dados para o gráfico.
+ * @returns {Chart} A nova instância do gráfico.
+ */
+function createOrUpdateChart(chartInstance, canvasId, chartLabel, chartTitle, chartData) {
+    if (chartInstance) {
+        chartInstance.destroy();
+    }
+    const ctx = document.getElementById(canvasId).getContext('2d');
+    return new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [
+                translations[currentLang].chartLabelConventional, 
+                translations[currentLang].chartLabelEcological, 
+                translations[currentLang].chartLabelEcologicalAdditive
+            ],
+            datasets: [{
+                label: chartLabel,
+                data: chartData,
+                backgroundColor: [
+                    'rgba(220, 53, 69, 0.6)', // Danger
+                    'rgba(25, 135, 84, 0.6)',  // Success
+                    'rgba(13, 110, 253, 0.6)'   // Primary
+                ],
+                borderColor: [
+                    'rgb(220, 53, 69)',
+                    'rgb(25, 135, 84)',
+                    'rgb(13, 110, 253)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                title: { display: true, text: chartTitle, font: { size: 16 } },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const value = context.parsed.y;
+                            if (value === null) return '';
+                            const formattedValue = formatNumber(value);
+
+                            if (chartLabel.includes('R$')) {
+                                return `R$ ${formattedValue}`;
+                            }
+                            
+                            return `${context.dataset.label || ''}: ${formattedValue}`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    ticks: {
+                        callback: function(value) {
+                            const formattedValue = formatNumber(value, { maximumFractionDigits: 0 });
+                            if (chartLabel.includes('R$')) {
+                                return `R$ ${formattedValue}`;
+                            }
+                            return formattedValue;
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+function displayResults(conv, eco, ecoAditivado, totalM2) {
+    const resultsBody1 = document.getElementById('results-body');
+    const resultsBody2 = document.getElementById('results-body-aditivado');
+    
+    const resultsHtml1 = `
+        <tr>
+            <td data-lang-key="wallArea">${translations[currentLang].wallArea}</td>
+            <td colspan="3" style="font-weight: bold;">${formatNumber(totalM2)} m²</td>
+        </tr>        
+        <tr>
+            <td data-lang-key="totalBricks">${translations[currentLang].totalBricks}</td>
+            <td class="conventional-col">${formatNumber(conv.numTijolos, { minimumFractionDigits: 0, maximumFractionDigits: 0 })} un</td>
+            <td class="ecological-col">${formatNumber(eco.numTijolos, { minimumFractionDigits: 0, maximumFractionDigits: 0 })} un</td>
+        </tr>
+        <tr>
+            <td data-lang-key="carbonEmission">${translations[currentLang].carbonEmission}</td>
+            <td class="conventional-col">${formatNumber(conv.co2)} kg CO₂</td>
+            <td class="ecological-col">${formatNumber(eco.co2)} kg CO₂</td>            
+        </tr>
+        <tr>
+            <td data-lang-key="wasteGeneration">${translations[currentLang].wasteGeneration}</td>
+            <td class="conventional-col">${formatNumber(conv.residuos)} kg</td>
+            <td class="ecological-col">${formatNumber(eco.residuos)} kg</td>            
+        </tr>
+        <tr>
+            <td data-lang-key="waterConsumption">${translations[currentLang].waterConsumption}</td>
+            <td class="conventional-col">${formatNumber(conv.agua)} L</td>
+            <td class="ecological-col">${formatNumber(eco.agua)} L</td>            
+        </tr>
+        <tr>
+            <td data-lang-key="materialCost">${translations[currentLang].materialCost}</td>
+            <td class="conventional-col">R$ ${formatNumber(conv.custo)}</td>
+            <td class="ecological-col">R$ ${formatNumber(eco.custo)}</td>            
+        </tr>
+    `;
+    resultsBody1.innerHTML = resultsHtml1;
+
+    // Table 2: Conventional vs. Ecological Additive
+    const resultsHtml2 = `
+        <tr>
+            <td data-lang-key="wallArea">${translations[currentLang].wallArea}</td>
+            <td colspan="2" style="font-weight: bold;">${formatNumber(totalM2)} m²</td>
+        </tr>
+        <tr>
+            <td data-lang-key="totalBricks">${translations[currentLang].totalBricks}</td>
+            <td class="conventional-col">${formatNumber(conv.numTijolos, { minimumFractionDigits: 0, maximumFractionDigits: 0 })} un</td>
+            <td class="ecological-col">${formatNumber(ecoAditivado.numTijolos, { minimumFractionDigits: 0, maximumFractionDigits: 0 })} un</td>
+        </tr>
+        <tr>
+            <td data-lang-key="carbonEmission">${translations[currentLang].carbonEmission}</td>
+            <td class="conventional-col">${formatNumber(conv.co2)} kg CO₂</td>
+            <td class="ecological-col">${formatNumber(ecoAditivado.co2)} kg CO₂</td>
+        </tr>
+        <tr>
+            <td data-lang-key="wasteGeneration">${translations[currentLang].wasteGeneration}</td>
+            <td class="conventional-col">${formatNumber(conv.residuos)} kg</td>
+            <td class="ecological-col">${formatNumber(ecoAditivado.residuos)} kg</td>
+        </tr>
+        <tr>
+            <td data-lang-key="waterConsumption">${translations[currentLang].waterConsumption}</td>
+            <td class="conventional-col">${formatNumber(conv.agua)} L</td>
+            <td class="ecological-col">${formatNumber(ecoAditivado.agua)} L</td>
+        </tr>
+        <tr>
+            <td data-lang-key="materialCost">${translations[currentLang].materialCost}</td>
+            <td class="conventional-col">R$ ${formatNumber(conv.custo)}</td>
+            <td class="ecological-col">R$ ${formatNumber(ecoAditivado.custo)}</td>
+        </tr>
+        <tr>
+            <td data-lang-key="polyesterResidue">${translations[currentLang].polyesterResidue}</td>
+            <td class="conventional-col">-</td>
+            <td class="ecological-col">${formatNumber(ecoAditivado.residuo_poliester)} kg</td>
+        </tr>
+        <tr>
+            <td data-lang-key="co2EmissionReduction">${translations[currentLang].co2EmissionReduction}</td>
+            <td class="conventional-col">-</td>
+            <td class="ecological-col">${formatNumber(ecoAditivado.reducao_emissao)} kg CO₂</td>
+        </tr>
+        <tr>
+            <td data-lang-key="netCo2Emission">${translations[currentLang].netCo2Emission}</td>
+            <td class="conventional-col">${formatNumber(conv.co2)} kg CO₂</td>
+            <td class="ecological-col">${formatNumber(ecoAditivado.emissao_liquida_co2)} kg CO₂</td>
+        </tr>
+    `;
+    resultsBody2.innerHTML = resultsHtml2;
+   
+    // --- CHART CREATION ---
+    const co2Data = [conv.co2, eco.co2, ecoAditivado.emissao_liquida_co2];
+    co2Chart = createOrUpdateChart(co2Chart, 'co2-chart', translations[currentLang].chartCO2, translations[currentLang].chartCO2, co2Data);
+
+    const wasteData = [conv.residuos, eco.residuos, ecoAditivado.residuos];    
+    wasteChart = createOrUpdateChart(wasteChart, 'waste-chart', translations[currentLang].chartWaste, translations[currentLang].chartWaste, wasteData);
+
+    const waterData = [conv.agua, eco.agua, ecoAditivado.agua];    
+    waterChart = createOrUpdateChart(waterChart, 'water-chart', translations[currentLang].chartWater, translations[currentLang].chartWater, waterData);
+
+    const costData = [conv.custo, eco.custo, ecoAditivado.custo];    
+    costChart = createOrUpdateChart(costChart, 'cost-chart', translations[currentLang].chartCost, translations[currentLang].chartCost, costData);
+
+    document.getElementById('loading-message').style.display = 'none';
+    document.getElementById('results-section').style.display = 'block';
+}
